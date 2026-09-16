@@ -1,0 +1,579 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Human OS Simulation Labs - LabVersions API",
+    "version": "1.0.0",
+    "description": "Azure Functions HTTP CRUD and state transition endpoints for LAB_LabVersion."
+  },
+  "servers": [
+    {
+      "url": "https://{hostname}/api",
+      "description": "API Gateway / Azure Functions host"
+    }
+  ],
+  "paths": {
+    "/labs/{idLab}/versions": {
+      "post": {
+        "operationId": "LabVersion_Create",
+        "summary": "Create a new LabVersion in DRAFT status",
+        "description": "Creates version (max + 1) for an active Lab within the authenticated tenant. Protected by policy LabVersions.Create.",
+        "parameters": [
+          {
+            "name": "idLab",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" },
+            "description": "Unique identifier of the Lab."
+          },
+          {
+            "name": "X-Correlation-ID",
+            "in": "header",
+            "required": false,
+            "schema": { "type": "string" },
+            "description": "Optional correlation identifier. Generated if not supplied."
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": false,
+            "schema": { "type": "string" },
+            "description": "Optional idempotency key to prevent duplicate creation."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateLabVersionRequest" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "LabVersion created successfully in DRAFT status.",
+            "headers": {
+              "Location": { "schema": { "type": "string" }, "description": "URI of the newly created version (/api/lab-versions/{idVersion})." },
+              "ETag": { "schema": { "type": "string" }, "description": "Base64 encoded RowVersion concurrency token." },
+              "X-Correlation-ID": { "schema": { "type": "string" }, "description": "Correlation identifier." }
+            },
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/LabVersionDetailResponse" }
+              }
+            }
+          },
+          "400": { "description": "Invalid request body or parameters.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "401": { "description": "Caller is unauthenticated.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "403": { "description": "Caller lacks LabVersions.Create permission.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "404": { "description": "Lab not found in tenant.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "409": { "description": "Version number conflict / concurrency conflict.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "422": { "description": "Lab is in RETIRED status and does not accept new versions.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "500": { "description": "Internal server error.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } }
+        }
+      },
+      "get": {
+        "operationId": "LabVersion_ListByLab",
+        "summary": "List versions of a Lab",
+        "description": "Lists versions belonging to the specified Lab within the caller tenant, sorted by version number descending. Does not expose briefOculto. Protected by LabVersions.Read.",
+        "parameters": [
+          {
+            "name": "idLab",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "estatus",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "string", "enum": ["DRAFT", "APPROVED", "PUBLISHED", "RETIRED"] }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "integer", "default": 1, "minimum": 1 }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "integer", "default": 20, "minimum": 1, "maximum": 100 }
+          },
+          {
+            "name": "sortDirection",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "string", "enum": ["ASC", "DESC"], "default": "DESC" }
+          },
+          {
+            "name": "X-Correlation-ID",
+            "in": "header",
+            "required": false,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of Lab versions.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/LabVersionListResult" }
+              }
+            }
+          },
+          "400": { "description": "Invalid pagination or query parameters.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "401": { "description": "Caller is unauthenticated.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "403": { "description": "Caller lacks LabVersions.Read permission.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "404": { "description": "Lab not found in tenant.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "500": { "description": "Internal server error.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } }
+        }
+      }
+    },
+    "/lab-versions/{idVersion}": {
+      "get": {
+        "operationId": "LabVersion_GetById",
+        "summary": "Get LabVersion details by ID",
+        "description": "Administrative endpoint retrieving full version details including briefOculto. Requires LabVersions.Manage permission.",
+        "parameters": [
+          {
+            "name": "idVersion",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "X-Correlation-ID",
+            "in": "header",
+            "required": false,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "LabVersion details.",
+            "headers": {
+              "ETag": { "schema": { "type": "string" } },
+              "X-Correlation-ID": { "schema": { "type": "string" } }
+            },
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/LabVersionDetailResponse" }
+              }
+            }
+          },
+          "400": { "description": "Invalid idVersion.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "401": { "description": "Caller is unauthenticated.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "403": { "description": "Caller lacks LabVersions.Manage permission.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "404": { "description": "LabVersion not found in tenant.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "500": { "description": "Internal server error.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } }
+        }
+      },
+      "patch": {
+        "operationId": "LabVersion_Update",
+        "summary": "Update a LabVersion in DRAFT status",
+        "description": "Updates editable fields of a version while in DRAFT status. Requires If-Match concurrency header and LabVersions.Update permission.",
+        "parameters": [
+          {
+            "name": "idVersion",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Expected RowVersion token."
+          },
+          {
+            "name": "X-Correlation-ID",
+            "in": "header",
+            "required": false,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdateLabVersionRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "LabVersion updated successfully.",
+            "headers": {
+              "ETag": { "schema": { "type": "string" } },
+              "X-Correlation-ID": { "schema": { "type": "string" } }
+            },
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/LabVersionDetailResponse" }
+              }
+            }
+          },
+          "400": { "description": "Invalid request body or parameters.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "401": { "description": "Caller is unauthenticated.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "403": { "description": "Caller lacks LabVersions.Update permission.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "404": { "description": "LabVersion not found in tenant.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "409": { "description": "Concurrency collision detected by EF Core.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "412": { "description": "If-Match header is missing or does not match current RowVersion.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "422": { "description": "LabVersion is not editable (status is not DRAFT).", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "500": { "description": "Internal server error.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } }
+        }
+      }
+    },
+    "/lab-versions/{idVersion}/approve": {
+      "post": {
+        "operationId": "LabVersion_Approve",
+        "summary": "Approve a LabVersion from DRAFT to APPROVED",
+        "description": "Advances status from DRAFT to APPROVED after verifying required fields and constraints. Requires If-Match and LabVersions.Approve.",
+        "parameters": [
+          {
+            "name": "idVersion",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "X-Correlation-ID",
+            "in": "header",
+            "required": false,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ApproveLabVersionRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "LabVersion approved.",
+            "headers": {
+              "ETag": { "schema": { "type": "string" } },
+              "X-Correlation-ID": { "schema": { "type": "string" } }
+            },
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/LabVersionDetailResponse" }
+              }
+            }
+          },
+          "400": { "description": "Invalid request.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "401": { "description": "Caller is unauthenticated.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "403": { "description": "Caller lacks LabVersions.Approve permission.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "404": { "description": "LabVersion not found in tenant.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "409": { "description": "Concurrency collision.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "412": { "description": "If-Match missing or mismatch.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "422": { "description": "Invalid status transition (version not in DRAFT).", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "500": { "description": "Internal server error.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } }
+        }
+      }
+    },
+    "/lab-versions/{idVersion}/publish": {
+      "post": {
+        "operationId": "LabVersion_Publish",
+        "summary": "Publish an approved LabVersion",
+        "description": "Publishes an APPROVED version, computing a 64-character deterministic SHA-256 configuration hash. Repeated call is idempotent. Requires If-Match and LabVersions.Publish.",
+        "parameters": [
+          {
+            "name": "idVersion",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "X-Correlation-ID",
+            "in": "header",
+            "required": false,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/PublishLabVersionRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "LabVersion published.",
+            "headers": {
+              "ETag": { "schema": { "type": "string" } },
+              "X-Correlation-ID": { "schema": { "type": "string" } }
+            },
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/PublishLabVersionResponse" }
+              }
+            }
+          },
+          "400": { "description": "Invalid request (missing vigenciaDesde, etc.).", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "401": { "description": "Caller is unauthenticated.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "403": { "description": "Caller lacks LabVersions.Publish permission.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "404": { "description": "LabVersion not found in tenant.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "409": { "description": "Concurrency collision.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "412": { "description": "If-Match missing or mismatch.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "422": { "description": "Invalid status transition (e.g. from DRAFT or RETIRED).", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "500": { "description": "Configuration hash calculation failure or internal error.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } }
+        }
+      }
+    },
+    "/lab-versions/{idVersion}/retire": {
+      "post": {
+        "operationId": "LabVersion_Retire",
+        "summary": "Retire a LabVersion without physical deletion",
+        "description": "Transitions version from DRAFT, APPROVED, or PUBLISHED to RETIRED. Repeated call is idempotent. Requires If-Match and LabVersions.Retire.",
+        "parameters": [
+          {
+            "name": "idVersion",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "format": "uuid" }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "X-Correlation-ID",
+            "in": "header",
+            "required": false,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/RetireLabVersionRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "LabVersion retired.",
+            "headers": {
+              "ETag": { "schema": { "type": "string" } },
+              "X-Correlation-ID": { "schema": { "type": "string" } }
+            },
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/RetireLabVersionResponse" }
+              }
+            }
+          },
+          "400": { "description": "Invalid request.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "401": { "description": "Caller is unauthenticated.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "403": { "description": "Caller lacks LabVersions.Retire permission.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "404": { "description": "LabVersion not found in tenant.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "409": { "description": "Concurrency collision.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "412": { "description": "If-Match missing or mismatch.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "422": { "description": "Invalid status transition.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } },
+          "500": { "description": "Internal server error.", "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } } }
+        }
+      }
+    },
+    "/lab-versions/{idVersion}/stages": {
+      "post": { "operationId": "Stage_Create", "summary": "Create a stage in a DRAFT version", "parameters": [{ "name": "idVersion", "in": "path", "required": true, "schema": { "type": "string", "format": "uuid" } }, { "name": "X-Correlation-ID", "in": "header", "schema": { "type": "string" } }, { "name": "Idempotency-Key", "in": "header", "schema": { "type": "string" } }], "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/CreateStageRequest" } } } }, "responses": { "201": { "description": "Created", "headers": { "Location": { "schema": { "type": "string" } }, "ETag": { "schema": { "type": "string" } } }, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StageResponse" } } } }, "400": { "$ref": "#/components/responses/Problem400" }, "401": { "$ref": "#/components/responses/Problem401" }, "403": { "$ref": "#/components/responses/Problem403" }, "404": { "$ref": "#/components/responses/Problem404" }, "409": { "$ref": "#/components/responses/Problem409" } } },
+      "get": { "operationId": "Stage_ListByVersion", "summary": "List stages by version", "parameters": [{ "name": "idVersion", "in": "path", "required": true, "schema": { "type": "string", "format": "uuid" } }, { "name": "estatus", "in": "query", "schema": { "type": "string", "enum": ["DRAFT", "ACTIVE", "INACTIVE"] } }, { "name": "tipoInteraccion", "in": "query", "schema": { "type": "string" } }, { "name": "obligatorio", "in": "query", "schema": { "type": "boolean" } }, { "name": "page", "in": "query", "schema": { "type": "integer", "minimum": 1, "default": 1 } }, { "name": "pageSize", "in": "query", "schema": { "type": "integer", "minimum": 1, "maximum": 100, "default": 50 } }, { "name": "sortDirection", "in": "query", "schema": { "type": "string", "enum": ["ASC", "DESC"], "default": "ASC" } }], "responses": { "200": { "description": "Paginated stages", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StageListResponse" } } } }, "400": { "$ref": "#/components/responses/Problem400" }, "401": { "$ref": "#/components/responses/Problem401" }, "403": { "$ref": "#/components/responses/Problem403" }, "404": { "$ref": "#/components/responses/Problem404" } } }
+    },
+    "/stages/{idStage}": {
+      "get": { "operationId": "Stage_GetById", "summary": "Get a stage", "parameters": [{ "$ref": "#/components/parameters/StageId" }], "responses": { "200": { "description": "Stage", "headers": { "ETag": { "schema": { "type": "string" } } }, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StageResponse" } } } }, "404": { "$ref": "#/components/responses/Problem404" } } },
+      "patch": { "operationId": "Stage_Update", "summary": "Update a stage in a DRAFT version", "parameters": [{ "$ref": "#/components/parameters/StageId" }, { "$ref": "#/components/parameters/IfMatch" }], "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/UpdateStageRequest" } } } }, "responses": { "200": { "description": "Updated", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StageResponse" } } } }, "412": { "$ref": "#/components/responses/Problem412" }, "422": { "$ref": "#/components/responses/Problem422" } } }
+    },
+    "/lab-versions/{idVersion}/stages/reorder": { "post": { "operationId": "Stage_Reorder", "summary": "Reorder stages transactionally", "parameters": [{ "name": "idVersion", "in": "path", "required": true, "schema": { "type": "string", "format": "uuid" } }], "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ReorderStagesRequest" } } } }, "responses": { "200": { "description": "Reordered", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ReorderStagesResponse" } } } }, "409": { "$ref": "#/components/responses/Problem409" } } } },
+    "/stages/{idStage}/activate": { "post": { "operationId": "Stage_Activate", "summary": "Activate a stage", "parameters": [{ "$ref": "#/components/parameters/StageId" }, { "$ref": "#/components/parameters/IfMatch" }], "requestBody": { "$ref": "#/components/requestBodies/StageAction" }, "responses": { "200": { "description": "Activated", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StageResponse" } } } } } } },
+    "/stages/{idStage}/inactivate": { "post": { "operationId": "Stage_Inactivate", "summary": "Inactivate a stage", "parameters": [{ "$ref": "#/components/parameters/StageId" }, { "$ref": "#/components/parameters/IfMatch" }], "requestBody": { "$ref": "#/components/requestBodies/StageAction" }, "responses": { "200": { "description": "Inactivated", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StageResponse" } } } } } } }
+  },
+  "components": {
+    "parameters": { "StageId": { "name": "idStage", "in": "path", "required": true, "schema": { "type": "string", "format": "uuid" } }, "IfMatch": { "name": "If-Match", "in": "header", "required": true, "schema": { "type": "string" } } },
+    "requestBodies": { "StageAction": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StageActionRequest" } } } } },
+    "responses": { "Problem400": { "description": "Invalid request" }, "Problem401": { "description": "Unauthenticated" }, "Problem403": { "description": "Forbidden" }, "Problem404": { "description": "Not found" }, "Problem409": { "description": "Conflict" }, "Problem412": { "description": "ETag mismatch" }, "Problem422": { "description": "Not editable" } },
+    "schemas": {
+      "CreateLabVersionRequest": {
+        "type": "object",
+        "required": ["objetivoGeneral", "instruccionesParticipante", "duracionMinutos", "scoreMinimo"],
+        "properties": {
+          "objetivoGeneral": { "type": "string" },
+          "instruccionesParticipante": { "type": "string" },
+          "briefOculto": { "type": "string", "nullable": true },
+          "duracionMinutos": { "type": "integer", "minimum": 1 },
+          "scoreMinimo": { "type": "number", "format": "decimal", "minimum": 1.00, "maximum": 10.00 },
+          "vigenciaDesde": { "type": "string", "format": "date-time", "nullable": true },
+          "vigenciaHasta": { "type": "string", "format": "date-time", "nullable": true }
+        }
+      },
+      "UpdateLabVersionRequest": {
+        "type": "object",
+        "properties": {
+          "objetivoGeneral": { "type": "string" },
+          "instruccionesParticipante": { "type": "string" },
+          "briefOculto": { "type": "string", "nullable": true },
+          "duracionMinutos": { "type": "integer", "minimum": 1 },
+          "scoreMinimo": { "type": "number", "format": "decimal", "minimum": 1.00, "maximum": 10.00 },
+          "vigenciaDesde": { "type": "string", "format": "date-time", "nullable": true },
+          "vigenciaHasta": { "type": "string", "format": "date-time", "nullable": true }
+        }
+      },
+      "ApproveLabVersionRequest": {
+        "type": "object",
+        "required": ["motivo"],
+        "properties": {
+          "motivo": { "type": "string", "maxLength": 1000 }
+        }
+      },
+      "PublishLabVersionRequest": {
+        "type": "object",
+        "required": ["motivo", "vigenciaDesde"],
+        "properties": {
+          "vigenciaDesde": { "type": "string", "format": "date-time" },
+          "vigenciaHasta": { "type": "string", "format": "date-time", "nullable": true },
+          "motivo": { "type": "string", "maxLength": 1000 }
+        }
+      },
+      "RetireLabVersionRequest": {
+        "type": "object",
+        "required": ["motivo"],
+        "properties": {
+          "motivo": { "type": "string", "maxLength": 1000 },
+          "vigenciaHasta": { "type": "string", "format": "date-time", "nullable": true }
+        }
+      },
+      "LabVersionDetailResponse": {
+        "type": "object",
+        "properties": {
+          "idVersion": { "type": "string", "format": "uuid" },
+          "idLab": { "type": "string", "format": "uuid" },
+          "numeroVersion": { "type": "integer" },
+          "objetivoGeneral": { "type": "string" },
+          "instruccionesParticipante": { "type": "string" },
+          "briefOculto": { "type": "string", "nullable": true },
+          "duracionMinutos": { "type": "integer" },
+          "scoreMinimo": { "type": "number", "format": "decimal" },
+          "estatus": { "type": "string" },
+          "vigenciaDesde": { "type": "string", "format": "date-time", "nullable": true },
+          "vigenciaHasta": { "type": "string", "format": "date-time", "nullable": true },
+          "hashConfiguracion": { "type": "string", "nullable": true },
+          "fechaCreacion": { "type": "string", "format": "date-time" },
+          "creadoPor": { "type": "string" },
+          "fechaActualizacion": { "type": "string", "format": "date-time", "nullable": true },
+          "actualizadoPor": { "type": "string", "nullable": true },
+          "rowVersion": { "type": "string", "description": "Base64 encoded timestamp" }
+        }
+      },
+      "LabVersionListItemResponse": {
+        "type": "object",
+        "properties": {
+          "idVersion": { "type": "string", "format": "uuid" },
+          "numeroVersion": { "type": "integer" },
+          "objetivoGeneral": { "type": "string" },
+          "duracionMinutos": { "type": "integer" },
+          "scoreMinimo": { "type": "number", "format": "decimal" },
+          "estatus": { "type": "string" },
+          "vigenciaDesde": { "type": "string", "format": "date-time", "nullable": true },
+          "vigenciaHasta": { "type": "string", "format": "date-time", "nullable": true },
+          "fechaCreacion": { "type": "string", "format": "date-time" },
+          "fechaActualizacion": { "type": "string", "format": "date-time", "nullable": true },
+          "rowVersion": { "type": "string" }
+        }
+      },
+      "PublishLabVersionResponse": {
+        "type": "object",
+        "properties": {
+          "idVersion": { "type": "string", "format": "uuid" },
+          "numeroVersion": { "type": "integer" },
+          "estatus": { "type": "string", "example": "PUBLISHED" },
+          "vigenciaDesde": { "type": "string", "format": "date-time" },
+          "vigenciaHasta": { "type": "string", "format": "date-time", "nullable": true },
+          "hashConfiguracion": { "type": "string", "minLength": 64, "maxLength": 64 },
+          "rowVersion": { "type": "string" }
+        }
+      },
+      "RetireLabVersionResponse": {
+        "type": "object",
+        "properties": {
+          "idVersion": { "type": "string", "format": "uuid" },
+          "numeroVersion": { "type": "integer" },
+          "estatus": { "type": "string", "example": "RETIRED" },
+          "vigenciaHasta": { "type": "string", "format": "date-time", "nullable": true },
+          "rowVersion": { "type": "string" }
+        }
+      },
+      "LabVersionListResult": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/LabVersionListItemResponse" }
+          },
+          "page": { "type": "integer" },
+          "pageSize": { "type": "integer" },
+          "totalItems": { "type": "integer" },
+          "totalPages": { "type": "integer" }
+        }
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string", "example": "urn:error:REQUEST_INVALID" },
+          "title": { "type": "string" },
+          "status": { "type": "integer" },
+          "detail": { "type": "string", "nullable": true },
+          "errorCode": {
+            "type": "string",
+            "enum": [
+              "REQUEST_INVALID",
+              "UNAUTHENTICATED",
+              "FORBIDDEN",
+              "LAB_NOT_FOUND",
+              "LAB_RETIRED",
+              "LAB_VERSION_NOT_FOUND",
+              "LAB_VERSION_DUPLICATE",
+              "LAB_VERSION_NOT_EDITABLE",
+              "INVALID_STATUS_TRANSITION",
+              "ETAG_REQUIRED",
+              "ETAG_MISMATCH",
+              "CONCURRENCY_CONFLICT",
+              "CONFIGURATION_HASH_FAILED",
+              "INTERNAL_ERROR"
+            ]
+          },
+          "correlationId": { "type": "string" },
+          "errors": { "type": "array", "items": { "type": "string" }, "nullable": true }
+        },
+        "CreateStageRequest": { "type": "object", "required": ["codigo", "nombre", "descripcion", "tipoInteraccion", "esObligatorio", "permiteOrdenFlexible"], "properties": { "codigo": { "type": "string", "maxLength": 50 }, "nombre": { "type": "string", "maxLength": 200 }, "descripcion": { "type": "string" }, "tipoInteraccion": { "type": "string", "enum": ["CONVERSATION", "DESKTOP", "HYBRID", "ARTIFACT"] }, "esObligatorio": { "type": "boolean" }, "condicionCompletitud": { "type": "string", "nullable": true }, "tiempoSugeridoMinutos": { "type": "integer", "minimum": 1, "nullable": true }, "permiteOrdenFlexible": { "type": "boolean" } } },
+        "UpdateStageRequest": { "type": "object", "properties": { "nombre": { "type": "string" }, "descripcion": { "type": "string" }, "tipoInteraccion": { "type": "string" }, "esObligatorio": { "type": "boolean" }, "condicionCompletitud": { "type": "string", "nullable": true }, "tiempoSugeridoMinutos": { "type": "integer", "minimum": 1, "nullable": true }, "permiteOrdenFlexible": { "type": "boolean" } } },
+        "ReorderStagesRequest": { "type": "object", "required": ["stages"], "properties": { "stages": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["idStage", "orden", "rowVersion"], "properties": { "idStage": { "type": "string", "format": "uuid" }, "orden": { "type": "integer", "minimum": 1 }, "rowVersion": { "type": "string" } } } } } },
+        "StageActionRequest": { "type": "object", "required": ["motivo"], "properties": { "motivo": { "type": "string", "maxLength": 1000 } } },
+        "StageResponse": { "type": "object", "properties": { "idStage": { "type": "string", "format": "uuid" }, "idVersion": { "type": "string", "format": "uuid" }, "codigo": { "type": "string" }, "nombre": { "type": "string" }, "descripcion": { "type": "string" }, "orden": { "type": "integer" }, "tipoInteraccion": { "type": "string" }, "esObligatorio": { "type": "boolean" }, "condicionCompletitud": { "type": "string", "nullable": true }, "tiempoSugeridoMinutos": { "type": "integer", "nullable": true }, "permiteOrdenFlexible": { "type": "boolean" }, "estatus": { "type": "string" }, "fechaCreacion": { "type": "string", "format": "date-time" }, "creadoPor": { "type": "string" }, "fechaActualizacion": { "type": "string", "format": "date-time", "nullable": true }, "actualizadoPor": { "type": "string", "nullable": true }, "rowVersion": { "type": "string" } } },
+        "StageListResponse": { "type": "object", "properties": { "items": { "type": "array", "items": { "$ref": "#/components/schemas/StageListItemResponse" } }, "page": { "type": "integer" }, "pageSize": { "type": "integer" }, "totalItems": { "type": "integer" }, "totalPages": { "type": "integer" } } },
+        "StageListItemResponse": { "type": "object", "properties": { "idStage": { "type": "string", "format": "uuid" }, "codigo": { "type": "string" }, "nombre": { "type": "string" }, "descripcion": { "type": "string" }, "orden": { "type": "integer" }, "tipoInteraccion": { "type": "string" }, "esObligatorio": { "type": "boolean" }, "tiempoSugeridoMinutos": { "type": "integer", "nullable": true }, "permiteOrdenFlexible": { "type": "boolean" }, "estatus": { "type": "string" }, "rowVersion": { "type": "string" } } },
+        "ReorderStagesResponse": { "type": "object", "properties": { "items": { "type": "array", "items": { "type": "object", "properties": { "idStage": { "type": "string", "format": "uuid" }, "orden": { "type": "integer" }, "rowVersion": { "type": "string" } } } } } }
+      }
+    }
+  }
+}

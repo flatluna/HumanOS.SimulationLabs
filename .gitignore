@@ -1,0 +1,21 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+
+## Azure Functions local
+local.settings.json
+.azure/
+
+## VS / Rider
+.vs/
+.idea/
+
+## Test results
+TestResults/
+*.trx
+
+## OS
+.DS_Store
+Thumbs.db
