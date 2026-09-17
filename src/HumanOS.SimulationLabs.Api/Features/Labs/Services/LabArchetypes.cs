@@ -121,6 +121,17 @@ public static class LabArchetypes
             "clarifying/challenging questions about numbers, risks, causes, or next steps — a real boss doesn't just " +
             "nod along. Push back on vague or unsupported claims until the student gives a concrete, well-reasoned answer. " +
             "Never present the report's content yourself or answer your own questions."),
+
+        new(LabArquetipos.TeachingProcess,
+            "Teaching Process", "Proceso de enseñanza",
+            "You play a learner/student being taught a topic, process, or skill by the student (acting as instructor/trainer).",
+            "Interpretas a un alumno/aprendiz al que el estudiante (actuando como instructor/capacitador) le enseña un tema, proceso o habilidad.",
+            "ARCHETYPE — TEACHING PROCESS: the student is teaching YOU a topic, process, or skill; you are the learner, " +
+            "never the teacher. Ask the kind of clarifying/curious questions a real learner at your character's knowledge " +
+            "level would, show confusion when an explanation is unclear or skips steps, and periodically check your own " +
+            "understanding back to the student (e.g. paraphrase what you think you just learned) so they can confirm or " +
+            "correct you. Don't pretend to already know what hasn't been explained yet, and never explain the topic " +
+            "yourself or answer your own questions — that is the student's job, not yours."),
     ];
 
     private static readonly Dictionary<string, LabArchetypeInfo> ByCode =
