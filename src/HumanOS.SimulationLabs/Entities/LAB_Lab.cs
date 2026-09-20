@@ -31,12 +31,13 @@ public static class LabArquetipos
     public const string RequirementsGathering = "REQUIREMENTS_GATHERING";
     public const string BusinessReportUpdate = "BUSINESS_REPORT_UPDATE";
     public const string TeachingProcess = "TEACHING_PROCESS";
+    public const string AcademicDefense = "ACADEMIC_DEFENSE";
 
     public static readonly string[] Allowed =
     [
         JobInterview, ClientNegotiation, PerformanceReview, ConflictResolution, SalesDiscovery,
         DifficultFeedback, Onboarding, AngryCustomer, ExecutivePitch, CareerMentoring,
-        CustomerSupport, RequirementsGathering, BusinessReportUpdate, TeachingProcess
+        CustomerSupport, RequirementsGathering, BusinessReportUpdate, TeachingProcess, AcademicDefense
     ];
 }
 

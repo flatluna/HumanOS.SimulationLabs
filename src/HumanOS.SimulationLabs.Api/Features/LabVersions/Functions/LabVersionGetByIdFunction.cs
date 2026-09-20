@@ -65,7 +65,9 @@ public sealed class LabVersionGetByIdFunction
 
             LogAudit(versionId, null, "SUCCESS", sw.ElapsedMilliseconds, version.Estatus);
             var response = await ApiResponses.JsonAsync(request, HttpStatusCode.OK, version, correlationId, cancellationToken);
-            response.Headers.Add("ETag", version.RowVersion);
+            // ETag values must be quoted per HTTP spec — a bare base64 RowVersion is rejected by
+            // HttpHeaders.Add with a FormatException ("The format of value '...' is invalid.").
+            response.Headers.Add("ETag", $"\"{version.RowVersion}\"");
             return response;
         }
         catch (Exception ex)

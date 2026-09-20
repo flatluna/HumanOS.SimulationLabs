@@ -88,6 +88,7 @@ public sealed class AttemptEvaluationService
             LabNombre = lab?.LAB_Nombre ?? string.Empty,
             ScenarioNombre = scenario?.SCN_Nombre ?? string.Empty,
             ScenarioResultadoEsperado = scenario?.SCN_ResultadoEsperado ?? string.Empty,
+            IsAcademicDefense = string.Equals(lab?.LAB_Arquetipo, LabArquetipos.AcademicDefense, StringComparison.OrdinalIgnoreCase),
             ScoreMinimoAprobacion = rubric?.RUB_ScoreMinimoAprobacion ?? 7.00m,
             Criteria = criteria,
             SkillFeedbackGuidance = skillFeedbackGuidance,

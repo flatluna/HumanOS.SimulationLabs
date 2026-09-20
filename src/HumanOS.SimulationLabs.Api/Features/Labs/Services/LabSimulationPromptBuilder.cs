@@ -22,6 +22,7 @@ public static class LabSimulationPromptBuilder
         public string? Arquetipo { get; set; }
         public LAB_Scenario? Scenario { get; set; }
         public LAB_SimulatedActor? Actor { get; set; }
+        public List<LAB_SimulatedActor> CommitteeActors { get; set; } = [];
         public List<LAB_Stage> Stages { get; set; } = [];
         public List<LAB_ExpectedMoment> Moments { get; set; } = [];
     }
@@ -41,6 +42,9 @@ public static class LabSimulationPromptBuilder
         public List<string> RequiredTechnicalSkills { get; set; } = [];
         public List<string> RequiredSoftSkills { get; set; } = [];
         public string? ResumeSummary { get; set; }
+        public string? ProfessionalObjective { get; set; }
+        public string? AcademicProfileSummary { get; set; }
+        public string? ThesisSummary { get; set; }
 
         public bool HasAnyData =>
             !string.IsNullOrWhiteSpace(EmployeeName) ||
@@ -70,13 +74,18 @@ public static class LabSimulationPromptBuilder
             .FirstOrDefaultAsync(cancellationToken);
 
         LAB_SimulatedActor? actor = null;
+        var committeeActors = new List<LAB_SimulatedActor>();
         if (scenario is not null)
         {
-            actor = await db.SimulatedActors.AsNoTracking()
+            var actorsQuery = db.SimulatedActors.AsNoTracking()
                 .Where(a => a.SEG_IdTenant == tenantId && a.SCN_IdScenario == scenario.SCN_IdScenario)
                 .OrderByDescending(a => a.ACT_EsPrincipal)
-                .ThenBy(a => a.ACT_Orden)
-                .FirstOrDefaultAsync(cancellationToken);
+                .ThenBy(a => a.ACT_Orden);
+            actor = await actorsQuery.FirstOrDefaultAsync(cancellationToken);
+            if (string.Equals(lab.LAB_Arquetipo, LabArquetipos.AcademicDefense, StringComparison.OrdinalIgnoreCase))
+            {
+                committeeActors = await actorsQuery.OrderBy(a => a.ACT_Orden).Take(3).ToListAsync(cancellationToken);
+            }
         }
 
         // Stages are the real "Casos" (STG_Orden is the actual sequence, e.g. Caso 1, Caso 2) —
@@ -98,6 +107,7 @@ public static class LabSimulationPromptBuilder
             Arquetipo = lab.LAB_Arquetipo,
             Scenario = scenario,
             Actor = actor,
+            CommitteeActors = committeeActors,
             Stages = stages,
             Moments = moments
         };
@@ -120,13 +130,18 @@ public static class LabSimulationPromptBuilder
             .FirstOrDefaultAsync(s => s.SEG_IdTenant == tenantId && s.SCN_IdScenario == idScenario, cancellationToken);
 
         LAB_SimulatedActor? actor = null;
+        var committeeActors = new List<LAB_SimulatedActor>();
         if (scenario is not null)
         {
-            actor = await db.SimulatedActors.AsNoTracking()
+            var actorsQuery = db.SimulatedActors.AsNoTracking()
                 .Where(a => a.SEG_IdTenant == tenantId && a.SCN_IdScenario == scenario.SCN_IdScenario)
                 .OrderByDescending(a => a.ACT_EsPrincipal)
-                .ThenBy(a => a.ACT_Orden)
-                .FirstOrDefaultAsync(cancellationToken);
+                .ThenBy(a => a.ACT_Orden);
+            actor = await actorsQuery.FirstOrDefaultAsync(cancellationToken);
+            if (string.Equals(lab.LAB_Arquetipo, LabArquetipos.AcademicDefense, StringComparison.OrdinalIgnoreCase))
+            {
+                committeeActors = await actorsQuery.OrderBy(a => a.ACT_Orden).Take(3).ToListAsync(cancellationToken);
+            }
         }
 
         var stages = await db.Stages.AsNoTracking()
@@ -146,14 +161,16 @@ public static class LabSimulationPromptBuilder
             Arquetipo = lab.LAB_Arquetipo,
             Scenario = scenario,
             Actor = actor,
+            CommitteeActors = committeeActors,
             Stages = stages,
             Moments = moments
         };
     }
 
-    public static string BuildInstructions(SimulationContext context, string? adminDisplayName, bool isRealAttempt = false, EmployeeProfileContext? employeeProfile = null)
+    public static string BuildInstructions(SimulationContext context, string? adminDisplayName, bool isRealAttempt = false, EmployeeProfileContext? employeeProfile = null, LAB_SimulatedActor? actorOverride = null, bool isFirstCommitteeSpeaker = true, string? priorConversationTranscript = null, bool isIntroductionOnlyTurn = false)
     {
         var sb = new StringBuilder();
+        var actor = actorOverride ?? context.Actor;
 
         // LANGUAGE HARD RULE — FIXED (2026-09-15, "agent speaks Spanish with an English accent"):
         // every other working Realtime agent in this codebase (VoiceTutorSessionFunction.BuildInstructions,
@@ -163,7 +180,7 @@ public static class LabSimulationPromptBuilder
         // among dozens of other English rules ("ALWAYS speak in Español, native accent"). That weak,
         // English-authored rule was the actual root cause of the English-accented Spanish. Detect the
         // actor's language and lead with a same-language hard rule instead.
-        var actorLanguage = context.Actor?.ACT_Idioma;
+        var actorLanguage = actor?.ACT_Idioma;
         var isSpanish = actorLanguage is { Length: > 0 }
             && (actorLanguage.Contains("esp", StringComparison.OrdinalIgnoreCase) || actorLanguage.Equals("es", StringComparison.OrdinalIgnoreCase));
         sb.AppendLine(isSpanish
@@ -183,23 +200,24 @@ public static class LabSimulationPromptBuilder
         sb.AppendLine("student to speak first; you are the one leading and driving this conversation from turn one.");
         sb.AppendLine();
         var archetype = LabArchetypes.Resolve(context.Arquetipo);
+        var isAcademicDefense = string.Equals(context.Arquetipo, LabArquetipos.AcademicDefense, StringComparison.OrdinalIgnoreCase);
         sb.AppendLine(archetype.InstructionBlock);
         sb.AppendLine();
         sb.AppendLine("CRITICAL: WHO GIVES WHAT, NEVER CHANGES. Read this fact and hold onto it for the ENTIRE call, every single turn:");
-        sb.AppendLine($"  - \"I\" / \"we\" / \"us\" = YOU, \"{context.Actor?.ACT_Nombre ?? "the character"}\". \"You\"/\"your\" = the STUDENT. Never swap these.");
+        sb.AppendLine($"  - \"I\" / \"we\" / \"us\" = YOU, \"{actor?.ACT_Nombre ?? "the character"}\". \"You\"/\"your\" = the STUDENT. Never swap these.");
         sb.AppendLine("  - Only the STUDENT can offer discounts, free extras, special terms, or any other concession. YOU never offer, propose, or hand out ANY of those things — not even as a suggestion, not even hypothetically. YOU only ask for what you want, then accept / reject / counter-ask when the student proposes something.");
         sb.AppendLine("  - Before you speak, silently check: \"am I about to offer, give, or propose a concession?\" If yes, STOP — that line belongs to the student, not you. Ask for what YOU want instead, or react to what THEY already offered.");
         sb.AppendLine("  - WHOEVER ASKED FOR SOMETHING FIRST KEEPS ASKING FOR IT. If YOU are the one who requested a discount/concession/favor at the start of the call, YOU remain the one requesting it for the rest of the call — never flip into asking the STUDENT to justify wanting it (that request was yours, not theirs). Before each turn, silently check: \"who originally asked for this thing we're discussing — me or the student?\" and stay on that side.");
         sb.AppendLine();
         sb.AppendLine("Your role: You are an AI playing a character in a simulated practice conversation, evaluating a student.");
-        sb.AppendLine($"Your character: \"{context.Actor?.ACT_Nombre ?? "the client"}\". Title: \"{context.Actor?.ACT_Rol ?? "-"}\".");
+        sb.AppendLine($"Your character: \"{actor?.ACT_Nombre ?? "the client"}\". Title: \"{actor?.ACT_Rol ?? "-"}\".");
         if (context.Scenario is not null)
         {
             sb.AppendLine($"What this exam evaluates: {context.Scenario.SCN_ResultadoEsperado}");
         }
         sb.AppendLine();
         sb.AppendLine("IMPORTANT:");
-        sb.AppendLine($"- Never take the student's role. You are \"{context.Actor?.ACT_Nombre ?? "the character"}\"; the student is the other person on the call.");
+        sb.AppendLine($"- Never take the student's role. You are \"{actor?.ACT_Nombre ?? "the character"}\"; the student is the other person on the call.");
         sb.AppendLine("- This is a free-flowing, natural conversation, not a scripted questionnaire. Don't recite fixed lines — react like a real person would, in your own words, to whatever the student actually says or asks.");
         sb.AppendLine("- The GOALS/TOPICS list below are things you need the student to address by the end of the call — not a script and not a fixed order. Bring them up naturally whenever they fit the conversation's flow, ask as many follow-up questions as a real person in your position would need to get a genuinely good answer, and skip/reorder freely based on how the student is steering things.");
         sb.AppendLine("- NEVER RE-ASK A TOPIC YOU'VE ALREADY COVERED. Before speaking, mentally review the ENTIRE conversation so far: if the student has already substantively answered a topic (even briefly, even earlier in the call), do NOT circle back and ask it again in different words — move to a topic that is still genuinely uncovered. Repeating yourself wastes the student's time and is exactly what a real interviewer/counterpart would never do.");
@@ -215,9 +233,9 @@ public static class LabSimulationPromptBuilder
         sb.AppendLine("- This exam evaluates the STUDENT's skill (selling, negotiating, interviewing, giving feedback, diagnosing, running discovery, etc.), never yours. Never do that task for them, and never turn their question/task back onto them — that flips the roles and breaks the exam. You only react in character to what they do or say, driven by your own goals/context below.");
         sb.AppendLine();
 
-        if (context.Actor is not null)
+        if (actor is not null)
         {
-            var a = context.Actor;
+            var a = actor;
             sb.AppendLine($"YOUR CHARACTER: {a.ACT_Nombre} — {a.ACT_Rol}");
             sb.AppendLine($"Description: {a.ACT_Descripcion}");
             sb.AppendLine($"Your goal in this conversation: {a.ACT_Objetivo}");
@@ -293,8 +311,12 @@ public static class LabSimulationPromptBuilder
         if (isRealAttempt)
         {
             var realName = !string.IsNullOrWhiteSpace(employeeProfile?.EmployeeName) ? employeeProfile!.EmployeeName : adminDisplayName;
-            sb.AppendLine($"You're talking with {(string.IsNullOrWhiteSpace(realName) ? "the participant" : realName)}, " +
-                           "a real employee taking this exam for real. Keep the conversation natural and in character the whole time.");
+            sb.AppendLine(isAcademicDefense
+                ? $"You're talking with {(string.IsNullOrWhiteSpace(realName) ? "the candidate" : realName)}, a REAL Tecnológico de Monterrey " +
+                  "student defending her actual professional thesis for real — she is a STUDENT, never a HumanOS employee/company staff " +
+                  "member. Keep the conversation natural and in character the whole time."
+                : $"You're talking with {(string.IsNullOrWhiteSpace(realName) ? "the participant" : realName)}, " +
+                  "a real employee taking this exam for real. Keep the conversation natural and in character the whole time.");
             if (isResumeAwareArchetype && employeeProfile is { HasAnyData: true })
             {
                 sb.AppendLine();
@@ -307,31 +329,58 @@ public static class LabSimulationPromptBuilder
                 sb.AppendLine("explicitly say to reference the résumé/role — ground your questions in their real background and this role's");
                 sb.AppendLine("real requirements regardless.");
             }
-            if (employeeProfile is { HasAnyData: true })
+            if (!isAcademicDefense && employeeProfile is { HasAnyData: true })
             {
+                // A student (Tecnológico de Monterrey demo) has an academic profile but usually no
+                // real company/job role — never default to "at their real job" framing for them.
+                var isStudentProfile = !string.IsNullOrWhiteSpace(employeeProfile.AcademicProfileSummary);
                 sb.AppendLine();
-                sb.AppendLine("ABOUT THE REAL PERSON YOU'RE TALKING TO — this is who they actually are at their real job. Use it to make");
-                sb.AppendLine("the conversation specific and grounded (e.g. greet them by name, reference their actual company/role naturally,");
-                sb.AppendLine("the way someone who genuinely knew this about them would) — never recite this list back to them like a script:");
+                if (isStudentProfile)
+                {
+                    sb.AppendLine("ABOUT THE REAL PERSON YOU'RE TALKING TO — they are a real STUDENT at Tecnológico de Monterrey practicing this");
+                    sb.AppendLine("business case as a course exercise, NOT a HumanOS employee and NOT actually employed at any company mentioned in");
+                    sb.AppendLine("this scenario. Treat the scenario's company/role as a role-play backdrop for their learning, not their real job —");
+                    sb.AppendLine("never imply they actually work there. Use their real academic background to make the conversation specific and");
+                    sb.AppendLine("grounded (greet them by name, reference their real degree/academic record naturally) — never recite this list back");
+                    sb.AppendLine("to them like a script:");
+                }
+                else
+                {
+                    sb.AppendLine("ABOUT THE REAL PERSON YOU'RE TALKING TO — this is who they actually are at their real job. Use it to make");
+                    sb.AppendLine("the conversation specific and grounded (e.g. greet them by name, reference their actual company/role naturally,");
+                    sb.AppendLine("the way someone who genuinely knew this about them would) — never recite this list back to them like a script:");
+                }
                 if (!string.IsNullOrWhiteSpace(employeeProfile.EmployeeName))
                     sb.AppendLine($"  - Their real name: {employeeProfile.EmployeeName}");
-                if (!string.IsNullOrWhiteSpace(employeeProfile.CompanyName))
-                    sb.AppendLine($"  - The real company they work for: {employeeProfile.CompanyName}");
-                if (!string.IsNullOrWhiteSpace(employeeProfile.JobRoleTitle))
+                if (isStudentProfile)
                 {
-                    sb.AppendLine($"  - Their real job role: {employeeProfile.JobRoleTitle}" +
-                                   (string.IsNullOrWhiteSpace(employeeProfile.JobRoleSummary) ? "" : $" — {employeeProfile.JobRoleSummary}"));
+                    sb.AppendLine($"  - Their real academic record (Tecnológico de Monterrey): {employeeProfile.AcademicProfileSummary}");
+                    if (!string.IsNullOrWhiteSpace(employeeProfile.ProfessionalObjective))
+                        sb.AppendLine($"  - Their professional objective: {employeeProfile.ProfessionalObjective}");
                 }
-                if (employeeProfile.RequiredTechnicalSkills.Count > 0)
-                    sb.AppendLine($"  - Their role's technical skills: {string.Join(", ", employeeProfile.RequiredTechnicalSkills)}");
-                if (employeeProfile.RequiredSoftSkills.Count > 0)
-                    sb.AppendLine($"  - Their role's soft skills: {string.Join(", ", employeeProfile.RequiredSoftSkills)}");
+                // CompanyName is just the platform tenant name (e.g. "HumanOS" itself) — never a real
+                // employer for a student, so skip it (and job role/skills, which don't apply either)
+                // entirely for student profiles instead of accidentally implying they work there.
+                if (!isStudentProfile)
+                {
+                    if (!string.IsNullOrWhiteSpace(employeeProfile.CompanyName))
+                        sb.AppendLine($"  - The real company they work for: {employeeProfile.CompanyName}");
+                    if (!string.IsNullOrWhiteSpace(employeeProfile.JobRoleTitle))
+                    {
+                        sb.AppendLine($"  - Their real job role: {employeeProfile.JobRoleTitle}" +
+                                       (string.IsNullOrWhiteSpace(employeeProfile.JobRoleSummary) ? "" : $" — {employeeProfile.JobRoleSummary}"));
+                    }
+                    if (employeeProfile.RequiredTechnicalSkills.Count > 0)
+                        sb.AppendLine($"  - Their role's technical skills: {string.Join(", ", employeeProfile.RequiredTechnicalSkills)}");
+                    if (employeeProfile.RequiredSoftSkills.Count > 0)
+                        sb.AppendLine($"  - Their role's soft skills: {string.Join(", ", employeeProfile.RequiredSoftSkills)}");
+                }
                 if (!string.IsNullOrWhiteSpace(employeeProfile.ResumeSummary))
                     sb.AppendLine($"  - Their résumé/professional background: {employeeProfile.ResumeSummary}");
                 sb.AppendLine("  - Only reference details your character would realistically know (e.g. an interviewer or mentor may know");
                 sb.AppendLine("    their résumé; a client/prospect would only know their name, company and job title, not their résumé). If your");
                 sb.AppendLine("    character wouldn't plausibly know a given detail, let it silently inform your judgment instead of mentioning it.");
-                if (!string.IsNullOrWhiteSpace(employeeProfile.CompanyName) || !string.IsNullOrWhiteSpace(employeeProfile.JobRoleTitle))
+                if (!isStudentProfile && (!string.IsNullOrWhiteSpace(employeeProfile.CompanyName) || !string.IsNullOrWhiteSpace(employeeProfile.JobRoleTitle)))
                 {
                     sb.AppendLine();
                     sb.AppendLine("CRITICAL — PROVE YOU KNOW WHO THEY ARE, DON'T STAY VAGUE: at some point in your first 1-2 turns, explicitly and");
@@ -353,6 +402,20 @@ public static class LabSimulationPromptBuilder
                     sb.AppendLine("nothing — that would be a FAILURE, since you already have it in front of you.");
                 }
             }
+            if (isAcademicDefense)
+            {
+                sb.AppendLine();
+                sb.AppendLine("ACADEMIC DEFENSE CONTEXT — use this only for the Tec de Monterrey professional thesis exam:");
+                sb.AppendLine("  - The thesis and process description are stored in the Lab scenario below. Treat that stored process description as the authoritative thesis source.");
+                sb.AppendLine("  - Do not invent thesis facts. If the stored description does not contain a detail, ask the student to clarify it instead of guessing.");
+                if (!string.IsNullOrWhiteSpace(employeeProfile?.ProfessionalObjective))
+                    sb.AppendLine($"  - Student professional objective: {employeeProfile.ProfessionalObjective}");
+                if (!string.IsNullOrWhiteSpace(employeeProfile?.AcademicProfileSummary))
+                    sb.AppendLine($"  - Student academic record: {employeeProfile.AcademicProfileSummary}");
+                if (!string.IsNullOrWhiteSpace(employeeProfile?.ResumeSummary))
+                    sb.AppendLine($"  - Student résumé context: {employeeProfile.ResumeSummary}");
+                sb.AppendLine("  - Use academic record and résumé only to make relevant application questions; never treat them as evidence that replaces the thesis.");
+            }
             if (!string.IsNullOrWhiteSpace(employeeProfile?.EmployeeName))
             {
                 var firstName = employeeProfile!.EmployeeName!.Split(' ', StringSplitOptions.RemoveEmptyEntries).FirstOrDefault() ?? employeeProfile.EmployeeName!;
@@ -371,11 +434,63 @@ public static class LabSimulationPromptBuilder
                            "who is testing the Lab, not a real participant. Keep the conversation natural and in character the whole time.");
         }
         sb.AppendLine();
-        sb.AppendLine($"REMINDER before you speak: you are \"{context.Actor?.ACT_Nombre ?? "the character"}\". You only ask for things; the STUDENT is the only one who can offer discounts/concessions/extras. Never say a line that gives the student something — that line is theirs to say, not yours.");
+        sb.AppendLine($"REMINDER before you speak: you are \"{actor?.ACT_Nombre ?? "the character"}\". You only ask for things; the STUDENT is the only one who can offer discounts/concessions/extras. Never say a line that gives the student something — that line is theirs to say, not yours.");
+        if (isAcademicDefense)
+        {
+            sb.AppendLine("ROLE LOCK — ACADEMIC DEFENSE: you are the sinodales, the examining judges. The student is Sofia, the candidate.");
+            sb.AppendLine("Never speak as Sofia. Never say that you are ready to defend a thesis, that you will present your thesis, or any other first-person candidate statement.");
+            sb.AppendLine("Never read or imitate a scenario line written for the candidate. Convert candidate instructions into questions asked by the committee.");
+        }
         sb.AppendLine();
         var useInterviewOpening = isRealAttempt && isResumeAwareArchetype && employeeProfile is { HasAnyData: true }
             && (!string.IsNullOrWhiteSpace(employeeProfile.ResumeSummary) || !string.IsNullOrWhiteSpace(employeeProfile.JobRoleSummary));
-        if (useInterviewOpening)
+        if (isAcademicDefense)
+        {
+            if (isIntroductionOnlyTurn && isFirstCommitteeSpeaker)
+            {
+                sb.AppendLine("YOUR FIRST TURN: greet Sofia in ONE short sentence as the president of the examining committee — say only your name and role,");
+                sb.AppendLine("then one brief sentence that the other sinodales will introduce themselves next. Then stop talking.");
+            }
+            else if (isIntroductionOnlyTurn)
+            {
+                sb.AppendLine("YOUR FIRST TURN: introduce yourself to Sofia in ONE short sentence — your name and role, nothing else. Then stop talking.");
+                if (!string.IsNullOrWhiteSpace(priorConversationTranscript))
+                {
+                    sb.AppendLine();
+                    sb.AppendLine("CONVERSATION SO FAR (already happened before you joined — read it so you don't repeat a name/role already said):");
+                    sb.AppendLine(priorConversationTranscript);
+                }
+            }
+            else if (isFirstCommitteeSpeaker)
+            {
+                sb.AppendLine("YOUR FIRST TURN: the whole committee has already introduced itself by name in prior turns — do NOT introduce anyone again.");
+                sb.AppendLine("Say a brief transition (e.g. 'Bien, comencemos') and ask Sofia to begin by stating the title, central problem, objective, and main contribution of her thesis.");
+                sb.AppendLine("Do not say that you are ready to defend a thesis. Sofia is the person who defends; you are the judges who ask and evaluate.");
+                sb.AppendLine("Ignore any first-turn topic text that is written in the candidate's voice, such as 'estoy lista para defender mi tesis'.");
+                if (!string.IsNullOrWhiteSpace(priorConversationTranscript))
+                {
+                    sb.AppendLine();
+                    sb.AppendLine("CONVERSATION SO FAR (the committee's introductions — read it so you don't repeat any name/role):");
+                    sb.AppendLine(priorConversationTranscript);
+                }
+            }
+            else
+            {
+                sb.AppendLine("YOUR FIRST TURN — YOU ARE JOINING AN ALREADY-STARTED DEFENSE: the committee has already greeted Sofia and other sinodales");
+                sb.AppendLine("have already spoken. Do NOT greet her again, do NOT reintroduce the committee, and do NOT repeat the opening request to");
+                sb.AppendLine("state the thesis title/problem/objective. Speak as if you were listening the whole time — briefly acknowledge the topic");
+                sb.AppendLine("only if natural, then go straight into your OWN first question from your area of expertise.");
+                if (!string.IsNullOrWhiteSpace(priorConversationTranscript))
+                {
+                    sb.AppendLine();
+                    sb.AppendLine("CONVERSATION SO FAR (already happened before you joined this call — read it carefully):");
+                    sb.AppendLine(priorConversationTranscript);
+                    sb.AppendLine("Never repeat a question another sinodal already asked. Never ask Sofia to repeat something she already answered above.");
+                    sb.AppendLine("Build your own question on what she has already said, as a real committee member who was listening would.");
+                }
+            }
+        }
+        else if (useInterviewOpening)
         {
             sb.AppendLine("YOUR FIRST TURN (OVERRIDES THE GENERIC RULE BELOW): warmly greet the candidate by name, briefly confirm they're");
             sb.AppendLine("ready to start (e.g. ask if they're ready and, if the language wasn't already obvious, which language they'd");
@@ -386,9 +501,11 @@ public static class LabSimulationPromptBuilder
         }
         else if (context.Moments.Count > 0)
         {
-            sb.AppendLine("YOUR FIRST TURN: say topic 1 above almost verbatim (adapt only tone, not content/intent) as your opening");
-            sb.AppendLine("line — that IS your greeting and your ask/problem statement combined, don't add another separate greeting");
-            sb.AppendLine("before it. State YOUR position/ask directly. Never turn it into a question asking the student to explain");
+            sb.AppendLine("YOUR FIRST TURN: start by stating your name and role/title in a short natural phrase (e.g. \"Soy " +
+                $"{(actor?.ACT_Nombre ?? "...")}, {(actor?.ACT_Rol ?? "...")}\" adapted to your character's voice), then immediately");
+            sb.AppendLine("say topic 1 above almost verbatim (adapt only tone, not content/intent) as the rest of your opening");
+            sb.AppendLine("line — together that IS your whole greeting and ask/problem statement, don't add another separate greeting");
+            sb.AppendLine("before or after it. State YOUR position/ask directly. Never turn it into a question asking the student to explain");
             sb.AppendLine("or justify their own goals/motives first — you already know what you want, you're the one asking for it.");
             sb.AppendLine("If topic 1's text itself describes exam logistics (question counts, categories, time limits) instead of real");
             sb.AppendLine("in-character speech, ignore that meta-text and just open naturally in character based on your context above —");
@@ -396,9 +513,10 @@ public static class LabSimulationPromptBuilder
         }
         else
         {
-            sb.AppendLine("YOUR FIRST TURN: greet briefly in character (your name/a short natural opener), then bring up the first thing on your");
-            sb.AppendLine("mind from your own goals/context above, in your own words. State YOUR position directly, don't ask the student to");
-            sb.AppendLine("explain or justify their own goals/motives first.");
+            sb.AppendLine("YOUR FIRST TURN: greet briefly in character, starting by stating your name and role/title (e.g. \"Soy " +
+                $"{(actor?.ACT_Nombre ?? "...")}, {(actor?.ACT_Rol ?? "...")}\" adapted to your character's voice), then bring up the first");
+            sb.AppendLine("thing on your mind from your own goals/context above, in your own words. State YOUR position directly, don't ask");
+            sb.AppendLine("the student to explain or justify their own goals/motives first.");
         }
 
         return sb.ToString();

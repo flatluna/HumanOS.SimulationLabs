@@ -76,6 +76,7 @@ public sealed class AttemptEvaluationContext
     public string ScenarioNombre { get; set; } = string.Empty;
 
     public string ScenarioResultadoEsperado { get; set; } = string.Empty;
+    public bool IsAcademicDefense { get; set; }
 
     public decimal ScoreMinimoAprobacion { get; set; } = 7.00m;
 
@@ -227,6 +228,16 @@ public sealed class AttemptEvaluationAgent
         sb.AppendLine($"SCENARIO: {context.ScenarioNombre}");
         sb.AppendLine($"What this exam evaluates: {context.ScenarioResultadoEsperado}");
         sb.AppendLine($"Minimum passing score: {context.ScoreMinimoAprobacion}");
+        if (context.IsAcademicDefense)
+        {
+            sb.AppendLine();
+            sb.AppendLine("=== ACADEMIC DEFENSE SCORING CALIBRATION ===");
+            sb.AppendLine("This is a Tec de Monterrey thesis defense. The sinodales evaluate Sofia as a candidate, but this is a formative professional examination, not a demand for a perfect thesis recital.");
+            sb.AppendLine("Score each answer for the specific question actually asked. Give fair partial credit when the candidate demonstrates a correct idea but omits detail, uses imprecise wording, or needs a follow-up.");
+            sb.AppendLine("Do not require one answer to cover the entire thesis, every methodological detail, or every rubric dimension. Do not give a very low score merely because the candidate needs clarification or a second attempt.");
+            sb.AppendLine("Use approximately 7-10 for a correct, relevant and sufficiently supported answer; 5-6 for a substantially correct answer with meaningful gaps; 3-4 for a partial but relevant answer; 1-2 only for no answer, an irrelevant answer, or a serious factual/conceptual failure.");
+            sb.AppendLine("A weak answer to one question is not by itself a critical failure. Reserve CRITICAL_FAILURE for a clearly severe issue supported by the transcript and an applicable critical criterion.");
+        }
         sb.AppendLine();
 
         var e = context.Employee;

@@ -1,0 +1,1081 @@
+Running 'func start' directly against a .NET Isolated project may not correctly load function extensions. Use 'dotnet run' instead, which builds the project and starts the Functions host from the correct output directory.
+  Determining projects to restore...
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-23rf-6693-g89p [C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj]
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-37gx-xxp4-5rgx [C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj]
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6588-8gv4-xfgh [C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj]
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8q5v-6pqq-x66h [C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj]
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-cvvh-rhrc-wg4q [C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj]
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-g8r8-53c2-pm3f [C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj]
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-mmjf-rqrv-855v [C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj]
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3x6-4m5h-cxqf [C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj]
+  All projects are up-to-date for restore.
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-23rf-6693-g89p
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-37gx-xxp4-5rgx
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6588-8gv4-xfgh
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8q5v-6pqq-x66h
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-cvvh-rhrc-wg4q
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-g8r8-53c2-pm3f
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-mmjf-rqrv-855v
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3x6-4m5h-cxqf
+  HumanOS.SimulationLabs -> C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\bin\output\HumanOS.SimulationLabs.dll
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  WorkerExtensions -> C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\obj\Debug\net10.0\WorkerExtensions\bin\Release\net8.0\Microsoft.Azure.Functions.Worker.Extensions.dll
+  HumanOS.SimulationLabs.Api -> C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\bin\output\HumanOS.SimulationLabs.Api.dll
+
+Build succeeded.
+
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-23rf-6693-g89p [C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj]
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-37gx-xxp4-5rgx [C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj]
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6588-8gv4-xfgh [C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj]
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8q5v-6pqq-x66h [C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj]
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-cvvh-rhrc-wg4q [C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj]
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-g8r8-53c2-pm3f [C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj]
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-mmjf-rqrv-855v [C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj]
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3x6-4m5h-cxqf [C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj]
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-23rf-6693-g89p
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-37gx-xxp4-5rgx
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6588-8gv4-xfgh
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8q5v-6pqq-x66h
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-cvvh-rhrc-wg4q
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-g8r8-53c2-pm3f
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-mmjf-rqrv-855v
+C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs\HumanOS.SimulationLabs.csproj : warning NU1903: Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3x6-4m5h-cxqf
+    16 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:06.86
+
+
+
+Azure Functions Core Tools
+Core Tools Version:       4.12.0+21d180f3f62481fc8035563798e6d970d8eb0ebb (64-bit)
+Function Runtime Version: 4.1048.200.26180
+
+[2026-09-17T18:54:03.795Z] Found C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\HumanOS.SimulationLabs.Api.csproj. Using for user secrets file configuration.
+[2026-09-17T18:54:05.122Z] Worker process started and initialized.
+
+Functions:
+
+	ArtifactSubmission_Create: [POST] http://localhost:7072/api/attempts/{idAttempt}/artifacts
+
+	ArtifactSubmission_Exclude: [POST] http://localhost:7072/api/artifacts/{idSubmission}/exclude
+
+	ArtifactSubmission_Finalize: [POST] http://localhost:7072/api/artifacts/{idSubmission}/finalize
+
+	ArtifactSubmission_GetById: [GET] http://localhost:7072/api/artifacts/{idSubmission}
+
+	ArtifactSubmission_ListByAttempt: [GET] http://localhost:7072/api/attempts/{idAttempt}/artifacts
+
+	ArtifactSubmission_Submit: [POST] http://localhost:7072/api/artifacts/{idSubmission}/submit
+
+	ArtifactSubmission_Update: [PATCH] http://localhost:7072/api/artifacts/{idSubmission}
+
+	AttemptEvaluation_GetByAttempt: [GET] http://localhost:7072/api/attempts/{idAttempt:guid}/evaluation
+
+	Attempt_Abandon: [POST] http://localhost:7072/api/attempts/{idAttempt}/abandon
+
+	Attempt_Cancel: [POST] http://localhost:7072/api/attempts/{idAttempt}/cancel
+
+	Attempt_Complete: [POST] http://localhost:7072/api/attempts/{idAttempt}/complete
+
+	Attempt_Delete: [DELETE] http://localhost:7072/api/attempts/{idAttempt}
+
+	Attempt_Evaluate: [POST] http://localhost:7072/api/attempts/{idAttempt:guid}/evaluate
+
+	Attempt_GetById: [GET] http://localhost:7072/api/attempts/{idAttempt}
+
+	Attempt_ListMine: [GET] http://localhost:7072/api/me/attempts
+
+	Attempt_Pause: [POST] http://localhost:7072/api/attempts/{idAttempt}/pause
+
+	Attempt_Resume: [POST] http://localhost:7072/api/attempts/{idAttempt}/resume
+
+	Attempt_Start: [POST] http://localhost:7072/api/scenarios/{idScenario}/attempts
+
+	Attempt_VoiceSession: [POST] http://localhost:7072/api/attempts/{idAttempt:guid}/voice-session
+
+	ConversationTurn_CorrectTranscript: [POST] http://localhost:7072/api/conversation-turns/{idTurn}/correct
+
+	ConversationTurn_Create: [POST] http://localhost:7072/api/attempts/{idAttempt}/conversation-turns
+
+	ConversationTurn_Exclude: [POST] http://localhost:7072/api/conversation-turns/{idTurn}/exclude
+
+	ConversationTurn_Finalize: [POST] http://localhost:7072/api/conversation-turns/{idTurn}/finalize
+
+	ConversationTurn_GetById: [GET] http://localhost:7072/api/conversation-turns/{idTurn}
+
+	ConversationTurn_ListByAttempt: [GET] http://localhost:7072/api/attempts/{idAttempt}/conversation-turns
+
+	Enrollment_Enroll: [POST] http://localhost:7072/api/labs/{idLab:guid}/enroll
+
+	Enrollment_ListMine: [GET] http://localhost:7072/api/me/lab-enrollments
+
+	Enrollment_Unenroll: [DELETE] http://localhost:7072/api/labs/{idLab:guid}/enroll
+
+	ExpectedMoment_Activate: [POST] http://localhost:7072/api/expected-moments/{idExpectedMoment}/activate
+
+	ExpectedMoment_Create: [POST] http://localhost:7072/api/stages/{idStage}/expected-moments
+
+	ExpectedMoment_GetById: [GET] http://localhost:7072/api/expected-moments/{idExpectedMoment}
+
+	ExpectedMoment_Inactivate: [POST] http://localhost:7072/api/expected-moments/{idExpectedMoment}/inactivate
+
+	ExpectedMoment_ListByStage: [GET] http://localhost:7072/api/stages/{idStage}/expected-moments
+
+	ExpectedMoment_ListByVersion: [GET] http://localhost:7072/api/lab-versions/{idVersion}/expected-moments
+
+	ExpectedMoment_Reorder: [POST] http://localhost:7072/api/stages/{idStage}/expected-moments/reorder
+
+	ExpectedMoment_Update: [PATCH] http://localhost:7072/api/expected-moments/{idExpectedMoment}
+
+	LabBuilder_GenerateDraft: [POST] http://localhost:7072/api/ai-lab-builder/generate-draft
+
+	LabBuilder_SaveDraft: [POST] http://localhost:7072/api/ai-lab-builder/save-draft
+
+	LabVersion_Approve: [POST] http://localhost:7072/api/lab-versions/{idVersion}/approve
+
+	LabVersion_Create: [POST] http://localhost:7072/api/labs/{idLab}/versions
+
+	LabVersion_GetById: [GET] http://localhost:7072/api/lab-versions/{idVersion}
+
+	LabVersion_ListByLab: [GET] http://localhost:7072/api/labs/{idLab}/versions
+
+	LabVersion_Publish: [POST] http://localhost:7072/api/lab-versions/{idVersion}/publish
+
+	LabVersion_Retire: [POST] http://localhost:7072/api/lab-versions/{idVersion}/retire
+
+	LabVersion_Update: [PATCH] http://localhost:7072/api/lab-versions/{idVersion}
+
+	Lab_Create: [POST] http://localhost:7072/api/labs
+
+	Lab_Delete: [DELETE] http://localhost:7072/api/labs/{idLab}
+
+	Lab_Get: [GET] http://localhost:7072/api/labs/{idLab:guid}
+
+	Lab_Inactivate: [POST] http://localhost:7072/api/labs/{idLab}/inactivate
+
+	Lab_List: [GET] http://localhost:7072/api/labs
+
+	Lab_SimulationVoiceSession: [POST] http://localhost:7072/api/labs/{idLab:guid}/simulate-voice-session
+
+	Lab_Update: [PATCH] http://localhost:7072/api/labs/{idLab}
+
+	Objective_Activate: [POST] http://localhost:7072/api/objectives/{idObjective}/activate
+
+	Objective_Create: [POST] http://localhost:7072/api/lab-versions/{idVersion}/objectives
+
+	Objective_GetById: [GET] http://localhost:7072/api/objectives/{idObjective}
+
+	Objective_Inactivate: [POST] http://localhost:7072/api/objectives/{idObjective}/inactivate
+
+	Objective_ListByStage: [GET] http://localhost:7072/api/stages/{idStage}/objectives
+
+	Objective_ListByVersion: [GET] http://localhost:7072/api/lab-versions/{idVersion}/objectives
+
+	Objective_Reorder: [POST] http://localhost:7072/api/lab-versions/{idVersion}/objectives/reorder
+
+	Objective_Update: [PATCH] http://localhost:7072/api/objectives/{idObjective}
+
+	RubricCriterion_Activate: [POST] http://localhost:7072/api/rubric-criteria/{idCriterion}/activate
+
+	RubricCriterion_Create: [POST] http://localhost:7072/api/rubrics/{idRubric}/criteria
+
+	RubricCriterion_GetById: [GET] http://localhost:7072/api/rubric-criteria/{idCriterion}
+
+	RubricCriterion_Inactivate: [POST] http://localhost:7072/api/rubric-criteria/{idCriterion}/inactivate
+
+	RubricCriterion_ListByRubric: [GET] http://localhost:7072/api/rubrics/{idRubric}/criteria
+
+	RubricCriterion_Reorder: [POST] http://localhost:7072/api/rubrics/{idRubric}/criteria/reorder
+
+	RubricCriterion_Update: [PATCH] http://localhost:7072/api/rubric-criteria/{idCriterion}
+
+	Rubric_Approve: [POST] http://localhost:7072/api/rubrics/{idRubric}/approve
+
+	Rubric_Create: [POST] http://localhost:7072/api/lab-versions/{idVersion}/rubric
+
+	Rubric_GetById: [GET] http://localhost:7072/api/rubrics/{idRubric}
+
+	Rubric_GetByVersion: [GET] http://localhost:7072/api/lab-versions/{idVersion}/rubric
+
+	Rubric_Publish: [POST] http://localhost:7072/api/rubrics/{idRubric}/publish
+
+	Rubric_Retire: [POST] http://localhost:7072/api/rubrics/{idRubric}/retire
+
+	Rubric_Update: [PATCH] http://localhost:7072/api/rubrics/{idRubric}
+
+	Scenario_Approve: [POST] http://localhost:7072/api/scenarios/{idScenario}/approve
+
+	Scenario_Create: [POST] http://localhost:7072/api/lab-versions/{idVersion}/scenarios
+
+	Scenario_GetById: [GET] http://localhost:7072/api/scenarios/{idScenario}
+
+	Scenario_ListByVersion: [GET] http://localhost:7072/api/lab-versions/{idVersion}/scenarios
+
+	Scenario_Publish: [POST] http://localhost:7072/api/scenarios/{idScenario}/publish
+
+	Scenario_Retire: [POST] http://localhost:7072/api/scenarios/{idScenario}/retire
+
+	Scenario_Update: [PATCH] http://localhost:7072/api/scenarios/{idScenario}
+
+	SimulatedActor_Activate: [POST] http://localhost:7072/api/simulated-actors/{idActor}/activate
+
+	SimulatedActor_Create: [POST] http://localhost:7072/api/scenarios/{idScenario}/actors
+
+	SimulatedActor_GetById: [GET] http://localhost:7072/api/simulated-actors/{idActor}
+
+	SimulatedActor_Inactivate: [POST] http://localhost:7072/api/simulated-actors/{idActor}/inactivate
+
+	SimulatedActor_ListByScenario: [GET] http://localhost:7072/api/scenarios/{idScenario}/actors
+
+	SimulatedActor_Reorder: [POST] http://localhost:7072/api/scenarios/{idScenario}/actors/reorder
+
+	SimulatedActor_Update: [PATCH] http://localhost:7072/api/simulated-actors/{idActor}
+
+	Stage_Activate: [POST] http://localhost:7072/api/stages/{idStage}/activate
+
+	Stage_Create: [POST] http://localhost:7072/api/lab-versions/{idVersion}/stages
+
+	Stage_GetById: [GET] http://localhost:7072/api/stages/{idStage}
+
+	Stage_Inactivate: [POST] http://localhost:7072/api/stages/{idStage}/inactivate
+
+	Stage_ListByVersion: [GET] http://localhost:7072/api/lab-versions/{idVersion}/stages
+
+	Stage_Reorder: [POST] http://localhost:7072/api/lab-versions/{idVersion}/stages/reorder
+
+	Stage_Update: [PATCH] http://localhost:7072/api/stages/{idStage}
+
+	TestedSkill_ListByVersion: [GET] http://localhost:7072/api/lab-versions/{idVersion}/tested-skills
+
+	UserAction_Create: [POST] http://localhost:7072/api/attempts/{idAttempt}/user-actions
+
+	UserAction_Exclude: [POST] http://localhost:7072/api/user-actions/{idUserAction}/exclude
+
+	UserAction_Finalize: [POST] http://localhost:7072/api/user-actions/{idUserAction}/finalize
+
+	UserAction_GetById: [GET] http://localhost:7072/api/user-actions/{idUserAction}
+
+	UserAction_ListByAttempt: [GET] http://localhost:7072/api/attempts/{idAttempt}/user-actions
+
+	UserAction_Reverse: [POST] http://localhost:7072/api/user-actions/{idUserAction}/reverse
+
+For detailed output, run func with --verbose flag.
+[2026-09-17T18:54:12.309Z] Executing 'Functions.LabVersion_ListByLab' (Reason='This function was programmatically called via the host APIs.', Id=96d546c4-2acd-431c-b45c-f417400e81b1)
+[2026-09-17T18:54:16.313Z] StructuredLog: Function=LabVersion_ListByLab, TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b, UserId=16190330-d75f-4c92-8a73-ed0c8bc92675, LabId=9faca328-4747-4543-9f19-f7ea4cd234ee, LabVersionId=(null), CorrelationId=ba724995-858f-4895-90ce-1d9548089675, EstadoAnterior=N/A, EstadoNuevo=N/A, Resultado=SUCCESS, Duracion=1288ms, ErrorCode=NONE
+[2026-09-17T18:54:16.346Z] Executed 'Functions.LabVersion_ListByLab' (Succeeded, Id=96d546c4-2acd-431c-b45c-f417400e81b1, Duration=4048ms)
+[2026-09-17T18:54:16.357Z] Executing 'Functions.LabVersion_ListByLab' (Reason='This function was programmatically called via the host APIs.', Id=b9573793-79b7-423e-97a2-516286c56699)
+[2026-09-17T18:54:16.360Z] Executing 'Functions.Scenario_ListByVersion' (Reason='This function was programmatically called via the host APIs.', Id=686671ea-f56d-40e8-a01c-293472144863)
+[2026-09-17T18:54:18.999Z] Executed 'Functions.Scenario_ListByVersion' (Succeeded, Id=686671ea-f56d-40e8-a01c-293472144863, Duration=2639ms)
+[2026-09-17T18:54:19.007Z] Executing 'Functions.Attempt_Start' (Reason='This function was programmatically called via the host APIs.', Id=10f1b379-f1b2-4145-aa0e-3e22ca670c0a)
+[2026-09-17T18:54:19.287Z] StructuredLog: Function=LabVersion_ListByLab, TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b, UserId=16190330-d75f-4c92-8a73-ed0c8bc92675, LabId=9faca328-4747-4543-9f19-f7ea4cd234ee, LabVersionId=(null), CorrelationId=040c71ff-726e-4f8c-936f-0748d450f139, EstadoAnterior=N/A, EstadoNuevo=N/A, Resultado=SUCCESS, Duracion=159ms, ErrorCode=NONE
+[2026-09-17T18:54:19.290Z] Executed 'Functions.LabVersion_ListByLab' (Succeeded, Id=b9573793-79b7-423e-97a2-516286c56699, Duration=2933ms)
+[2026-09-17T18:54:19.295Z] Executing 'Functions.Scenario_ListByVersion' (Reason='This function was programmatically called via the host APIs.', Id=f917b7d8-2377-4f83-bdf2-53defe617390)
+[2026-09-17T18:54:20.239Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"A timeout occurred while running check."}}
+[2026-09-17T18:54:21.723Z] Executed 'Functions.Scenario_ListByVersion' (Succeeded, Id=f917b7d8-2377-4f83-bdf2-53defe617390, Duration=2427ms)
+[2026-09-17T18:54:21.727Z] Executing 'Functions.Attempt_Start' (Reason='This function was programmatically called via the host APIs.', Id=d81e4216-56cb-4707-a4be-4c787927cc4a)
+[2026-09-17T18:54:22.100Z] Attempt_Start ok. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b UserId=16190330-d75f-4c92-8a73-ed0c8bc92675 ScenarioId=4bd3d949-ba64-4bdf-9cda-e760bee3f89e AttemptId=89292885-f92b-45f7-81f0-a0db0b652216 CorrelationId=4e418102-8b0d-432d-9625-60a6f67b130f Action=START NewState=IN_PROGRESS Result=SUCCESS
+[2026-09-17T18:54:22.106Z] Executed 'Functions.Attempt_Start' (Succeeded, Id=10f1b379-f1b2-4145-aa0e-3e22ca670c0a, Duration=3101ms)
+[2026-09-17T18:54:22.119Z] Executing 'Functions.Attempt_GetById' (Reason='This function was programmatically called via the host APIs.', Id=fef4b472-e40b-40d5-ad68-2cd8cf972a5d)
+[2026-09-17T18:54:22.996Z] Executing 'Functions.Attempt_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=96c4f43d-3ada-4c4b-94fa-a404b049d7d7)
+[2026-09-17T18:54:23.300Z] Executing 'Functions.Enrollment_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=a7b7cc1a-203e-4a46-ad70-7a5a130c3def)
+[2026-09-17T18:54:23.300Z] Executing 'Functions.Lab_List' (Reason='This function was programmatically called via the host APIs.', Id=53a1497d-2843-4ada-a4d9-6e0e9f295231)
+[2026-09-17T18:54:24.081Z] Executing 'Functions.Attempt_VoiceSession' (Reason='This function was programmatically called via the host APIs.', Id=cddc98a9-13df-4880-acc7-e369c9bef981)
+[2026-09-17T18:54:24.420Z] Executed 'Functions.Attempt_GetById' (Succeeded, Id=fef4b472-e40b-40d5-ad68-2cd8cf972a5d, Duration=2301ms)
+[2026-09-17T18:54:24.460Z] Executed 'Functions.Attempt_Start' (Succeeded, Id=d81e4216-56cb-4707-a4be-4c787927cc4a, Duration=2733ms)
+[2026-09-17T18:54:25.652Z] Executed 'Functions.Lab_List' (Succeeded, Id=53a1497d-2843-4ada-a4d9-6e0e9f295231, Duration=2352ms)
+[2026-09-17T18:54:25.656Z] Executing 'Functions.Lab_List' (Reason='This function was programmatically called via the host APIs.', Id=c9eccf3f-dfbf-44cd-9b0d-e37ccc325365)
+[2026-09-17T18:54:25.990Z] Executed 'Functions.Attempt_ListMine' (Succeeded, Id=96c4f43d-3ada-4c4b-94fa-a404b049d7d7, Duration=2994ms)
+[2026-09-17T18:54:25.994Z] Executing 'Functions.Attempt_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=9eac03a1-4463-4208-be3f-e5ddbebafa56)
+[2026-09-17T18:54:26.385Z] Executed 'Functions.Enrollment_ListMine' (Succeeded, Id=a7b7cc1a-203e-4a46-ad70-7a5a130c3def, Duration=3085ms)
+[2026-09-17T18:54:26.387Z] Executing 'Functions.Enrollment_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=49a26c55-1b61-4524-aa9b-d81189a99240)
+[2026-09-17T18:54:27.113Z] Start processing HTTP request POST https://twinet-resource.openai.azure.com/openai/v1/realtime/client_secrets
+[2026-09-17T18:54:27.115Z] Sending HTTP request POST https://twinet-resource.openai.azure.com/openai/v1/realtime/client_secrets
+[2026-09-17T18:54:27.471Z] Received HTTP response headers after 351.3325ms - 200
+[2026-09-17T18:54:27.473Z] End processing HTTP request after 361.0144ms - 200
+[2026-09-17T18:54:27.518Z] Executed 'Functions.Attempt_VoiceSession' (Succeeded, Id=cddc98a9-13df-4880-acc7-e369c9bef981, Duration=3436ms)
+[2026-09-17T18:54:28.393Z] Executed 'Functions.Attempt_ListMine' (Succeeded, Id=9eac03a1-4463-4208-be3f-e5ddbebafa56, Duration=2399ms)
+[2026-09-17T18:54:28.440Z] Executed 'Functions.Lab_List' (Succeeded, Id=c9eccf3f-dfbf-44cd-9b0d-e37ccc325365, Duration=2784ms)
+[2026-09-17T18:54:29.233Z] Executed 'Functions.Enrollment_ListMine' (Succeeded, Id=49a26c55-1b61-4524-aa9b-d81189a99240, Duration=2845ms)
+[2026-09-17T18:54:37.988Z] Executing 'Functions.Attempt_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=76fb60a4-57d9-4790-995e-f8ae6d409328)
+[2026-09-17T18:54:37.988Z] Executing 'Functions.Enrollment_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=8147f266-9d7a-4b57-864a-47813dce0d92)
+[2026-09-17T18:54:37.988Z] Executing 'Functions.Lab_List' (Reason='This function was programmatically called via the host APIs.', Id=04f4795b-f37d-433d-aacc-4119f797e099)
+[2026-09-17T18:54:40.425Z] Executed 'Functions.Attempt_ListMine' (Succeeded, Id=76fb60a4-57d9-4790-995e-f8ae6d409328, Duration=2437ms)
+[2026-09-17T18:54:40.429Z] Executing 'Functions.Attempt_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=498d4fd7-f6fc-43e7-bd39-4ea4b6f95118)
+[2026-09-17T18:54:40.660Z] Executed 'Functions.Enrollment_ListMine' (Succeeded, Id=8147f266-9d7a-4b57-864a-47813dce0d92, Duration=2671ms)
+[2026-09-17T18:54:40.663Z] Executing 'Functions.Enrollment_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=1d262dc0-5517-4d76-9a90-99553dbe6027)
+[2026-09-17T18:54:40.716Z] Executed 'Functions.Lab_List' (Succeeded, Id=04f4795b-f37d-433d-aacc-4119f797e099, Duration=2728ms)
+[2026-09-17T18:54:40.720Z] Executing 'Functions.Lab_List' (Reason='This function was programmatically called via the host APIs.', Id=b8b6a5ed-7fb6-4e62-b9d2-6725ff97d1cc)
+[2026-09-17T18:54:42.921Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=edf5e511-cb5b-4d84-9aff-2ab7c9694a07)
+[2026-09-17T18:54:42.968Z] Executed 'Functions.Enrollment_ListMine' (Succeeded, Id=1d262dc0-5517-4d76-9a90-99553dbe6027, Duration=2305ms)
+[2026-09-17T18:54:43.079Z] Executed 'Functions.Attempt_ListMine' (Succeeded, Id=498d4fd7-f6fc-43e7-bd39-4ea4b6f95118, Duration=2650ms)
+[2026-09-17T18:54:43.404Z] Executed 'Functions.Lab_List' (Succeeded, Id=b8b6a5ed-7fb6-4e62-b9d2-6725ff97d1cc, Duration=2683ms)
+[2026-09-17T18:54:45.206Z] Executing 'Functions.LabVersion_ListByLab' (Reason='This function was programmatically called via the host APIs.', Id=3f9b4131-ea09-4ddd-9c31-42a101d23790)
+[2026-09-17T18:54:45.964Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=edf5e511-cb5b-4d84-9aff-2ab7c9694a07, Duration=3043ms)
+[2026-09-17T18:54:46.507Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T18:54:47.883Z] StructuredLog: Function=LabVersion_ListByLab, TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b, UserId=16190330-d75f-4c92-8a73-ed0c8bc92675, LabId=9faca328-4747-4543-9f19-f7ea4cd234ee, LabVersionId=(null), CorrelationId=c4dae0a7-2a38-4df8-a43c-d73519a0c8e1, EstadoAnterior=N/A, EstadoNuevo=N/A, Resultado=SUCCESS, Duracion=138ms, ErrorCode=NONE
+[2026-09-17T18:54:47.885Z] Executed 'Functions.LabVersion_ListByLab' (Succeeded, Id=3f9b4131-ea09-4ddd-9c31-42a101d23790, Duration=2678ms)
+[2026-09-17T18:54:47.887Z] Executing 'Functions.LabVersion_ListByLab' (Reason='This function was programmatically called via the host APIs.', Id=80505c89-058d-4541-97e3-51396a8dd07a)
+[2026-09-17T18:54:47.889Z] Executing 'Functions.Scenario_ListByVersion' (Reason='This function was programmatically called via the host APIs.', Id=84bd8370-ace4-4951-a751-487ae4b1aa34)
+[2026-09-17T18:54:50.390Z] Executed 'Functions.Scenario_ListByVersion' (Succeeded, Id=84bd8370-ace4-4951-a751-487ae4b1aa34, Duration=2501ms)
+[2026-09-17T18:54:50.396Z] Executing 'Functions.Attempt_Start' (Reason='This function was programmatically called via the host APIs.', Id=27a83327-b19b-430c-8819-7344a4c17c88)
+[2026-09-17T18:54:50.613Z] StructuredLog: Function=LabVersion_ListByLab, TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b, UserId=16190330-d75f-4c92-8a73-ed0c8bc92675, LabId=9faca328-4747-4543-9f19-f7ea4cd234ee, LabVersionId=(null), CorrelationId=ec3c1c59-5aeb-4c4d-9295-383f69b0bd5c, EstadoAnterior=N/A, EstadoNuevo=N/A, Resultado=SUCCESS, Duracion=140ms, ErrorCode=NONE
+[2026-09-17T18:54:50.615Z] Executed 'Functions.LabVersion_ListByLab' (Succeeded, Id=80505c89-058d-4541-97e3-51396a8dd07a, Duration=2728ms)
+[2026-09-17T18:54:50.618Z] Executing 'Functions.Scenario_ListByVersion' (Reason='This function was programmatically called via the host APIs.', Id=87f4afa6-79ca-4a0c-bea9-55514a5b81df)
+[2026-09-17T18:54:53.014Z] Attempt_Start ok. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b UserId=16190330-d75f-4c92-8a73-ed0c8bc92675 ScenarioId=4bd3d949-ba64-4bdf-9cda-e760bee3f89e AttemptId=eb02ea06-1391-4187-8ae4-85a5bd022ad5 CorrelationId=760b42cb-5a0a-41c8-8452-6a9179ad7b41 Action=START NewState=IN_PROGRESS Result=SUCCESS
+[2026-09-17T18:54:53.016Z] Executed 'Functions.Attempt_Start' (Succeeded, Id=27a83327-b19b-430c-8819-7344a4c17c88, Duration=2620ms)
+[2026-09-17T18:54:53.231Z] Executed 'Functions.Scenario_ListByVersion' (Succeeded, Id=87f4afa6-79ca-4a0c-bea9-55514a5b81df, Duration=2612ms)
+[2026-09-17T18:54:53.235Z] Executing 'Functions.Attempt_Start' (Reason='This function was programmatically called via the host APIs.', Id=37152042-39ea-4605-b34f-9dea0a23c2f6)
+[2026-09-17T18:54:55.780Z] Executed 'Functions.Attempt_Start' (Succeeded, Id=37152042-39ea-4605-b34f-9dea0a23c2f6, Duration=2544ms)
+[2026-09-17T18:54:55.788Z] Executing 'Functions.Attempt_GetById' (Reason='This function was programmatically called via the host APIs.', Id=32c8cdc5-ede8-4730-94bc-22e95ab98c3d)
+[2026-09-17T18:54:56.028Z] Executing 'Functions.Attempt_VoiceSession' (Reason='This function was programmatically called via the host APIs.', Id=8d2c2742-c450-40ee-acb8-76aea5d86809)
+[2026-09-17T18:54:58.420Z] Executed 'Functions.Attempt_GetById' (Succeeded, Id=32c8cdc5-ede8-4730-94bc-22e95ab98c3d, Duration=2631ms)
+[2026-09-17T18:54:58.580Z] Start processing HTTP request POST https://twinet-resource.openai.azure.com/openai/v1/realtime/client_secrets
+[2026-09-17T18:54:58.582Z] Sending HTTP request POST https://twinet-resource.openai.azure.com/openai/v1/realtime/client_secrets
+[2026-09-17T18:54:58.668Z] Executing 'Functions.Attempt_VoiceSession' (Reason='This function was programmatically called via the host APIs.', Id=695f6d31-1804-4ab8-b5ab-291b4b51d96a)
+[2026-09-17T18:54:58.700Z] Received HTTP response headers after 119.4692ms - 200
+[2026-09-17T18:54:58.701Z] End processing HTTP request after 119.6374ms - 200
+[2026-09-17T18:54:58.702Z] Executed 'Functions.Attempt_VoiceSession' (Succeeded, Id=8d2c2742-c450-40ee-acb8-76aea5d86809, Duration=2673ms)
+[2026-09-17T18:55:01.548Z] Start processing HTTP request POST https://twinet-resource.openai.azure.com/openai/v1/realtime/client_secrets
+[2026-09-17T18:55:01.550Z] Sending HTTP request POST https://twinet-resource.openai.azure.com/openai/v1/realtime/client_secrets
+[2026-09-17T18:55:01.737Z] Received HTTP response headers after 188.3216ms - 200
+[2026-09-17T18:55:01.740Z] End processing HTTP request after 188.5053ms - 200
+[2026-09-17T18:55:01.740Z] Executed 'Functions.Attempt_VoiceSession' (Succeeded, Id=695f6d31-1804-4ab8-b5ab-291b4b51d96a, Duration=3072ms)
+[2026-09-17T18:55:02.968Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=0ce9e47c-742a-43eb-9c7b-e9dc5605e9b7)
+[2026-09-17T18:55:03.096Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=c9019e7d-5a1e-4f9b-9706-54c0fe592263)
+[2026-09-17T18:55:03.333Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=af5c9837-9788-450f-8e31-484ed6443643)
+[2026-09-17T18:55:03.425Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=c29bbf93-2d53-4984-aa7d-0fd4eb692348)
+[2026-09-17T18:55:04.554Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=9ffb78d9-08ff-460a-a7ec-50d645d32429)
+[2026-09-17T18:55:04.693Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=030c1954-42c7-4167-bcb0-a3bde751d9e4)
+[2026-09-17T18:55:05.031Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=649381e2-6096-41ca-abda-aa91e52e3d08)
+[2026-09-17T18:55:05.053Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=1157f16b-af4a-4e72-a280-ab08e76f51fc)
+[2026-09-17T18:55:05.623Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=c9019e7d-5a1e-4f9b-9706-54c0fe592263, Duration=2527ms)
+[2026-09-17T18:55:05.866Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=0ce9e47c-742a-43eb-9c7b-e9dc5605e9b7, Duration=2898ms)
+[2026-09-17T18:55:06.139Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=d4498361-14a1-4884-9bf2-ee5b44443480
+[2026-09-17T18:55:06.140Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=d4498361-14a1-4884-9bf2-ee5b44443480
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:55:06.141Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:06.141Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:06.142Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:55:06.144Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=af5c9837-9788-450f-8e31-484ed6443643, Duration=2811ms)
+[2026-09-17T18:55:06.190Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=c29bbf93-2d53-4984-aa7d-0fd4eb692348, Duration=2765ms)
+[2026-09-17T18:55:06.826Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=503018e1-07fe-47d8-a529-4ba9ceb03549)
+[2026-09-17T18:55:07.182Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=0a01a250-cad8-4c8c-b14c-fa388649935a)
+[2026-09-17T18:55:07.193Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=0800ab3c-20fc-4a7a-9b32-a27cf2000efc)
+[2026-09-17T18:55:07.260Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=9ffb78d9-08ff-460a-a7ec-50d645d32429, Duration=2705ms)
+[2026-09-17T18:55:07.598Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=8d5411a3-7160-4164-87f0-8caf546b41fb
+[2026-09-17T18:55:07.600Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=8d5411a3-7160-4164-87f0-8caf546b41fb
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:55:07.600Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:07.601Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:07.601Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:55:07.603Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=030c1954-42c7-4167-bcb0-a3bde751d9e4, Duration=2910ms)
+[2026-09-17T18:55:07.617Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=649381e2-6096-41ca-abda-aa91e52e3d08, Duration=2586ms)
+[2026-09-17T18:55:07.916Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=bc664754-4ec0-4cf5-a8c6-a8e3bc859133)
+[2026-09-17T18:55:08.169Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=1157f16b-af4a-4e72-a280-ab08e76f51fc, Duration=3116ms)
+[2026-09-17T18:55:09.495Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=503018e1-07fe-47d8-a529-4ba9ceb03549, Duration=2669ms)
+[2026-09-17T18:55:09.619Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=8677a7ee-4e9e-4659-993c-0ab982179ffa
+[2026-09-17T18:55:09.620Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=8677a7ee-4e9e-4659-993c-0ab982179ffa
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:55:09.621Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:09.623Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:09.625Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:55:09.626Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=0800ab3c-20fc-4a7a-9b32-a27cf2000efc, Duration=2433ms)
+[2026-09-17T18:55:09.688Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=db1f7510-acbf-4b62-8806-aa56bdc9bc4e)
+[2026-09-17T18:55:09.828Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=0a01a250-cad8-4c8c-b14c-fa388649935a, Duration=2646ms)
+[2026-09-17T18:55:10.220Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T18:55:10.536Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=bc664754-4ec0-4cf5-a8c6-a8e3bc859133, Duration=2620ms)
+[2026-09-17T18:55:11.753Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=c88212b5-bef4-4fcd-825a-0a9dc41cc4c4)
+[2026-09-17T18:55:11.920Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=f18ca970-a9f4-45cc-a5d2-7ffc5b8e056e)
+[2026-09-17T18:55:12.410Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=db1f7510-acbf-4b62-8806-aa56bdc9bc4e, Duration=2721ms)
+[2026-09-17T18:55:14.300Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=1dd582d8-9b4f-40f9-9d6c-a9aa9134edcf
+[2026-09-17T18:55:14.304Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=1dd582d8-9b4f-40f9-9d6c-a9aa9134edcf
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:55:14.305Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:14.306Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:14.307Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:55:14.308Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=c88212b5-bef4-4fcd-825a-0a9dc41cc4c4, Duration=2555ms)
+[2026-09-17T18:55:14.699Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=f18ca970-a9f4-45cc-a5d2-7ffc5b8e056e, Duration=2779ms)
+[2026-09-17T18:55:18.260Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=a6def046-ef55-4c95-b967-5e598e1db16d)
+[2026-09-17T18:55:18.266Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=4c55f939-3503-40cf-8161-d72f5ce77b98)
+[2026-09-17T18:55:20.803Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=550a8beb-f290-4f21-bc50-97f03d934c18
+[2026-09-17T18:55:20.805Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=550a8beb-f290-4f21-bc50-97f03d934c18
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:55:20.806Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:20.806Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:20.807Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:55:20.808Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=4c55f939-3503-40cf-8161-d72f5ce77b98, Duration=2542ms)
+[2026-09-17T18:55:20.935Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=a6def046-ef55-4c95-b967-5e598e1db16d, Duration=2675ms)
+[2026-09-17T18:55:21.404Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=a5c3ef0d-bced-489c-bf4d-491c62800587)
+[2026-09-17T18:55:21.521Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=2a9e548c-1f16-4a15-961f-6cb2ad78b511)
+[2026-09-17T18:55:24.135Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=2a9e548c-1f16-4a15-961f-6cb2ad78b511, Duration=2614ms)
+[2026-09-17T18:55:25.589Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=681022f7-76ca-4212-96a9-b0420d74c529)
+[2026-09-17T18:55:28.054Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=681022f7-76ca-4212-96a9-b0420d74c529, Duration=2465ms)
+[2026-09-17T18:55:28.657Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=440c7ba3-0c85-4b37-8ec8-943712bdba9c
+[2026-09-17T18:55:28.659Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=440c7ba3-0c85-4b37-8ec8-943712bdba9c
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:55:28.659Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:28.660Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:28.660Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:55:28.661Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=a5c3ef0d-bced-489c-bf4d-491c62800587, Duration=7256ms)
+[2026-09-17T18:55:31.701Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=bc1150a1-89c9-45e2-b0b8-251c410a31f4)
+[2026-09-17T18:55:31.735Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=750ff92b-e40c-466d-a02a-c3b2dad64c97)
+[2026-09-17T18:55:34.248Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=184562a5-d45a-478d-8fb7-3b80406f0039
+[2026-09-17T18:55:34.249Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=184562a5-d45a-478d-8fb7-3b80406f0039
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:55:34.250Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:34.251Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:34.252Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:55:34.253Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=750ff92b-e40c-466d-a02a-c3b2dad64c97, Duration=2517ms)
+[2026-09-17T18:55:34.499Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=bc1150a1-89c9-45e2-b0b8-251c410a31f4, Duration=2798ms)
+[2026-09-17T18:55:40.043Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=c71a1c96-57ee-4bd5-ab2c-3190a4cad325)
+[2026-09-17T18:55:40.071Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=6d908bf8-fc38-4bb5-8e4a-1e3212e18f04)
+[2026-09-17T18:55:40.076Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=a974de86-80b0-4d08-aefe-d4c441012f29)
+[2026-09-17T18:55:40.122Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=000774c9-f548-444f-95aa-7f7daecadc52)
+[2026-09-17T18:55:40.134Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=8f9fd9c7-abc7-46df-933b-86c66a3f3e4a)
+[2026-09-17T18:55:40.220Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T18:55:42.643Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=f32d0c1d-a9fe-4f24-a709-7baf38f03e6e)
+[2026-09-17T18:55:42.674Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=a974de86-80b0-4d08-aefe-d4c441012f29, Duration=2598ms)
+[2026-09-17T18:55:42.721Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=1fd8e0fd-e792-4f76-9848-9725b98af935)
+[2026-09-17T18:55:42.732Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=68c3a37e-b8f5-4553-94bc-ffba1569e0e8)
+[2026-09-17T18:55:42.777Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=99883786-1279-4ec5-90a7-1d9dd11793a6)
+[2026-09-17T18:55:42.822Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=3070f77b-ff19-4f33-a43a-3ca340ba982b)
+[2026-09-17T18:55:43.055Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=6d908bf8-fc38-4bb5-8e4a-1e3212e18f04, Duration=2984ms)
+[2026-09-17T18:55:43.188Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=c71a1c96-57ee-4bd5-ab2c-3190a4cad325, Duration=3145ms)
+[2026-09-17T18:55:43.440Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=a527f223-5999-497e-8f59-f9bb163bfd81
+[2026-09-17T18:55:43.441Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=a527f223-5999-497e-8f59-f9bb163bfd81
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:55:43.441Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:43.442Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:43.443Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:55:43.444Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=8f9fd9c7-abc7-46df-933b-86c66a3f3e4a, Duration=3310ms)
+[2026-09-17T18:55:43.534Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=000774c9-f548-444f-95aa-7f7daecadc52, Duration=3412ms)
+[2026-09-17T18:55:44.338Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=07478f9c-72b6-47eb-aaba-fac6f369c011)
+[2026-09-17T18:55:44.420Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=f29130dd-5005-45d5-b13e-13c210584b6c)
+[2026-09-17T18:55:45.383Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=f32d0c1d-a9fe-4f24-a709-7baf38f03e6e, Duration=2740ms)
+[2026-09-17T18:55:45.710Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=3070f77b-ff19-4f33-a43a-3ca340ba982b, Duration=2887ms)
+[2026-09-17T18:55:45.749Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=9c0f9fe6-0ef8-402b-9405-c4f3371fb83f
+[2026-09-17T18:55:45.750Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=9c0f9fe6-0ef8-402b-9405-c4f3371fb83f
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:55:45.751Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:45.753Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:45.754Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:55:45.755Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=68c3a37e-b8f5-4553-94bc-ffba1569e0e8, Duration=3022ms)
+[2026-09-17T18:55:45.912Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=1fd8e0fd-e792-4f76-9848-9725b98af935, Duration=3191ms)
+[2026-09-17T18:55:46.272Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=99883786-1279-4ec5-90a7-1d9dd11793a6, Duration=3495ms)
+[2026-09-17T18:55:46.908Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=8d6c656b-5c40-4f87-a310-0bc313b28cac
+[2026-09-17T18:55:46.909Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=8d6c656b-5c40-4f87-a310-0bc313b28cac
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:55:46.910Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:46.910Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:46.911Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:55:46.912Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=07478f9c-72b6-47eb-aaba-fac6f369c011, Duration=2574ms)
+[2026-09-17T18:55:47.187Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=d26453a5-4405-44bc-ab2f-36a0062f0358)
+[2026-09-17T18:55:47.233Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=82b758fa-cf8c-458b-a52c-24a89a46b2c7)
+[2026-09-17T18:55:47.721Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=fd5ff3e7-8593-4711-9cfe-a7e4c87b408f)
+[2026-09-17T18:55:47.969Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=f29130dd-5005-45d5-b13e-13c210584b6c, Duration=3548ms)
+[2026-09-17T18:55:48.073Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=7115c0fd-be7f-4d51-beda-cc33863e5f0b)
+[2026-09-17T18:55:49.841Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=82b758fa-cf8c-458b-a52c-24a89a46b2c7, Duration=2607ms)
+[2026-09-17T18:55:50.258Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=fd5ff3e7-8593-4711-9cfe-a7e4c87b408f, Duration=2537ms)
+[2026-09-17T18:55:50.473Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=d26453a5-4405-44bc-ab2f-36a0062f0358, Duration=3285ms)
+[2026-09-17T18:55:51.267Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=7115c0fd-be7f-4d51-beda-cc33863e5f0b, Duration=3194ms)
+[2026-09-17T18:55:52.498Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=654409fb-ebb9-4ad5-a5b7-0fc6ed9c4fb2)
+[2026-09-17T18:55:54.144Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=f594901b-a628-4331-8494-1212930e8c34)
+[2026-09-17T18:55:54.164Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=d072809a-c716-4b69-bf5d-53af9e7dd3e7)
+[2026-09-17T18:55:55.531Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=654409fb-ebb9-4ad5-a5b7-0fc6ed9c4fb2, Duration=3032ms)
+[2026-09-17T18:55:56.626Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=ee3369b7-7af3-4a89-a03a-08f5081e3fdd
+[2026-09-17T18:55:56.627Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=ee3369b7-7af3-4a89-a03a-08f5081e3fdd
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:55:56.628Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:56.628Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:55:56.629Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:55:56.630Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=d072809a-c716-4b69-bf5d-53af9e7dd3e7, Duration=2465ms)
+[2026-09-17T18:55:57.132Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=f594901b-a628-4331-8494-1212930e8c34, Duration=2988ms)
+[2026-09-17T18:56:03.475Z] Executing 'Functions.Lab_List' (Reason='This function was programmatically called via the host APIs.', Id=cc227863-c2ed-41ea-908c-79ecdfc819ab)
+[2026-09-17T18:56:05.159Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=49b31e0d-dd02-412d-8593-76bf41a9b135)
+[2026-09-17T18:56:05.241Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=123b5b1c-fe74-43cf-b0c2-dee560da50ab)
+[2026-09-17T18:56:07.166Z] Executed 'Functions.Lab_List' (Succeeded, Id=cc227863-c2ed-41ea-908c-79ecdfc819ab, Duration=3691ms)
+[2026-09-17T18:56:07.171Z] Executing 'Functions.Attempt_GetById' (Reason='This function was programmatically called via the host APIs.', Id=1fd95df1-2ffb-494b-bb54-3ab73ca8d3b6)
+[2026-09-17T18:56:07.714Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=98f2a282-f62f-4b71-9a41-ef38bd139508
+[2026-09-17T18:56:07.715Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=98f2a282-f62f-4b71-9a41-ef38bd139508
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:56:07.716Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:56:07.716Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:56:07.717Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:56:07.718Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=49b31e0d-dd02-412d-8593-76bf41a9b135, Duration=2559ms)
+[2026-09-17T18:56:07.811Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=123b5b1c-fe74-43cf-b0c2-dee560da50ab, Duration=2569ms)
+[2026-09-17T18:56:07.933Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=4250c6eb-3229-412b-b4d0-314acf67096b)
+[2026-09-17T18:56:09.075Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=8f70a5fd-150a-4291-a5aa-af3c5dff5a52)
+[2026-09-17T18:56:09.856Z] Executed 'Functions.Attempt_GetById' (Succeeded, Id=1fd95df1-2ffb-494b-bb54-3ab73ca8d3b6, Duration=2684ms)
+[2026-09-17T18:56:09.863Z] Executing 'Functions.LabVersion_GetById' (Reason='This function was programmatically called via the host APIs.', Id=220db1e4-61ef-49b4-9965-004fda72467a)
+[2026-09-17T18:56:10.106Z] Executing 'Functions.Attempt_VoiceSession' (Reason='This function was programmatically called via the host APIs.', Id=9fbd8d16-0591-4b2f-8a45-250b825a2bac)
+[2026-09-17T18:56:10.227Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T18:56:10.587Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=87f29559-e31e-43ca-b1a8-1e50e447d113
+[2026-09-17T18:56:10.588Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=87f29559-e31e-43ca-b1a8-1e50e447d113
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:56:10.589Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:56:10.590Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:56:10.590Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:56:10.591Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=4250c6eb-3229-412b-b4d0-314acf67096b, Duration=2658ms)
+[2026-09-17T18:56:12.266Z] StructuredLog: Function=LabVersion_GetById, TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b, UserId=16190330-d75f-4c92-8a73-ed0c8bc92675, LabId=(null), LabVersionId=1cd72814-aea9-4855-85fe-31460493237b, CorrelationId=f48599af-fcaa-4d5b-9d06-30f9e67a6c88, EstadoAnterior=DRAFT, EstadoNuevo=DRAFT, Resultado=SUCCESS, Duracion=49ms, ErrorCode=NONE
+[2026-09-17T18:56:12.270Z] Unexpected error retrieving LabVersion 1cd72814-aea9-4855-85fe-31460493237b. CorrelationId=f48599af-fcaa-4d5b-9d06-30f9e67a6c88
+[2026-09-17T18:56:12.271Z] Result: Unexpected error retrieving LabVersion 1cd72814-aea9-4855-85fe-31460493237b. CorrelationId=f48599af-fcaa-4d5b-9d06-30f9e67a6c88
+Type: 
+Exception: System.FormatException: The format of value 'AAAAAAAFP8M=' is invalid.
+[2026-09-17T18:56:12.271Z]    at System.Net.Http.Headers.HttpHeaders.ParseAndAddValue(HeaderDescriptor descriptor, HeaderStoreItemInfo info, String value)
+[2026-09-17T18:56:12.272Z]    at System.Net.Http.Headers.HttpHeaders.Add(HeaderDescriptor descriptor, String value)
+[2026-09-17T18:56:12.273Z]    at System.Net.Http.Headers.HttpHeaders.Add(String name, String value)
+[2026-09-17T18:56:12.273Z]    at HumanOS.SimulationLabs.Api.Features.LabVersions.Functions.LabVersionGetByIdFunction.RunAsync(HttpRequestData request, String idVersion, CancellationToken cancellationToken) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\LabVersions\Functions\LabVersionGetByIdFunction.cs:line 68
+Stack:    at System.Net.Http.Headers.HttpHeaders.ParseAndAddValue(HeaderDescriptor descriptor, HeaderStoreItemInfo info, String value)
+[2026-09-17T18:56:12.274Z]    at System.Net.Http.Headers.HttpHeaders.Add(HeaderDescriptor descriptor, String value)
+[2026-09-17T18:56:12.274Z]    at System.Net.Http.Headers.HttpHeaders.Add(String name, String value)
+[2026-09-17T18:56:12.275Z]    at HumanOS.SimulationLabs.Api.Features.LabVersions.Functions.LabVersionGetByIdFunction.RunAsync(HttpRequestData request, String idVersion, CancellationToken cancellationToken) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\LabVersions\Functions\LabVersionGetByIdFunction.cs:line 68.
+[2026-09-17T18:56:12.275Z] StructuredLog: Function=LabVersion_GetById, TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b, UserId=16190330-d75f-4c92-8a73-ed0c8bc92675, LabId=(null), LabVersionId=1cd72814-aea9-4855-85fe-31460493237b, CorrelationId=f48599af-fcaa-4d5b-9d06-30f9e67a6c88, EstadoAnterior=N/A, EstadoNuevo=N/A, Resultado=FAILED, Duracion=53ms, ErrorCode=INTERNAL_ERROR
+[2026-09-17T18:56:12.276Z] Executed 'Functions.LabVersion_GetById' (Succeeded, Id=220db1e4-61ef-49b4-9965-004fda72467a, Duration=2412ms)
+[2026-09-17T18:56:12.520Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=8f70a5fd-150a-4291-a5aa-af3c5dff5a52, Duration=3445ms)
+[2026-09-17T18:56:13.290Z] Start processing HTTP request POST https://twinet-resource.openai.azure.com/openai/v1/realtime/client_secrets
+[2026-09-17T18:56:13.292Z] Sending HTTP request POST https://twinet-resource.openai.azure.com/openai/v1/realtime/client_secrets
+[2026-09-17T18:56:13.686Z] Received HTTP response headers after 396.0869ms - 200
+[2026-09-17T18:56:13.688Z] End processing HTTP request after 396.2309ms - 200
+[2026-09-17T18:56:13.688Z] Executed 'Functions.Attempt_VoiceSession' (Succeeded, Id=9fbd8d16-0591-4b2f-8a45-250b825a2bac, Duration=3582ms)
+[2026-09-17T18:56:18.058Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=a96e21b3-9b52-4155-babe-a5e19247436f)
+[2026-09-17T18:56:18.643Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=80065d33-276d-4224-a151-86f3c514a868)
+[2026-09-17T18:56:20.646Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=60e677ab-1d34-4608-9e55-388bbf3dd73e
+[2026-09-17T18:56:20.647Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=60e677ab-1d34-4608-9e55-388bbf3dd73e
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:56:20.648Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:56:20.650Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:56:20.651Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:56:20.652Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=a96e21b3-9b52-4155-babe-a5e19247436f, Duration=2594ms)
+[2026-09-17T18:56:21.436Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=80065d33-276d-4224-a151-86f3c514a868, Duration=2793ms)
+[2026-09-17T18:56:21.616Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=c72bd998-c887-49f6-8129-eae1a93202b3)
+[2026-09-17T18:56:21.665Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=fdebad77-dffd-45b6-af97-3e19c16cb1e2)
+[2026-09-17T18:56:24.163Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=c0b7f63a-b6b6-40bf-b833-aacec9742146
+[2026-09-17T18:56:24.165Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=c0b7f63a-b6b6-40bf-b833-aacec9742146
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:56:24.166Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:56:24.166Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:56:24.167Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:56:24.168Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=c72bd998-c887-49f6-8129-eae1a93202b3, Duration=2552ms)
+[2026-09-17T18:56:24.247Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=fdebad77-dffd-45b6-af97-3e19c16cb1e2, Duration=2582ms)
+[2026-09-17T18:56:26.595Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=747f5a94-9e53-432c-88f1-76d9cb37c4a5)
+[2026-09-17T18:56:26.670Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=b14a6a1e-e6fa-4b96-bdf6-a9ffebfa38df)
+[2026-09-17T18:56:29.193Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=b14a6a1e-e6fa-4b96-bdf6-a9ffebfa38df, Duration=2523ms)
+[2026-09-17T18:56:29.612Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=4d1c5861-960c-4cea-80f7-9185b4247c01
+[2026-09-17T18:56:29.614Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=4d1c5861-960c-4cea-80f7-9185b4247c01
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:56:29.614Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:56:29.615Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:56:29.615Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:56:29.616Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=747f5a94-9e53-432c-88f1-76d9cb37c4a5, Duration=3020ms)
+[2026-09-17T18:56:37.029Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=07f9f521-baa3-4a7c-94ba-c1bc2527b471)
+[2026-09-17T18:56:37.112Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=ee4872fd-330c-449e-8b58-69e406a95e7f)
+[2026-09-17T18:56:39.736Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=4a35122a-c09a-4820-a65b-c6ff7c7aff2d
+[2026-09-17T18:56:39.738Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=4a35122a-c09a-4820-a65b-c6ff7c7aff2d
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:56:39.739Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:56:39.740Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:56:39.741Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:56:39.742Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=ee4872fd-330c-449e-8b58-69e406a95e7f, Duration=2630ms)
+[2026-09-17T18:56:39.812Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=07f9f521-baa3-4a7c-94ba-c1bc2527b471, Duration=2783ms)
+[2026-09-17T18:56:40.233Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T18:56:42.358Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=7bf3c008-f074-4177-b718-dcefc27098a6)
+[2026-09-17T18:56:42.452Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=2fb712a3-e877-44d0-8eef-8de957ca147b)
+[2026-09-17T18:56:44.914Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=36b0438e-e6d3-4a5f-8076-79a5ba4ac373
+[2026-09-17T18:56:44.916Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=36b0438e-e6d3-4a5f-8076-79a5ba4ac373
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:56:44.917Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:56:44.918Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:56:44.920Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:56:44.921Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=2fb712a3-e877-44d0-8eef-8de957ca147b, Duration=2469ms)
+[2026-09-17T18:56:45.012Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=7bf3c008-f074-4177-b718-dcefc27098a6, Duration=2653ms)
+[2026-09-17T18:56:55.028Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=4bf70934-eeef-420e-9043-dfb57b53e46c)
+[2026-09-17T18:56:55.078Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=5cfbb2d9-2172-4180-bfcc-3c436e1a09b3)
+[2026-09-17T18:56:55.083Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=1f6c2dfa-c233-45a4-bcda-356ab1d86e34)
+[2026-09-17T18:56:55.186Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=a0d4916b-2406-4efc-b4e7-5047bc43ae96)
+[2026-09-17T18:56:55.186Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=f6b8caaf-5362-4552-a911-9680c16f9ed9)
+[2026-09-17T18:56:55.248Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=b547d9ea-a5f3-4282-b664-935527d559eb)
+[2026-09-17T18:56:56.265Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=d35949e9-d4fc-472d-a553-7c857d5e16b2)
+[2026-09-17T18:56:57.666Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=d0c13df3-d3ea-4dbd-bb79-a6627d24ebfc)
+[2026-09-17T18:56:58.207Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=80489401-8bf9-4316-b00b-bca55248d3b6
+[2026-09-17T18:56:58.208Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=80489401-8bf9-4316-b00b-bca55248d3b6
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:56:58.209Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:56:58.210Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:56:58.212Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:56:58.214Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=1f6c2dfa-c233-45a4-bcda-356ab1d86e34, Duration=3131ms)
+[2026-09-17T18:56:58.361Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=a0d4916b-2406-4efc-b4e7-5047bc43ae96, Duration=3175ms)
+[2026-09-17T18:56:58.370Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=4bf70934-eeef-420e-9043-dfb57b53e46c, Duration=3342ms)
+[2026-09-17T18:56:58.504Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=b547d9ea-a5f3-4282-b664-935527d559eb, Duration=3256ms)
+[2026-09-17T18:56:58.553Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=5a4d44f3-96be-487c-9b52-73855b2f36fc)
+[2026-09-17T18:56:58.555Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=ead5f35b-919a-456d-9380-75dec9eca15c)
+[2026-09-17T18:56:58.668Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=d907b2e9-98cb-4dc4-9f3d-5c9f1d1b036d)
+[2026-09-17T18:56:58.678Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=5cfbb2d9-2172-4180-bfcc-3c436e1a09b3, Duration=3599ms)
+[2026-09-17T18:56:59.529Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=71c6cc8c-0b40-4de7-968c-b86dbc71c2d5)
+[2026-09-17T18:56:59.570Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=d35949e9-d4fc-472d-a553-7c857d5e16b2, Duration=3304ms)
+[2026-09-17T18:56:59.766Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=5b00e9fb-569f-446f-9511-e2d7e6788ea9)
+[2026-09-17T18:56:59.848Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=f6b8caaf-5362-4552-a911-9680c16f9ed9, Duration=4662ms)
+[2026-09-17T18:57:00.349Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=66bf6c3e-ed13-44b6-9bcb-037943bec01f)
+[2026-09-17T18:57:00.437Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=9d029f6e-a336-49bf-8922-16e0e855e9c0)
+[2026-09-17T18:57:01.098Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=bcca0434-beac-48e1-b541-1444ff060aa5
+[2026-09-17T18:57:01.100Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=bcca0434-beac-48e1-b541-1444ff060aa5
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:57:01.101Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:01.102Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:01.103Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:57:01.105Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=5a4d44f3-96be-487c-9b52-73855b2f36fc, Duration=2552ms)
+[2026-09-17T18:57:01.218Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=ead5f35b-919a-456d-9380-75dec9eca15c, Duration=2663ms)
+[2026-09-17T18:57:01.413Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=d0c13df3-d3ea-4dbd-bb79-a6627d24ebfc, Duration=3747ms)
+[2026-09-17T18:57:02.080Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=71c6cc8c-0b40-4de7-968c-b86dbc71c2d5, Duration=2551ms)
+[2026-09-17T18:57:02.310Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=d907b2e9-98cb-4dc4-9f3d-5c9f1d1b036d, Duration=3642ms)
+[2026-09-17T18:57:02.908Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=5b00e9fb-569f-446f-9511-e2d7e6788ea9, Duration=3142ms)
+[2026-09-17T18:57:03.081Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=973705e2-ffda-4000-aad6-e8bebfe91814
+[2026-09-17T18:57:03.082Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=973705e2-ffda-4000-aad6-e8bebfe91814
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:57:03.083Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:03.084Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:03.085Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:57:03.086Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=9d029f6e-a336-49bf-8922-16e0e855e9c0, Duration=2649ms)
+[2026-09-17T18:57:03.460Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=66bf6c3e-ed13-44b6-9bcb-037943bec01f, Duration=3111ms)
+[2026-09-17T18:57:04.728Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=d8bbb9ec-3c34-4bb4-998e-bd1c18c897e6)
+[2026-09-17T18:57:04.867Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=805cf718-6f9e-42b6-82ff-ccbd87f3cb53)
+[2026-09-17T18:57:07.408Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=805cf718-6f9e-42b6-82ff-ccbd87f3cb53, Duration=2541ms)
+[2026-09-17T18:57:07.593Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=a7fbe022-a233-4879-bde5-883b72c6a1e8
+[2026-09-17T18:57:07.595Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=a7fbe022-a233-4879-bde5-883b72c6a1e8
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:57:07.596Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:07.596Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:07.596Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:57:07.597Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=d8bbb9ec-3c34-4bb4-998e-bd1c18c897e6, Duration=2868ms)
+[2026-09-17T18:57:10.228Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T18:57:13.374Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=55cbbb76-143a-4a4d-b322-e64a9afe9103)
+[2026-09-17T18:57:13.391Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=1d678839-aca3-46d6-88ff-ecfcf884d999)
+[2026-09-17T18:57:15.859Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=d34baecb-efaf-418e-850d-4e396205f7bb
+[2026-09-17T18:57:15.863Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=d34baecb-efaf-418e-850d-4e396205f7bb
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:57:15.863Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:15.864Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:15.864Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:57:15.865Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=1d678839-aca3-46d6-88ff-ecfcf884d999, Duration=2474ms)
+[2026-09-17T18:57:16.129Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=55cbbb76-143a-4a4d-b322-e64a9afe9103, Duration=2754ms)
+[2026-09-17T18:57:37.260Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=b290d2a8-59ef-4dc3-a8e5-5009eb9ea6f9)
+[2026-09-17T18:57:37.291Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=263b10d6-b6bb-48c1-b3f8-45b2e728aa21)
+[2026-09-17T18:57:37.314Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=85a0a24e-7a2f-4c51-9721-aa99954db5e7)
+[2026-09-17T18:57:37.364Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=1beebbf0-577d-41f6-bdd5-d211280e5831)
+[2026-09-17T18:57:37.365Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=376999e8-ac6f-47b4-b451-886bc2aafa53)
+[2026-09-17T18:57:37.404Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=400016c9-63ec-44a2-9e62-9fe5fc971ede)
+[2026-09-17T18:57:39.886Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=263b10d6-b6bb-48c1-b3f8-45b2e728aa21, Duration=2594ms)
+[2026-09-17T18:57:40.227Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T18:57:40.266Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=0972b406-7768-47ba-9614-65403497eb49)
+[2026-09-17T18:57:40.271Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=85a0a24e-7a2f-4c51-9721-aa99954db5e7, Duration=2956ms)
+[2026-09-17T18:57:40.354Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=b290d2a8-59ef-4dc3-a8e5-5009eb9ea6f9, Duration=3094ms)
+[2026-09-17T18:57:40.447Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=376999e8-ac6f-47b4-b451-886bc2aafa53, Duration=3082ms)
+[2026-09-17T18:57:40.593Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=0e5d884c-908a-4388-9872-931592fb6eba)
+[2026-09-17T18:57:40.970Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=400016c9-63ec-44a2-9e62-9fe5fc971ede, Duration=3565ms)
+[2026-09-17T18:57:41.091Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=44f9b091-ef9c-4577-9baa-0f76f97400a2)
+[2026-09-17T18:57:41.148Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=becbb691-a4df-474d-a2b7-d7e339c3b094)
+[2026-09-17T18:57:41.770Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=5e37aba0-f959-40ce-bded-662222d67bd1
+[2026-09-17T18:57:41.773Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=5e37aba0-f959-40ce-bded-662222d67bd1
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:57:41.774Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:41.776Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:41.778Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:57:41.779Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=1beebbf0-577d-41f6-bdd5-d211280e5831, Duration=4414ms)
+[2026-09-17T18:57:43.008Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=0e5d884c-908a-4388-9872-931592fb6eba, Duration=2415ms)
+[2026-09-17T18:57:43.263Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=0972b406-7768-47ba-9614-65403497eb49, Duration=2997ms)
+[2026-09-17T18:57:43.605Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=ad718324-1d05-4baa-9744-18b46da7ce8b)
+[2026-09-17T18:57:43.616Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=b06f11a8-16c4-4cac-85af-574d36e866a0)
+[2026-09-17T18:57:43.689Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=80070b8d-70fa-48a5-bbd6-7f3b1f3e57ad)
+[2026-09-17T18:57:43.698Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=becbb691-a4df-474d-a2b7-d7e339c3b094, Duration=2549ms)
+[2026-09-17T18:57:43.729Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=443f320f-7fa3-4e4e-b580-36546255edea)
+[2026-09-17T18:57:44.211Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=b918cec8-fc95-4d1a-8e47-45b14bda299e
+[2026-09-17T18:57:44.213Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=b918cec8-fc95-4d1a-8e47-45b14bda299e
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:57:44.214Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:44.215Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:44.216Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:57:44.217Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=44f9b091-ef9c-4577-9baa-0f76f97400a2, Duration=3126ms)
+[2026-09-17T18:57:45.034Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=3105d98a-7881-4545-ab07-ef299c75c918)
+[2026-09-17T18:57:46.324Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=b06f11a8-16c4-4cac-85af-574d36e866a0, Duration=2707ms)
+[2026-09-17T18:57:46.808Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=083c2749-e3e3-4d7a-bbdc-320beddb00cb
+[2026-09-17T18:57:46.813Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=083c2749-e3e3-4d7a-bbdc-320beddb00cb
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:57:46.815Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:46.817Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:46.818Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:57:46.820Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=ad718324-1d05-4baa-9744-18b46da7ce8b, Duration=3215ms)
+[2026-09-17T18:57:46.829Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=80070b8d-70fa-48a5-bbd6-7f3b1f3e57ad, Duration=3139ms)
+[2026-09-17T18:57:47.347Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=443f320f-7fa3-4e4e-b580-36546255edea, Duration=3618ms)
+[2026-09-17T18:57:47.765Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=3105d98a-7881-4545-ab07-ef299c75c918, Duration=2730ms)
+[2026-09-17T18:57:49.058Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=b7261019-b678-4146-a167-96d0e8909789)
+[2026-09-17T18:57:49.213Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=4ce4aae3-ae0c-4280-b9fd-0f64b2afe73f)
+[2026-09-17T18:57:51.753Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=4ce4aae3-ae0c-4280-b9fd-0f64b2afe73f, Duration=2540ms)
+[2026-09-17T18:57:51.946Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=1d914280-ce15-4d2b-a66a-d594f13bad1f
+[2026-09-17T18:57:51.947Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=1d914280-ce15-4d2b-a66a-d594f13bad1f
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:57:51.950Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:51.953Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:51.954Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:57:51.955Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=b7261019-b678-4146-a167-96d0e8909789, Duration=2896ms)
+[2026-09-17T18:57:52.281Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=4585bdb2-7ba6-4a5c-8ecd-ec5869a512c8)
+[2026-09-17T18:57:52.406Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=e0191578-d8f0-44a1-bc23-a2707645d913)
+[2026-09-17T18:57:54.885Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=2f64b726-40e1-4481-9534-d6a304fc94f7
+[2026-09-17T18:57:54.888Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=2f64b726-40e1-4481-9534-d6a304fc94f7
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:57:54.888Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:54.889Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:54.890Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:57:54.892Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=e0191578-d8f0-44a1-bc23-a2707645d913, Duration=2486ms)
+[2026-09-17T18:57:56.814Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=f109e6d4-edc5-4ad2-9942-4f07eae352e7)
+[2026-09-17T18:57:57.004Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=36c30fde-097f-402b-b027-6c7698e393b6)
+[2026-09-17T18:57:57.733Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=4585bdb2-7ba6-4a5c-8ecd-ec5869a512c8, Duration=5452ms)
+[2026-09-17T18:57:59.457Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=36c30fde-097f-402b-b027-6c7698e393b6, Duration=2452ms)
+[2026-09-17T18:57:59.578Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=667ae27d-d6cc-4673-9c39-89d07ade0e97
+[2026-09-17T18:57:59.581Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=667ae27d-d6cc-4673-9c39-89d07ade0e97
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:57:59.583Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:59.585Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:57:59.585Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:57:59.586Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=f109e6d4-edc5-4ad2-9942-4f07eae352e7, Duration=2772ms)
+[2026-09-17T18:58:06.371Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=e8c9e4d5-d0df-4c51-aa3b-be3b4973a9ef)
+[2026-09-17T18:58:06.459Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=4acc50b5-34ff-425b-82fd-4d7d210cd2ff)
+[2026-09-17T18:58:08.976Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=91d76e0b-2ab8-4159-abed-cf93a47f4ac4
+[2026-09-17T18:58:08.991Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=91d76e0b-2ab8-4159-abed-cf93a47f4ac4
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:58:08.999Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:58:09.006Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:58:09.013Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:58:09.005Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=4acc50b5-34ff-425b-82fd-4d7d210cd2ff, Duration=2546ms)
+[2026-09-17T18:58:09.020Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=e8c9e4d5-d0df-4c51-aa3b-be3b4973a9ef, Duration=2648ms)
+[2026-09-17T18:58:10.232Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T18:58:31.206Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=940c01b7-0713-436b-9a40-05a0f24e0489)
+[2026-09-17T18:58:31.216Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=82d729e7-4528-4f94-8e16-f22451391643)
+[2026-09-17T18:58:31.245Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=b7a63ce3-b2ec-47fd-ba28-140d7c3190d3)
+[2026-09-17T18:58:31.255Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=57eb8e6a-8268-47db-a164-48a6e6c3fbc8)
+[2026-09-17T18:58:31.331Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=8d8c6dc8-b80b-4c02-b4fa-5240783b2dd5)
+[2026-09-17T18:58:31.506Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=61530cc4-b449-4ea8-ba2e-36a0ef2cf0a5)
+[2026-09-17T18:58:32.550Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=c769ac42-5668-42ee-bc0b-cdc77e58cbe5)
+[2026-09-17T18:58:33.924Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=82d729e7-4528-4f94-8e16-f22451391643, Duration=2708ms)
+[2026-09-17T18:58:33.927Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=b7a63ce3-b2ec-47fd-ba28-140d7c3190d3, Duration=2682ms)
+[2026-09-17T18:58:34.199Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=57eb8e6a-8268-47db-a164-48a6e6c3fbc8, Duration=2944ms)
+[2026-09-17T18:58:34.380Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=940c01b7-0713-436b-9a40-05a0f24e0489, Duration=3174ms)
+[2026-09-17T18:58:34.707Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=61530cc4-b449-4ea8-ba2e-36a0ef2cf0a5, Duration=3200ms)
+[2026-09-17T18:58:35.486Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=90a07405-d810-4147-868a-226083686d02
+[2026-09-17T18:58:35.490Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=90a07405-d810-4147-868a-226083686d02
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:58:35.493Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:58:35.497Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:58:35.498Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:58:35.496Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=d06493be-6f80-4c9f-9a3b-01888b815656
+[2026-09-17T18:58:35.499Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=8d8c6dc8-b80b-4c02-b4fa-5240783b2dd5, Duration=4168ms)
+[2026-09-17T18:58:35.500Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=d06493be-6f80-4c9f-9a3b-01888b815656
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:58:35.502Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:58:35.503Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:58:35.504Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:58:35.504Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=c769ac42-5668-42ee-bc0b-cdc77e58cbe5, Duration=2954ms)
+[2026-09-17T18:58:35.914Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=3291aab5-87d2-433f-a36d-fb6f12340f17)
+[2026-09-17T18:58:37.266Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=647b9459-10a1-4494-af82-6286a0aa2768)
+[2026-09-17T18:58:37.278Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=4d8129b8-d7e1-4ab6-b3bc-dbbe63c6f27b)
+[2026-09-17T18:58:38.797Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=74f66d20-4b0c-4731-bfec-87d747d1bdb1)
+[2026-09-17T18:58:39.086Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=3291aab5-87d2-433f-a36d-fb6f12340f17, Duration=3171ms)
+[2026-09-17T18:58:39.800Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=647b9459-10a1-4494-af82-6286a0aa2768, Duration=2533ms)
+[2026-09-17T18:58:39.885Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=4d8129b8-d7e1-4ab6-b3bc-dbbe63c6f27b, Duration=2606ms)
+[2026-09-17T18:58:40.225Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T18:58:41.407Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=74f66d20-4b0c-4731-bfec-87d747d1bdb1, Duration=2609ms)
+[2026-09-17T18:58:42.499Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=dfe10dcc-a808-4d8f-9973-a35da5d81865)
+[2026-09-17T18:58:42.712Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=da4df218-89fd-4a27-afe5-089e23787f29)
+[2026-09-17T18:58:44.144Z] Executing 'Functions.Attempt_Complete' (Reason='This function was programmatically called via the host APIs.', Id=fa6800bf-9894-423f-b768-d564603103c1)
+[2026-09-17T18:58:44.946Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=b5df6e86-e995-482f-afd5-f9fe5c113b6d
+[2026-09-17T18:58:44.948Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=b5df6e86-e995-482f-afd5-f9fe5c113b6d
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:58:44.949Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:58:44.949Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:58:44.950Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:58:44.950Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=dfe10dcc-a808-4d8f-9973-a35da5d81865, Duration=2451ms)
+[2026-09-17T18:58:44.994Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=da4df218-89fd-4a27-afe5-089e23787f29, Duration=2281ms)
+[2026-09-17T18:58:45.726Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=6b267b6a-e433-45c3-9e15-e9d743900d00)
+[2026-09-17T18:58:46.660Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=825cbeb4-b75f-4ef6-b193-d9647ae23a94)
+[2026-09-17T18:58:46.718Z] Executed 'Functions.Attempt_Complete' (Succeeded, Id=fa6800bf-9894-423f-b768-d564603103c1, Duration=2574ms)
+[2026-09-17T18:58:46.724Z] Executing 'Functions.ConversationTurn_ListByAttempt' (Reason='This function was programmatically called via the host APIs.', Id=46523e55-32b3-44be-9bfe-c2b6ab74fe8f)
+[2026-09-17T18:58:48.239Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=17d8ddf1-a676-4727-96e4-3869d09d2547
+[2026-09-17T18:58:48.241Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=17d8ddf1-a676-4727-96e4-3869d09d2547
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:58:48.242Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:58:48.243Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:58:48.244Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:58:48.245Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=6b267b6a-e433-45c3-9e15-e9d743900d00, Duration=2519ms)
+[2026-09-17T18:58:48.935Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=c7563279-64b6-40e4-b54c-cd6c657484eb)
+[2026-09-17T18:58:49.231Z] Executed 'Functions.ConversationTurn_ListByAttempt' (Succeeded, Id=46523e55-32b3-44be-9bfe-c2b6ab74fe8f, Duration=2507ms)
+[2026-09-17T18:58:49.438Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=825cbeb4-b75f-4ef6-b193-d9647ae23a94, Duration=2777ms)
+[2026-09-17T18:58:51.391Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=51756a1b-6788-4830-9591-2ad0a7fa4c37
+[2026-09-17T18:58:51.398Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=51756a1b-6788-4830-9591-2ad0a7fa4c37
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T18:58:51.400Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:58:51.402Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T18:58:51.403Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T18:58:51.405Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=c7563279-64b6-40e4-b54c-cd6c657484eb, Duration=2470ms)
+[2026-09-17T18:58:53.632Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=f802ff7c-8205-43a2-b561-f117e50b7179)
+[2026-09-17T18:58:56.836Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=f802ff7c-8205-43a2-b561-f117e50b7179, Duration=3204ms)
+[2026-09-17T18:59:10.219Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T18:59:40.227Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:00:10.221Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:00:40.220Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:01:10.233Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:01:40.231Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:02:10.231Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:02:20.698Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=34e79a6f-7ad3-4007-b962-d6e73b40b3a7)
+[2026-09-17T19:02:20.738Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=c302f87a-7238-4f1f-8509-cf8f37e573a6)
+[2026-09-17T19:02:20.739Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=ac11ce6c-7d2a-48cd-8be0-987d9eeeff13)
+[2026-09-17T19:02:20.964Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=0aefbc69-5e9f-4874-b73d-ba5228dee0e2)
+[2026-09-17T19:02:23.794Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=eb02ea06-1391-4187-8ae4-85a5bd022ad5 CorrelationId=65c35303-aa41-421e-8cff-4a63068d5f4f
+[2026-09-17T19:02:23.796Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=eb02ea06-1391-4187-8ae4-85a5bd022ad5 CorrelationId=65c35303-aa41-421e-8cff-4a63068d5f4f
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T19:02:23.798Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T19:02:23.799Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T19:02:23.800Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T19:02:23.802Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=c302f87a-7238-4f1f-8509-cf8f37e573a6, Duration=3064ms)
+[2026-09-17T19:02:23.833Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=ac11ce6c-7d2a-48cd-8be0-987d9eeeff13, Duration=3094ms)
+[2026-09-17T19:02:23.904Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=71b31300-2b69-4703-a184-8b8df611cfcb
+[2026-09-17T19:02:23.907Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=71b31300-2b69-4703-a184-8b8df611cfcb
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T19:02:23.908Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T19:02:23.908Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T19:02:23.909Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T19:02:23.910Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=0aefbc69-5e9f-4874-b73d-ba5228dee0e2, Duration=2946ms)
+[2026-09-17T19:02:24.224Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=34e79a6f-7ad3-4007-b962-d6e73b40b3a7, Duration=3526ms)
+[2026-09-17T19:02:25.115Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=55712e7a-9eeb-4bc0-9e33-6514e7042186)
+[2026-09-17T19:02:25.896Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=3b633eed-b8b4-4078-811c-801228dce6ee)
+[2026-09-17T19:02:25.973Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=cd8224ed-310a-400e-897c-c04ded9c4488)
+[2026-09-17T19:02:27.704Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=38439d27-8647-40a6-b5e8-48e598259f08
+[2026-09-17T19:02:27.706Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=38439d27-8647-40a6-b5e8-48e598259f08
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T19:02:27.707Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T19:02:27.708Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T19:02:27.710Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T19:02:27.712Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=55712e7a-9eeb-4bc0-9e33-6514e7042186, Duration=2596ms)
+[2026-09-17T19:02:28.474Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=eb02ea06-1391-4187-8ae4-85a5bd022ad5 CorrelationId=7c532d50-e947-4599-893d-1c5410f485ee
+[2026-09-17T19:02:28.476Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=eb02ea06-1391-4187-8ae4-85a5bd022ad5 CorrelationId=7c532d50-e947-4599-893d-1c5410f485ee
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T19:02:28.477Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T19:02:28.478Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T19:02:28.479Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T19:02:28.481Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=cd8224ed-310a-400e-897c-c04ded9c4488, Duration=2507ms)
+[2026-09-17T19:02:28.630Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=3b633eed-b8b4-4078-811c-801228dce6ee, Duration=2733ms)
+[2026-09-17T19:02:34.315Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=5c10070e-8c54-41df-8614-b0543359317c)
+[2026-09-17T19:02:37.636Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=5c10070e-8c54-41df-8614-b0543359317c, Duration=3321ms)
+[2026-09-17T19:02:40.228Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:03:10.232Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:03:40.235Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:04:10.230Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:04:40.220Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:05:10.232Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:05:40.231Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:06:10.221Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:06:40.227Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:06:57.964Z] Executing 'Functions.Attempt_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=14a3bb2d-6bec-4a9c-b35c-57353b271106)
+[2026-09-17T19:06:57.964Z] Executing 'Functions.Lab_List' (Reason='This function was programmatically called via the host APIs.', Id=c224e63c-5776-49a6-84a3-92850edf054c)
+[2026-09-17T19:06:57.964Z] Executing 'Functions.Enrollment_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=1ff2bcf2-31b3-4d7a-863e-4d12a1c16e84)
+[2026-09-17T19:07:00.743Z] Executed 'Functions.Lab_List' (Succeeded, Id=c224e63c-5776-49a6-84a3-92850edf054c, Duration=2779ms)
+[2026-09-17T19:07:00.746Z] Executing 'Functions.Lab_List' (Reason='This function was programmatically called via the host APIs.', Id=cce59d1a-abd5-4e5a-b744-e97abd6a64f2)
+[2026-09-17T19:07:01.003Z] Executed 'Functions.Enrollment_ListMine' (Succeeded, Id=1ff2bcf2-31b3-4d7a-863e-4d12a1c16e84, Duration=3038ms)
+[2026-09-17T19:07:01.005Z] Executing 'Functions.Enrollment_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=5af643ed-6ab0-40e4-9e81-6208becad31d)
+[2026-09-17T19:07:01.111Z] Executed 'Functions.Attempt_ListMine' (Succeeded, Id=14a3bb2d-6bec-4a9c-b35c-57353b271106, Duration=3146ms)
+[2026-09-17T19:07:01.114Z] Executing 'Functions.Attempt_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=cfb1f9ce-d672-4c09-8968-3fe05c6437ce)
+[2026-09-17T19:07:03.330Z] Executed 'Functions.Enrollment_ListMine' (Succeeded, Id=5af643ed-6ab0-40e4-9e81-6208becad31d, Duration=2325ms)
+[2026-09-17T19:07:03.515Z] Executed 'Functions.Lab_List' (Succeeded, Id=cce59d1a-abd5-4e5a-b744-e97abd6a64f2, Duration=2768ms)
+[2026-09-17T19:07:04.248Z] Executed 'Functions.Attempt_ListMine' (Succeeded, Id=cfb1f9ce-d672-4c09-8968-3fe05c6437ce, Duration=3133ms)
+[2026-09-17T19:07:10.219Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:07:40.232Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:08:10.229Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:08:40.227Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:09:10.223Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:09:26.834Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=0d3f92db-4820-4115-87c6-8eb6e625568b)
+[2026-09-17T19:09:29.374Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=5aaae589-e145-432c-9eae-8ecc7ba9be08)
+[2026-09-17T19:09:30.020Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=f7ea3c51-3791-47cd-b42d-fa747c54d4bc)
+[2026-09-17T19:09:30.262Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=0d3f92db-4820-4115-87c6-8eb6e625568b, Duration=3427ms)
+[2026-09-17T19:09:31.199Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=e7ebe5f4-b2bb-4b9f-bf65-42c48258412c)
+[2026-09-17T19:09:32.213Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=03c7d5f1-10fd-4c02-a416-b12251412576
+[2026-09-17T19:09:32.214Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=68c7c423-80a9-44bc-a2b9-c81db2442693 CorrelationId=03c7d5f1-10fd-4c02-a416-b12251412576
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T19:09:32.214Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T19:09:32.215Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T19:09:32.216Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T19:09:32.216Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=f7ea3c51-3791-47cd-b42d-fa747c54d4bc, Duration=2195ms)
+[2026-09-17T19:09:32.524Z] ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=eb02ea06-1391-4187-8ae4-85a5bd022ad5 CorrelationId=44bf4293-a089-40c8-92dd-3eed8675d843
+[2026-09-17T19:09:32.525Z] Result: ConversationTurn_Create failed. TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b AttemptId=eb02ea06-1391-4187-8ae4-85a5bd022ad5 CorrelationId=44bf4293-a089-40c8-92dd-3eed8675d843
+Type: 
+Exception: HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException: Exception of type 'HumanOS.SimulationLabs.Api.Features.ConversationTurns.ConversationTurnAttemptNotEditableException' was thrown.
+[2026-09-17T19:09:32.526Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T19:09:32.526Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63
+Stack:    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Services.ConversationTurnService.CreateAsync(Guid tenantId, Guid attemptId, String user, CreateConversationTurnRequest request, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Services\ConversationTurnService.cs:line 16
+[2026-09-17T19:09:32.527Z]    at HumanOS.SimulationLabs.Api.Features.ConversationTurns.Functions.ConversationTurnCreateFunction.RunAsync(HttpRequestData r, String idAttempt, CancellationToken ct) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\ConversationTurns\Functions\ConversationTurnFunctions.cs:line 63.
+[2026-09-17T19:09:32.527Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=5aaae589-e145-432c-9eae-8ecc7ba9be08, Duration=3153ms)
+[2026-09-17T19:09:33.822Z] Executing 'Functions.ConversationTurn_Create' (Reason='This function was programmatically called via the host APIs.', Id=46a733a4-a68f-4c38-a331-feace7b91fe9)
+[2026-09-17T19:09:35.090Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=e7ebe5f4-b2bb-4b9f-bf65-42c48258412c, Duration=3890ms)
+[2026-09-17T19:09:36.468Z] Executed 'Functions.ConversationTurn_Create' (Succeeded, Id=46a733a4-a68f-4c38-a331-feace7b91fe9, Duration=2646ms)
+[2026-09-17T19:09:40.223Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:10:10.226Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:10:40.227Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:11:10.227Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:11:40.228Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:12:10.222Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:12:40.220Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:13:10.230Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:13:13.888Z] Executing 'Functions.Attempt_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=a5fc8b49-3831-4d85-90fe-be28feee623a)
+[2026-09-17T19:13:13.888Z] Executing 'Functions.Enrollment_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=e90fe03b-dd72-4873-a65b-cbdde2d4fbf4)
+[2026-09-17T19:13:13.888Z] Executing 'Functions.Lab_List' (Reason='This function was programmatically called via the host APIs.', Id=dfd21f27-ef33-4546-b3b4-dc39c07f3d2e)
+[2026-09-17T19:13:16.577Z] Executed 'Functions.Enrollment_ListMine' (Succeeded, Id=e90fe03b-dd72-4873-a65b-cbdde2d4fbf4, Duration=2688ms)
+[2026-09-17T19:13:16.579Z] Executing 'Functions.Enrollment_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=6d641c69-17ca-46e3-be7f-73f69766bb4f)
+[2026-09-17T19:13:16.814Z] Executed 'Functions.Attempt_ListMine' (Succeeded, Id=a5fc8b49-3831-4d85-90fe-be28feee623a, Duration=2925ms)
+[2026-09-17T19:13:16.816Z] Executing 'Functions.Attempt_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=265eb23c-f8f6-4b94-9f63-f16c89701a08)
+[2026-09-17T19:13:16.904Z] Executed 'Functions.Lab_List' (Succeeded, Id=dfd21f27-ef33-4546-b3b4-dc39c07f3d2e, Duration=3015ms)
+[2026-09-17T19:13:16.907Z] Executing 'Functions.Lab_List' (Reason='This function was programmatically called via the host APIs.', Id=f2f9208a-65b9-4c25-9bd0-62da93bad31f)
+[2026-09-17T19:13:19.103Z] Executed 'Functions.Enrollment_ListMine' (Succeeded, Id=6d641c69-17ca-46e3-be7f-73f69766bb4f, Duration=2523ms)
+[2026-09-17T19:13:19.532Z] Executed 'Functions.Lab_List' (Succeeded, Id=f2f9208a-65b9-4c25-9bd0-62da93bad31f, Duration=2625ms)
+[2026-09-17T19:13:19.661Z] Executed 'Functions.Attempt_ListMine' (Succeeded, Id=265eb23c-f8f6-4b94-9f63-f16c89701a08, Duration=2844ms)
+[2026-09-17T19:13:21.294Z] Executing 'Functions.Lab_List' (Reason='This function was programmatically called via the host APIs.', Id=755e6bae-1e30-4eb7-9c6f-2aa7fb71fb57)
+[2026-09-17T19:13:24.394Z] Executed 'Functions.Lab_List' (Succeeded, Id=755e6bae-1e30-4eb7-9c6f-2aa7fb71fb57, Duration=3100ms)
+[2026-09-17T19:13:24.397Z] Executing 'Functions.Lab_List' (Reason='This function was programmatically called via the host APIs.', Id=049d429c-5f50-411a-9e71-ee004e41a55b)
+[2026-09-17T19:13:24.399Z] Executing 'Functions.LabVersion_ListByLab' (Reason='This function was programmatically called via the host APIs.', Id=c5e5aee0-8d92-4bf1-8f60-33ae1ee7c9ef)
+[2026-09-17T19:13:26.964Z] StructuredLog: Function=LabVersion_ListByLab, TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b, UserId=16190330-d75f-4c92-8a73-ed0c8bc92675, LabId=9faca328-4747-4543-9f19-f7ea4cd234ee, LabVersionId=(null), CorrelationId=05f1526e-68d3-4537-9bce-f0b19f17450e, EstadoAnterior=N/A, EstadoNuevo=N/A, Resultado=SUCCESS, Duracion=141ms, ErrorCode=NONE
+[2026-09-17T19:13:26.966Z] Executed 'Functions.LabVersion_ListByLab' (Succeeded, Id=c5e5aee0-8d92-4bf1-8f60-33ae1ee7c9ef, Duration=2566ms)
+[2026-09-17T19:13:26.969Z] Executing 'Functions.Scenario_ListByVersion' (Reason='This function was programmatically called via the host APIs.', Id=b87d8293-80d2-41f9-b61b-e718eb2b92bd)
+[2026-09-17T19:13:26.991Z] Executed 'Functions.Lab_List' (Succeeded, Id=049d429c-5f50-411a-9e71-ee004e41a55b, Duration=2593ms)
+[2026-09-17T19:13:26.994Z] Executing 'Functions.LabVersion_ListByLab' (Reason='This function was programmatically called via the host APIs.', Id=239205ea-6b10-4ecd-97c6-ac6765463b7a)
+[2026-09-17T19:13:29.557Z] Executed 'Functions.Scenario_ListByVersion' (Succeeded, Id=b87d8293-80d2-41f9-b61b-e718eb2b92bd, Duration=2588ms)
+[2026-09-17T19:13:29.561Z] Executing 'Functions.LabVersion_GetById' (Reason='This function was programmatically called via the host APIs.', Id=53c5de24-b7a4-4223-9393-19ecfdcb6c3a)
+[2026-09-17T19:13:29.830Z] StructuredLog: Function=LabVersion_ListByLab, TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b, UserId=16190330-d75f-4c92-8a73-ed0c8bc92675, LabId=9faca328-4747-4543-9f19-f7ea4cd234ee, LabVersionId=(null), CorrelationId=899dd2f2-afc7-4152-835c-eb6da7e1941d, EstadoAnterior=N/A, EstadoNuevo=N/A, Resultado=SUCCESS, Duracion=151ms, ErrorCode=NONE
+[2026-09-17T19:13:29.832Z] Executed 'Functions.LabVersion_ListByLab' (Succeeded, Id=239205ea-6b10-4ecd-97c6-ac6765463b7a, Duration=2838ms)
+[2026-09-17T19:13:29.835Z] Executing 'Functions.Scenario_ListByVersion' (Reason='This function was programmatically called via the host APIs.', Id=a837c695-f3be-467d-9af1-e44c8cea3a58)
+[2026-09-17T19:13:32.130Z] StructuredLog: Function=LabVersion_GetById, TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b, UserId=16190330-d75f-4c92-8a73-ed0c8bc92675, LabId=(null), LabVersionId=1cd72814-aea9-4855-85fe-31460493237b, CorrelationId=8d4e4978-fcc1-40bb-93f2-6bcefb1eadfa, EstadoAnterior=DRAFT, EstadoNuevo=DRAFT, Resultado=SUCCESS, Duracion=51ms, ErrorCode=NONE
+[2026-09-17T19:13:32.131Z] Unexpected error retrieving LabVersion 1cd72814-aea9-4855-85fe-31460493237b. CorrelationId=8d4e4978-fcc1-40bb-93f2-6bcefb1eadfa
+[2026-09-17T19:13:32.132Z] Result: Unexpected error retrieving LabVersion 1cd72814-aea9-4855-85fe-31460493237b. CorrelationId=8d4e4978-fcc1-40bb-93f2-6bcefb1eadfa
+Type: 
+Exception: System.FormatException: The format of value 'AAAAAAAFP8M=' is invalid.
+[2026-09-17T19:13:32.132Z]    at System.Net.Http.Headers.HttpHeaders.ParseAndAddValue(HeaderDescriptor descriptor, HeaderStoreItemInfo info, String value)
+[2026-09-17T19:13:32.133Z]    at System.Net.Http.Headers.HttpHeaders.Add(HeaderDescriptor descriptor, String value)
+[2026-09-17T19:13:32.133Z]    at System.Net.Http.Headers.HttpHeaders.Add(String name, String value)
+[2026-09-17T19:13:32.133Z]    at HumanOS.SimulationLabs.Api.Features.LabVersions.Functions.LabVersionGetByIdFunction.RunAsync(HttpRequestData request, String idVersion, CancellationToken cancellationToken) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\LabVersions\Functions\LabVersionGetByIdFunction.cs:line 68
+Stack:    at System.Net.Http.Headers.HttpHeaders.ParseAndAddValue(HeaderDescriptor descriptor, HeaderStoreItemInfo info, String value)
+[2026-09-17T19:13:32.134Z]    at System.Net.Http.Headers.HttpHeaders.Add(HeaderDescriptor descriptor, String value)
+[2026-09-17T19:13:32.134Z]    at System.Net.Http.Headers.HttpHeaders.Add(String name, String value)
+[2026-09-17T19:13:32.134Z]    at HumanOS.SimulationLabs.Api.Features.LabVersions.Functions.LabVersionGetByIdFunction.RunAsync(HttpRequestData request, String idVersion, CancellationToken cancellationToken) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\LabVersions\Functions\LabVersionGetByIdFunction.cs:line 68.
+[2026-09-17T19:13:32.135Z] StructuredLog: Function=LabVersion_GetById, TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b, UserId=16190330-d75f-4c92-8a73-ed0c8bc92675, LabId=(null), LabVersionId=1cd72814-aea9-4855-85fe-31460493237b, CorrelationId=8d4e4978-fcc1-40bb-93f2-6bcefb1eadfa, EstadoAnterior=N/A, EstadoNuevo=N/A, Resultado=FAILED, Duracion=51ms, ErrorCode=INTERNAL_ERROR
+[2026-09-17T19:13:32.136Z] Executed 'Functions.LabVersion_GetById' (Succeeded, Id=53c5de24-b7a4-4223-9393-19ecfdcb6c3a, Duration=2574ms)
+[2026-09-17T19:13:32.466Z] Executed 'Functions.Scenario_ListByVersion' (Succeeded, Id=a837c695-f3be-467d-9af1-e44c8cea3a58, Duration=2631ms)
+[2026-09-17T19:13:32.470Z] Executing 'Functions.LabVersion_GetById' (Reason='This function was programmatically called via the host APIs.', Id=dd09552e-9b8a-433a-81c0-e1420b6cd87a)
+[2026-09-17T19:13:35.543Z] StructuredLog: Function=LabVersion_GetById, TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b, UserId=16190330-d75f-4c92-8a73-ed0c8bc92675, LabId=(null), LabVersionId=1cd72814-aea9-4855-85fe-31460493237b, CorrelationId=16370cb8-fdb7-4c57-83d1-3de2f5051c37, EstadoAnterior=DRAFT, EstadoNuevo=DRAFT, Resultado=SUCCESS, Duracion=50ms, ErrorCode=NONE
+[2026-09-17T19:13:35.544Z] Unexpected error retrieving LabVersion 1cd72814-aea9-4855-85fe-31460493237b. CorrelationId=16370cb8-fdb7-4c57-83d1-3de2f5051c37
+[2026-09-17T19:13:35.545Z] Result: Unexpected error retrieving LabVersion 1cd72814-aea9-4855-85fe-31460493237b. CorrelationId=16370cb8-fdb7-4c57-83d1-3de2f5051c37
+Type: 
+Exception: System.FormatException: The format of value 'AAAAAAAFP8M=' is invalid.
+[2026-09-17T19:13:35.545Z]    at System.Net.Http.Headers.HttpHeaders.ParseAndAddValue(HeaderDescriptor descriptor, HeaderStoreItemInfo info, String value)
+[2026-09-17T19:13:35.545Z]    at System.Net.Http.Headers.HttpHeaders.Add(HeaderDescriptor descriptor, String value)
+[2026-09-17T19:13:35.546Z]    at System.Net.Http.Headers.HttpHeaders.Add(String name, String value)
+[2026-09-17T19:13:35.546Z]    at HumanOS.SimulationLabs.Api.Features.LabVersions.Functions.LabVersionGetByIdFunction.RunAsync(HttpRequestData request, String idVersion, CancellationToken cancellationToken) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\LabVersions\Functions\LabVersionGetByIdFunction.cs:line 68
+Stack:    at System.Net.Http.Headers.HttpHeaders.ParseAndAddValue(HeaderDescriptor descriptor, HeaderStoreItemInfo info, String value)
+[2026-09-17T19:13:35.546Z]    at System.Net.Http.Headers.HttpHeaders.Add(HeaderDescriptor descriptor, String value)
+[2026-09-17T19:13:35.547Z]    at System.Net.Http.Headers.HttpHeaders.Add(String name, String value)
+[2026-09-17T19:13:35.547Z]    at HumanOS.SimulationLabs.Api.Features.LabVersions.Functions.LabVersionGetByIdFunction.RunAsync(HttpRequestData request, String idVersion, CancellationToken cancellationToken) in C:\EducationAI\HumanOS.SimulationLabs\src\HumanOS.SimulationLabs.Api\Features\LabVersions\Functions\LabVersionGetByIdFunction.cs:line 68.
+[2026-09-17T19:13:35.547Z] StructuredLog: Function=LabVersion_GetById, TenantId=81c35f10-60ab-4ca4-b2ec-6c4bee8d0c0b, UserId=16190330-d75f-4c92-8a73-ed0c8bc92675, LabId=(null), LabVersionId=1cd72814-aea9-4855-85fe-31460493237b, CorrelationId=16370cb8-fdb7-4c57-83d1-3de2f5051c37, EstadoAnterior=N/A, EstadoNuevo=N/A, Resultado=FAILED, Duracion=50ms, ErrorCode=INTERNAL_ERROR
+[2026-09-17T19:13:35.548Z] Executed 'Functions.LabVersion_GetById' (Succeeded, Id=dd09552e-9b8a-433a-81c0-e1420b6cd87a, Duration=3078ms)
+[2026-09-17T19:13:40.227Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:13:49.695Z] Executing 'Functions.Lab_List' (Reason='This function was programmatically called via the host APIs.', Id=dc097ef2-7f19-4aa3-a48f-e676214390e5)
+[2026-09-17T19:13:49.695Z] Executing 'Functions.Enrollment_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=b8bf4e63-35f1-494c-aaa5-3c72a11d3572)
+[2026-09-17T19:13:49.695Z] Executing 'Functions.Attempt_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=402daa78-cca0-465e-ac8f-81cdd3ee8410)
+[2026-09-17T19:13:52.187Z] Executed 'Functions.Enrollment_ListMine' (Succeeded, Id=b8bf4e63-35f1-494c-aaa5-3c72a11d3572, Duration=2491ms)
+[2026-09-17T19:13:52.190Z] Executing 'Functions.Enrollment_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=0f6ec791-ec81-4b51-9635-8e9744573762)
+[2026-09-17T19:13:52.417Z] Executed 'Functions.Attempt_ListMine' (Succeeded, Id=402daa78-cca0-465e-ac8f-81cdd3ee8410, Duration=2722ms)
+[2026-09-17T19:13:52.420Z] Executing 'Functions.Attempt_ListMine' (Reason='This function was programmatically called via the host APIs.', Id=c5962b35-e52a-498c-9fcd-6bf9393065a7)
+[2026-09-17T19:13:52.991Z] Executed 'Functions.Lab_List' (Succeeded, Id=dc097ef2-7f19-4aa3-a48f-e676214390e5, Duration=3296ms)
+[2026-09-17T19:13:52.994Z] Executing 'Functions.Lab_List' (Reason='This function was programmatically called via the host APIs.', Id=cc7c0395-4667-4261-a32d-e458a7b6ceda)
+[2026-09-17T19:13:54.812Z] Executed 'Functions.Enrollment_ListMine' (Succeeded, Id=0f6ec791-ec81-4b51-9635-8e9744573762, Duration=2622ms)
+[2026-09-17T19:13:54.833Z] Executed 'Functions.Attempt_ListMine' (Succeeded, Id=c5962b35-e52a-498c-9fcd-6bf9393065a7, Duration=2412ms)
+[2026-09-17T19:13:55.642Z] Executed 'Functions.Lab_List' (Succeeded, Id=cc7c0395-4667-4261-a32d-e458a7b6ceda, Duration=2648ms)
+[2026-09-17T19:14:10.225Z] [Tag=''] Process reporting unhealthy: Unhealthy. Health check entries are {"azure.functions.web_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.script_host.lifecycle":{"status":"Healthy","description":null},"azure.functions.webjobs.storage":{"status":"Unhealthy","description":"Unable to access AzureWebJobsStorage","errorCode":null}}
+[2026-09-17T19:14:10.946Z] Executing 'Functions.Lab_List' (Reason='This function was programmatically called via the host APIs.', Id=79b7a327-4b30-4638-9475-02d0b96a75f5)
+[2026-09-17T19:14:13.549Z] Executed 'Functions.Lab_List' (Succeeded, Id=79b7a327-4b30-4638-9475-02d0b96a75f5, Duration=2603ms)
+[2026-09-17T19:14:13.554Z] Executing 'Functions.Lab_List' (Reason='This function was programmatically called via the host APIs.', Id=28a0b302-0224-4e25-9f84-97282108efa3)
+[2026-09-17T19:14:13.555Z] Executing 'Functions.LabVersion_ListByLab' (Reason='This function was programmatically called via the host APIs.', Id=16b0a18a-a29a-4dd1-8b41-2adba3ab1f27)

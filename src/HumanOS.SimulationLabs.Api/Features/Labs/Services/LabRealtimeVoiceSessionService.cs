@@ -84,10 +84,17 @@ public sealed class LabRealtimeVoiceSessionService
                         turn_detection = new
                         {
                             type = "server_vad",
-                            // Matches Azure AI Foundry playground's own defaults (2026-09-14).
-                            threshold = 0.5,
-                            prefix_padding_ms = 400,
-                            silence_duration_ms = 500,
+                            // Matches VoiceTutorAgent.tsx/EngramReviewAgent.tsx's already-working
+                            // config in the main HumanOS backend (RealtimeVoiceSessionService.cs) —
+                            // this service's previous 0.5/500ms (Azure AI Foundry playground
+                            // defaults) was far more sensitive to ambient noise/echo, which the
+                            // server's own VAD misread as "the student started talking", triggering
+                            // interrupt_response mid-sentence and then create_response regenerating
+                            // a brand new response — looked exactly like sinodales stuttering/
+                            // restarting their own greeting for no audible reason.
+                            threshold = 0.85,
+                            prefix_padding_ms = 300,
+                            silence_duration_ms = 700,
                             create_response = true,
                             interrupt_response = true
                         },
