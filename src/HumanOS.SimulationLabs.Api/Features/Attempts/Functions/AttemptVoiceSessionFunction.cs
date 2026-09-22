@@ -205,9 +205,10 @@ public sealed class AttemptVoiceSessionFunction
             }
 
             var instructions = LabSimulationPromptBuilder.BuildInstructions(context, _currentUser.DisplayName, isRealAttempt: true, employeeProfile: employeeProfile);
-            // Single-sinodal mode (2026-09-17): always use the default voice (same as every other
-            // course/Lab) instead of this actor's own ACT_VoiceName, per explicit request.
-            var session = await _voiceSessionService.CreateEphemeralSessionAsync(instructions, voiceOverride: null, cancellationToken);
+            // Single-sinodal mode (2026-09-17): falls back to the default voice like every other
+            // Lab, but now honors this actor's own ACT_VoiceName when explicitly set (2026-09-21 -
+            // needed to give a specific Lab actor a female voice without affecting the rest).
+            var session = await _voiceSessionService.CreateEphemeralSessionAsync(instructions, voiceOverride: context.Actor.ACT_VoiceName, cancellationToken);
 
             return await ApiResponses.JsonAsync(request, HttpStatusCode.OK, new AttemptVoiceSessionResponse
             {
