@@ -18,12 +18,12 @@ public sealed class ConversationTurnService : IConversationTurnService
         var speakerType = request.SpeakerType!.Trim().ToUpperInvariant();
         if (speakerType == TurnSpeakerType.SimulatedActor)
         {
-            var actorExists = await _db.SimulatedActors.AnyAsync(a => a.SEG_IdTenant == tenantId && a.ACT_IdActor == request.ActorId!.Value && a.SCN_IdScenario == attempt.SCN_IdScenario, ct);
+            var actorExists = await _db.SimulatedActors.AnyAsync(a => a.ACT_IdActor == request.ActorId!.Value && a.SCN_IdScenario == attempt.SCN_IdScenario, ct);
             if (!actorExists) throw new ActorScenarioMismatchException();
         }
         if (request.IdExpectedMoment is { } momentId)
         {
-            var momentExists = await _db.ExpectedMoments.AnyAsync(m => m.SEG_IdTenant == tenantId && m.MOM_IdExpectedMoment == momentId && m.LAB_IdVersion == attempt.LAB_IdVersion, ct);
+            var momentExists = await _db.ExpectedMoments.AnyAsync(m => m.MOM_IdExpectedMoment == momentId && m.LAB_IdVersion == attempt.LAB_IdVersion, ct);
             if (!momentExists) throw new ExpectedMomentVersionMismatchException();
         }
 

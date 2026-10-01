@@ -65,14 +65,14 @@ public sealed class LabService : ILabService
     {
         var lab = await _db.Labs
             .AsNoTracking()
-            .FirstOrDefaultAsync(l => l.SEG_IdTenant == tenantId && l.LAB_IdLab == idLab, cancellationToken);
+            .FirstOrDefaultAsync(l => (l.SEG_IdTenant == tenantId || l.LAB_EsGlobal) && l.LAB_IdLab == idLab, cancellationToken);
 
         return lab is null ? null : ToResponse(lab);
     }
 
     public async Task<PagedResult<LabListItemResponse>> ListAsync(Guid tenantId, LabListQuery query, CancellationToken cancellationToken)
     {
-        var labs = _db.Labs.AsNoTracking().Where(l => l.SEG_IdTenant == tenantId);
+        var labs = _db.Labs.AsNoTracking().Where(l => l.SEG_IdTenant == tenantId || l.LAB_EsGlobal);
 
         if (!string.IsNullOrWhiteSpace(query.Search))
         {
@@ -124,6 +124,7 @@ public sealed class LabService : ILabService
                 Tipo = l.LAB_Tipo,
                 Dominio = l.LAB_Dominio,
                 Estatus = l.LAB_Estatus,
+                EsGlobal = l.LAB_EsGlobal,
                 OwnerId = l.LAB_OwnerId,
                 FechaCreacion = l.FechaCreacion,
                 FechaActualizacion = l.FechaActualizacion,
@@ -183,6 +184,11 @@ public sealed class LabService : ILabService
         if (request.OwnerId is not null)
         {
             lab.LAB_OwnerId = request.OwnerId.Value;
+        }
+
+        if (request.EsGlobal is not null)
+        {
+            lab.LAB_EsGlobal = request.EsGlobal.Value;
         }
 
         lab.FechaActualizacion = DateTimeOffset.UtcNow;
@@ -331,6 +337,7 @@ public sealed class LabService : ILabService
         Arquetipo = lab.LAB_Arquetipo,
         Dominio = lab.LAB_Dominio,
         Estatus = lab.LAB_Estatus,
+        EsGlobal = lab.LAB_EsGlobal,
         OwnerId = lab.LAB_OwnerId,
         FechaCreacion = lab.FechaCreacion,
         CreadoPor = lab.CreadoPor,

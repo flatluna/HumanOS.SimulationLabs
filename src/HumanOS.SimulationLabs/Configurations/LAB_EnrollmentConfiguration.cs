@@ -71,8 +71,8 @@ public class LAB_EnrollmentConfiguration : IEntityTypeConfiguration<LAB_Enrollme
 
         builder.HasOne(e => e.Lab)
             .WithMany()
-            .HasForeignKey(e => new { e.SEG_IdTenant, e.LAB_IdLab })
-            .HasPrincipalKey(l => new { l.SEG_IdTenant, l.LAB_IdLab })
+            .HasForeignKey(e => e.LAB_IdLab)
+            .HasPrincipalKey(l => l.LAB_IdLab)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }

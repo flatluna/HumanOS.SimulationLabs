@@ -71,6 +71,11 @@ public class LAB_LabConfiguration : IEntityTypeConfiguration<LAB_Lab>
             .IsUnicode(false)
             .IsRequired();
 
+        // LAB_EsGlobal bit — visible to every tenant, not just SEG_IdTenant's own
+        builder.Property(e => e.LAB_EsGlobal)
+            .HasDefaultValue(false)
+            .IsRequired();
+
         // LAB_OwnerId
         builder.Property(e => e.LAB_OwnerId)
             .IsRequired();

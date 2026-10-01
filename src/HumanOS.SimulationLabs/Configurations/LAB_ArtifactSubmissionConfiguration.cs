@@ -209,21 +209,20 @@ public class LAB_ArtifactSubmissionConfiguration : IEntityTypeConfiguration<LAB_
             .OnDelete(DeleteBehavior.Restrict)
             .IsRequired();
 
-        // Relación 1:N opcional con LAB_Stage: FK compuesta (SEG_IdTenant, LAB_IdVersion, STG_IdStage)
+        // Relación 1:N opcional con LAB_Stage — FK simple (STG_IdStage), para permitir labs
+        // globales practicados desde otro tenant.
         builder.HasOne(e => e.Stage)
             .WithMany(s => s.ArtifactSubmissions)
-            .HasPrincipalKey(s => new { s.SEG_IdTenant, s.LAB_IdVersion, s.STG_IdStage })
-            .HasForeignKey(e => new { e.SEG_IdTenant, e.LAB_IdVersion, e.STG_IdStage })
-            .HasConstraintName("FK_LAB_ArtifactSubmission_LAB_Stage_SEG_IdTenant_LAB_IdVersion_STG_IdStage")
+            .HasForeignKey(e => e.STG_IdStage)
+            .HasConstraintName("FK_LAB_ArtifactSubmission_LAB_Stage_STG_IdStage")
             .OnDelete(DeleteBehavior.Restrict)
             .IsRequired(false);
 
-        // Relación 1:N opcional con LAB_Objective: FK compuesta (SEG_IdTenant, LAB_IdVersion, OBJ_IdObjective)
+        // Relación 1:N opcional con LAB_Objective — FK simple (OBJ_IdObjective), mismo motivo.
         builder.HasOne(e => e.Objective)
             .WithMany(o => o.ArtifactSubmissions)
-            .HasPrincipalKey(o => new { o.SEG_IdTenant, o.LAB_IdVersion, o.OBJ_IdObjective })
-            .HasForeignKey(e => new { e.SEG_IdTenant, e.LAB_IdVersion, e.OBJ_IdObjective })
-            .HasConstraintName("FK_LAB_ArtifactSubmission_LAB_Objective_SEG_IdTenant_LAB_IdVersion_OBJ_IdObjective")
+            .HasForeignKey(e => e.OBJ_IdObjective)
+            .HasConstraintName("FK_LAB_ArtifactSubmission_LAB_Objective_OBJ_IdObjective")
             .OnDelete(DeleteBehavior.Restrict)
             .IsRequired(false);
 

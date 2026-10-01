@@ -35,19 +35,23 @@ public sealed class AttemptEvaluationService
         var lab = await (
             from v in _db.LabVersions.AsNoTracking()
             join l in _db.Labs.AsNoTracking() on v.LAB_IdLab equals l.LAB_IdLab
-            where v.SEG_IdTenant == tenantId && v.LAB_IdVersion == attempt.LAB_IdVersion
+            where v.LAB_IdVersion == attempt.LAB_IdVersion
             select l).FirstOrDefaultAsync(ct);
 
+        // Global labs store their whole definition graph under the LAB'S OWN tenant, not the
+        // participant's — read scenario/rubric/criteria with that tenant, never the caller's.
+        var ownerTenantId = lab?.SEG_IdTenant ?? tenantId;
+
         var scenario = await _db.Scenarios.AsNoTracking()
-            .FirstOrDefaultAsync(s => s.SEG_IdTenant == tenantId && s.SCN_IdScenario == attempt.SCN_IdScenario, ct);
+            .FirstOrDefaultAsync(s => s.SEG_IdTenant == ownerTenantId && s.SCN_IdScenario == attempt.SCN_IdScenario, ct);
 
         var rubric = await _db.Rubrics.AsNoTracking()
-            .FirstOrDefaultAsync(r => r.SEG_IdTenant == tenantId && r.LAB_IdVersion == attempt.LAB_IdVersion, ct);
+            .FirstOrDefaultAsync(r => r.SEG_IdTenant == ownerTenantId && r.LAB_IdVersion == attempt.LAB_IdVersion, ct);
 
         var criteria = rubric is null
             ? []
             : await _db.RubricCriteria.AsNoTracking()
-                .Where(c => c.SEG_IdTenant == tenantId && c.RUB_IdRubric == rubric.RUB_IdRubric)
+                .Where(c => c.SEG_IdTenant == ownerTenantId && c.RUB_IdRubric == rubric.RUB_IdRubric)
                 .OrderBy(c => c.CRT_Orden)
                 .Select(c => new RubricCriterionInput
                 {
@@ -89,7 +93,9 @@ public sealed class AttemptEvaluationService
             ScenarioNombre = scenario?.SCN_Nombre ?? string.Empty,
             ScenarioResultadoEsperado = scenario?.SCN_ResultadoEsperado ?? string.Empty,
             IsAcademicDefense = string.Equals(lab?.LAB_Arquetipo, LabArquetipos.AcademicDefense, StringComparison.OrdinalIgnoreCase),
-            ScoreMinimoAprobacion = rubric?.RUB_ScoreMinimoAprobacion ?? 7.00m,
+            // Rubric scores are still stored on a 1.00-10.00 scale, but attempts are now graded
+            // 1.00-5.00 — halve the configured passing bar to keep the same relative threshold.
+            ScoreMinimoAprobacion = Math.Round((rubric?.RUB_ScoreMinimoAprobacion ?? 7.00m) / 2m, 2),
             Criteria = criteria,
             SkillFeedbackGuidance = skillFeedbackGuidance,
             Transcript = transcript,
@@ -119,12 +125,12 @@ public sealed class AttemptEvaluationService
         {
             // No substantive question/answer pairs found at all — force a safe, DB-valid
             // minimum score rather than trusting whatever the model left ScoreFinal at (it's
-            // instructed to leave it 0, which violates the 1.00-10.00 check constraint).
+            // instructed to leave it 0, which violates the 1.00-5.00 check constraint).
             result.ScoreFinal = 1.00m;
             result.Resultado = "NOT_COMPLETED";
             result.CriteriaScores = [];
         }
-        result.ScoreFinal = Math.Clamp(result.ScoreFinal, 1.00m, 10.00m);
+        result.ScoreFinal = Math.Clamp(result.ScoreFinal, 1.00m, 5.00m);
         if (!ValidResultados.Contains(result.Resultado)) result.Resultado = "NOT_COMPLETED";
 
         var now = DateTimeOffset.UtcNow;

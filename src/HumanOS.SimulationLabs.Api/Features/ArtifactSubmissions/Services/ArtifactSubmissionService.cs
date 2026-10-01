@@ -15,8 +15,8 @@ public sealed class ArtifactSubmissionService : IArtifactSubmissionService
         var attempt = await _db.Attempts.AsNoTracking().FirstOrDefaultAsync(a => a.SEG_IdTenant == tenantId && a.ATT_IdAttempt == attemptId, ct) ?? throw new ArtifactSubmissionAttemptNotFoundException();
         if (attempt.ATT_Estatus is not (AttemptEstatus.InProgress or AttemptEstatus.Paused)) throw new ArtifactSubmissionAttemptNotEditableException();
 
-        if (request.StageId is { } stageId && !await _db.Stages.AnyAsync(s => s.SEG_IdTenant == tenantId && s.STG_IdStage == stageId && s.LAB_IdVersion == attempt.LAB_IdVersion, ct)) throw new ArtifactSubmissionStageMismatchException();
-        if (request.ObjectiveId is { } objectiveId && !await _db.Objectives.AnyAsync(o => o.SEG_IdTenant == tenantId && o.OBJ_IdObjective == objectiveId && o.LAB_IdVersion == attempt.LAB_IdVersion, ct)) throw new ArtifactSubmissionObjectiveMismatchException();
+        if (request.StageId is { } stageId && !await _db.Stages.AnyAsync(s => s.STG_IdStage == stageId && s.LAB_IdVersion == attempt.LAB_IdVersion, ct)) throw new ArtifactSubmissionStageMismatchException();
+        if (request.ObjectiveId is { } objectiveId && !await _db.Objectives.AnyAsync(o => o.OBJ_IdObjective == objectiveId && o.LAB_IdVersion == attempt.LAB_IdVersion, ct)) throw new ArtifactSubmissionObjectiveMismatchException();
 
         var code = request.CodigoArtefacto!.Trim().ToUpperInvariant();
         var previous = await _db.ArtifactSubmissions.Where(s => s.SEG_IdTenant == tenantId && s.ATT_IdAttempt == attemptId && s.SUB_CodigoArtefacto == code).OrderByDescending(s => s.SUB_Version).ToListAsync(ct);

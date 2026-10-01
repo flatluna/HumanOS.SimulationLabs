@@ -53,13 +53,19 @@ public sealed class ScenarioService : IScenarioService
         return ToResponse(scenario);
     }
 
-    public async Task<ScenarioResponse?> GetByIdAsync(Guid tenantId, Guid scenarioId, CancellationToken ct) =>
-        (await _db.Scenarios.AsNoTracking().FirstOrDefaultAsync(s => s.SEG_IdTenant == tenantId && s.SCN_IdScenario == scenarioId, ct)) is { } scenario ? ToResponse(scenario) : null;
+    public async Task<ScenarioResponse?> GetByIdAsync(Guid tenantId, Guid scenarioId, CancellationToken ct)
+    {
+        var scenario = await _db.Scenarios.AsNoTracking().FirstOrDefaultAsync(s => s.SCN_IdScenario == scenarioId, ct);
+        if (scenario is null) return null;
+        if (scenario.SEG_IdTenant != tenantId && !await IsVersionGlobalAsync(scenario.LAB_IdVersion, ct)) return null;
+        return ToResponse(scenario);
+    }
 
     public async Task<ScenarioListResponse> ListAsync(Guid tenantId, Guid versionId, string? tipo, string? dificultad, string? estatus, string? search, int page, int pageSize, CancellationToken ct)
     {
-        if (!await _db.LabVersions.AsNoTracking().AnyAsync(v => v.SEG_IdTenant == tenantId && v.LAB_IdVersion == versionId, ct)) throw new ScenarioVersionNotFoundException();
-        var query = _db.Scenarios.AsNoTracking().Where(s => s.SEG_IdTenant == tenantId && s.LAB_IdVersion == versionId);
+        var version = await _db.LabVersions.AsNoTracking().FirstOrDefaultAsync(v => v.LAB_IdVersion == versionId, ct) ?? throw new ScenarioVersionNotFoundException();
+        if (version.SEG_IdTenant != tenantId && !await IsVersionGlobalAsync(versionId, ct)) throw new ScenarioVersionNotFoundException();
+        var query = _db.Scenarios.AsNoTracking().Where(s => s.SEG_IdTenant == version.SEG_IdTenant && s.LAB_IdVersion == versionId);
         if (!string.IsNullOrWhiteSpace(tipo)) query = query.Where(s => s.SCN_Tipo == tipo);
         if (!string.IsNullOrWhiteSpace(dificultad)) query = query.Where(s => s.SCN_Dificultad == dificultad);
         if (!string.IsNullOrWhiteSpace(estatus)) query = query.Where(s => s.SCN_Estatus == estatus);
@@ -123,6 +129,20 @@ public sealed class ScenarioService : IScenarioService
         return ToResponse(scenario);
     }
 
+    /// <summary>Lets a Studio admin edit an already Approved/Published scenario again (content
+    /// fields only, e.g. job description) by moving it back to DRAFT — must be re-approved and
+    /// re-published afterward, real employees stop seeing it as an active Attempt target meanwhile.</summary>
+    public async Task<ScenarioResponse> RevertToDraftAsync(Guid tenantId, Guid scenarioId, string etag, string user, CancellationToken ct)
+    {
+        var scenario = await _db.Scenarios.FirstOrDefaultAsync(s => s.SEG_IdTenant == tenantId && s.SCN_IdScenario == scenarioId, ct) ?? throw new ScenarioNotFoundException();
+        EnsureEtag(scenario.RowVersion, etag);
+        if (scenario.SCN_Estatus is not (ScenarioEstatus.Approved or ScenarioEstatus.Published)) throw new ScenarioPreconditionException("INVALID_STATUS_TRANSITION");
+        scenario.SCN_Estatus = ScenarioEstatus.Draft;
+        Touch(scenario, user);
+        await SaveAsync(ct);
+        return ToResponse(scenario);
+    }
+
     private async Task<ScenarioResponse> TransitionAsync(Guid tenantId, Guid scenarioId, string etag, string user, string fromStatus, string toStatus, CancellationToken ct)
     {
         var scenario = await _db.Scenarios.FirstOrDefaultAsync(s => s.SEG_IdTenant == tenantId && s.SCN_IdScenario == scenarioId, ct) ?? throw new ScenarioNotFoundException();
@@ -138,6 +158,12 @@ public sealed class ScenarioService : IScenarioService
     private static void EnsureDraft(string? status) { if (!string.Equals(status, LabVersionEstatus.Draft, StringComparison.OrdinalIgnoreCase)) throw new ScenarioVersionNotEditableException(); }
     private static void EnsureEtag(byte[] current, string? expected) { if (string.IsNullOrWhiteSpace(expected)) throw new ScenarioPreconditionException("ETAG_REQUIRED"); if (!string.Equals(Convert.ToBase64String(current), expected.Trim('"'), StringComparison.Ordinal)) throw new ScenarioPreconditionException("ETAG_MISMATCH"); }
     private static string? Clean(string? value) => string.IsNullOrWhiteSpace(value) ? null : value.Trim();
+
+    private async Task<bool> IsVersionGlobalAsync(Guid versionId, CancellationToken ct) =>
+        await (from v in _db.LabVersions.AsNoTracking()
+               join l in _db.Labs.AsNoTracking() on v.LAB_IdLab equals l.LAB_IdLab
+               where v.LAB_IdVersion == versionId && l.LAB_EsGlobal
+               select l.LAB_IdLab).AnyAsync(ct);
     private static void Touch(LAB_Scenario s, string user) { s.FechaActualizacion = DateTimeOffset.UtcNow; s.ActualizadoPor = user; }
     private static bool IsUnique(DbUpdateException ex) => ex.InnerException?.Message.Contains("UQ_LAB_Scenario", StringComparison.OrdinalIgnoreCase) == true;
 

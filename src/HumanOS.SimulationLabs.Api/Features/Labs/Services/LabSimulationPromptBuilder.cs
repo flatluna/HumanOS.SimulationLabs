@@ -119,22 +119,28 @@ public static class LabSimulationPromptBuilder
         SimulationLabsDbContext db, Guid tenantId, Guid idVersion, Guid idScenario, CancellationToken cancellationToken)
     {
         var version = await db.LabVersions.AsNoTracking()
-            .FirstOrDefaultAsync(v => v.SEG_IdTenant == tenantId && v.LAB_IdVersion == idVersion, cancellationToken);
+            .FirstOrDefaultAsync(v => v.LAB_IdVersion == idVersion, cancellationToken);
         if (version is null) return null;
 
         var lab = await db.Labs.AsNoTracking()
-            .FirstOrDefaultAsync(l => l.SEG_IdTenant == tenantId && l.LAB_IdLab == version.LAB_IdLab, cancellationToken);
+            .FirstOrDefaultAsync(l => l.LAB_IdLab == version.LAB_IdLab, cancellationToken);
         if (lab is null) return null;
+        if (lab.SEG_IdTenant != tenantId && !lab.LAB_EsGlobal) return null;
+
+        // Global labs store their whole definition graph (version/stages/moments/scenarios/
+        // actors) under the LAB'S OWN tenant, not the caller's — query with that tenant, never
+        // the caller's, so the lookup actually finds rows for a Lab practiced cross-tenant.
+        var ownerTenantId = lab.SEG_IdTenant;
 
         var scenario = await db.Scenarios.AsNoTracking()
-            .FirstOrDefaultAsync(s => s.SEG_IdTenant == tenantId && s.SCN_IdScenario == idScenario, cancellationToken);
+            .FirstOrDefaultAsync(s => s.SEG_IdTenant == ownerTenantId && s.SCN_IdScenario == idScenario, cancellationToken);
 
         LAB_SimulatedActor? actor = null;
         var committeeActors = new List<LAB_SimulatedActor>();
         if (scenario is not null)
         {
             var actorsQuery = db.SimulatedActors.AsNoTracking()
-                .Where(a => a.SEG_IdTenant == tenantId && a.SCN_IdScenario == scenario.SCN_IdScenario)
+                .Where(a => a.SEG_IdTenant == ownerTenantId && a.SCN_IdScenario == scenario.SCN_IdScenario)
                 .OrderByDescending(a => a.ACT_EsPrincipal)
                 .ThenBy(a => a.ACT_Orden);
             actor = await actorsQuery.FirstOrDefaultAsync(cancellationToken);
@@ -145,12 +151,12 @@ public static class LabSimulationPromptBuilder
         }
 
         var stages = await db.Stages.AsNoTracking()
-            .Where(s => s.SEG_IdTenant == tenantId && s.LAB_IdVersion == version.LAB_IdVersion)
+            .Where(s => s.SEG_IdTenant == ownerTenantId && s.LAB_IdVersion == version.LAB_IdVersion)
             .OrderBy(s => s.STG_Orden)
             .ToListAsync(cancellationToken);
 
         var moments = await db.ExpectedMoments.AsNoTracking()
-            .Where(m => m.SEG_IdTenant == tenantId && m.LAB_IdVersion == version.LAB_IdVersion)
+            .Where(m => m.SEG_IdTenant == ownerTenantId && m.LAB_IdVersion == version.LAB_IdVersion)
             .OrderBy(m => m.MOM_OrdenSugerido)
             .ToListAsync(cancellationToken);
 
@@ -223,7 +229,9 @@ public static class LabSimulationPromptBuilder
         sb.AppendLine("- NEVER RE-ASK A TOPIC YOU'VE ALREADY COVERED. Before speaking, mentally review the ENTIRE conversation so far: if the student has already substantively answered a topic (even briefly, even earlier in the call), do NOT circle back and ask it again in different words — move to a topic that is still genuinely uncovered. Repeating yourself wastes the student's time and is exactly what a real interviewer/counterpart would never do.");
         sb.AppendLine("- ONLY your very first turn is fixed (topic 1 below, near-verbatim). Every turn after that must be a NEW question you generate yourself in the moment, reacting to what the student just said — never mechanically read down the TOPICS list one by one. Treat the TOPICS list as a minimum checklist of ground to cover, not an exhaustive script: once you've cycled through it, keep going by drawing fresh, specific follow-up questions from ALL the rich context you were given (your character's knowledge, hidden brief, objections, contradictions, the scenario description) — there is always more real substance to probe than the fixed list alone.");
         sb.AppendLine("- Say ONE short thing per turn, then wait for the student's real response before continuing.");
+        sb.AppendLine("- LISTEN AND SHOW EMPATHY — do not just fire question after question: before moving to your next topic, briefly acknowledge/react to what the student just said (a short human reaction — \"got it\", \"that makes sense\", \"interesting approach\", genuine follow-up curiosity, etc.), the way an attentive, warm real person would. Never sound like you're mechanically working through a checklist.");
         sb.AppendLine("- If the student asks or comments something, respond to that first — never ignore it to jump to your own agenda.");
+        sb.AppendLine("- BE FLEXIBLE WITH QUESTIONS FROM THE STUDENT: if the student asks YOU a genuine, reasonable question (about the role, the company/team, the process, your own experience, next steps, etc. — NOT asking you to do their evaluated task for them), actually answer it in character using your own knowledge/context below, briefly and naturally, before returning to your agenda. Only redirect back to them when their \"question\" is really just handing you the task you're there to evaluate (e.g. asking you to solve the problem, write the pitch, or make the decision that is THEIR job in this exercise).");
         sb.AppendLine("- BREADTH OVER DEPTH: never stay on the same topic/question thread indefinitely, even if the student's answer invites");
         sb.AppendLine("  more follow-up. Ask at most 1-2 follow-ups on any single point, then move to a genuinely different topic/skill area —");
         sb.AppendLine("  you must cover a MIX of different skills across the conversation (e.g. both TECHNICAL and SOFT skills from the list");

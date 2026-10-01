@@ -129,13 +129,20 @@ public sealed class AttemptEvaluationAgent
            QuestionTurnNumber/AnswerTurnNumber (the transcript turn numbers), Question (the
            actor's exact question/prompt, verbatim or lightly trimmed), Answer (the participant's
            exact response, verbatim or lightly trimmed), SkillArea ("TECHNICAL" or "SOFT" -
-           whichever this specific question was really testing), Score (1.00-10.00 for that single
+           whichever this specific question was really testing), Score (1.00-5.00 for that single
            answer, based ONLY on how well it answered THIS question), Assessment (1-2 sentences on
            what was good/missing in THIS answer specifically), and RecommendedAnswer (a concrete,
            best-practice model answer — grounded in real technical knowledge, industry best
            practices, and strong soft-skill communication for this exact question, showing what a
            top-tier response would have said). Be thorough and exhaustive: cover EVERY substantive
            question actually asked, in order, not just a sample.
+           SCORING SCALE — 1.00 to 5.00, and be generous: this is a formative practice exercise,
+           not a hard exam. Use 5 for a strong, correct, complete answer; 4 for a solid answer with
+           only minor gaps; 3 for an adequate/partial answer that gets the main idea across even if
+           imprecise or incomplete; 2 for a weak answer that shows some relevant effort but misses
+           most of what was asked; 1 only for a missing, irrelevant, or seriously wrong answer. Most
+           real, on-topic attempts should land on 3, 4, or 5 — reserve 1-2 for genuinely poor or
+           absent answers, not merely imperfect ones.
            IMPORTANT — if RUBRIC CRITERIA were provided below, they are the GROUND TRUTH standard for
            what "good" looks like on this Lab: when scoring and writing Assessment for a turn, check
            the answer against the criterion's positive/negative indicators that apply to that
@@ -235,7 +242,7 @@ public sealed class AttemptEvaluationAgent
             sb.AppendLine("This is a Tec de Monterrey thesis defense. The sinodales evaluate Sofia as a candidate, but this is a formative professional examination, not a demand for a perfect thesis recital.");
             sb.AppendLine("Score each answer for the specific question actually asked. Give fair partial credit when the candidate demonstrates a correct idea but omits detail, uses imprecise wording, or needs a follow-up.");
             sb.AppendLine("Do not require one answer to cover the entire thesis, every methodological detail, or every rubric dimension. Do not give a very low score merely because the candidate needs clarification or a second attempt.");
-            sb.AppendLine("Use approximately 7-10 for a correct, relevant and sufficiently supported answer; 5-6 for a substantially correct answer with meaningful gaps; 3-4 for a partial but relevant answer; 1-2 only for no answer, an irrelevant answer, or a serious factual/conceptual failure.");
+            sb.AppendLine("Use approximately 4-5 for a correct, relevant and sufficiently supported answer; 3 for a substantially correct answer with meaningful gaps or a partial but relevant answer; 2 for a weak but on-topic attempt; 1 only for no answer, an irrelevant answer, or a serious factual/conceptual failure.");
             sb.AppendLine("A weak answer to one question is not by itself a critical failure. Reserve CRITICAL_FAILURE for a clearly severe issue supported by the transcript and an applicable critical criterion.");
         }
         sb.AppendLine();

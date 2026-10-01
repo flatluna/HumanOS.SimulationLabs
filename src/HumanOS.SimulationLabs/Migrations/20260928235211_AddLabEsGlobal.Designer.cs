@@ -4,6 +4,7 @@ using HumanOS.SimulationLabs.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HumanOS.SimulationLabs.Migrations
 {
     [DbContext(typeof(SimulationLabsDbContext))]
-    partial class SimulationLabsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260928235211_AddLabEsGlobal")]
+    partial class AddLabEsGlobal
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -166,10 +169,6 @@ namespace HumanOS.SimulationLabs.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("SUB_IdSubmission");
-
-                    b.HasIndex("OBJ_IdObjective");
-
-                    b.HasIndex("STG_IdStage");
 
                     b.HasIndex(new[] { "SEG_IdTenant", "ATT_IdAttempt", "SUB_EsEntregaFinal" }, "IX_LAB_ArtifactSubmission_SEG_IdTenant_ATT_IdAttempt_SUB_EsEntregaFinal");
 
@@ -330,10 +329,6 @@ namespace HumanOS.SimulationLabs.Migrations
 
                     b.HasAlternateKey("SEG_IdTenant", "LAB_IdVersion", "ATT_IdAttempt")
                         .HasName("AK_LAB_Attempt_SEG_IdTenant_LAB_IdVersion_ATT_IdAttempt");
-
-                    b.HasIndex("LAB_IdVersion");
-
-                    b.HasIndex("SCN_IdScenario");
 
                     b.HasIndex(new[] { "SEG_IdTenant", "LAB_IdVersion" }, "IX_LAB_Attempt_SEG_IdTenant_LAB_IdVersion");
 
@@ -574,10 +569,6 @@ namespace HumanOS.SimulationLabs.Migrations
 
                     b.HasKey("TRN_IdTurn");
 
-                    b.HasIndex("ACT_IdActor");
-
-                    b.HasIndex("TRN_IdExpectedMoment");
-
                     b.HasIndex(new[] { "SEG_IdTenant", "ACT_IdActor" }, "IX_LAB_ConversationTurn_SEG_IdTenant_ACT_IdActor");
 
                     b.HasIndex(new[] { "SEG_IdTenant", "ATT_IdAttempt", "TRN_Estatus" }, "IX_LAB_ConversationTurn_SEG_IdTenant_ATT_IdAttempt_TRN_Estatus");
@@ -667,8 +658,6 @@ namespace HumanOS.SimulationLabs.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("ENR_IdEnrollment");
-
-                    b.HasIndex("LAB_IdLab");
 
                     b.HasIndex("SEG_IdTenant", "LAB_IdLab", "USR_IdParticipant")
                         .IsUnique()
@@ -2144,8 +2133,6 @@ namespace HumanOS.SimulationLabs.Migrations
 
                     b.HasKey("ACT_IdUserAction");
 
-                    b.HasIndex("MOM_IdExpectedMoment");
-
                     b.HasIndex(new[] { "SEG_IdTenant", "ACT_EntidadTipo", "ACT_EntidadId" }, "IX_LAB_UserAction_SEG_IdTenant_ACT_EntidadTipo_ACT_EntidadId");
 
                     b.HasIndex(new[] { "SEG_IdTenant", "ATT_IdAttempt", "ACT_EsCritica" }, "IX_LAB_UserAction_SEG_IdTenant_ATT_IdAttempt_ACT_EsCritica");
@@ -2193,18 +2180,6 @@ namespace HumanOS.SimulationLabs.Migrations
 
             modelBuilder.Entity("HumanOS.SimulationLabs.Entities.LAB_ArtifactSubmission", b =>
                 {
-                    b.HasOne("HumanOS.SimulationLabs.Entities.LAB_Objective", "Objective")
-                        .WithMany("ArtifactSubmissions")
-                        .HasForeignKey("OBJ_IdObjective")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .HasConstraintName("FK_LAB_ArtifactSubmission_LAB_Objective_OBJ_IdObjective");
-
-                    b.HasOne("HumanOS.SimulationLabs.Entities.LAB_Stage", "Stage")
-                        .WithMany("ArtifactSubmissions")
-                        .HasForeignKey("STG_IdStage")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .HasConstraintName("FK_LAB_ArtifactSubmission_LAB_Stage_STG_IdStage");
-
                     b.HasOne("HumanOS.SimulationLabs.Entities.LAB_Attempt", "Attempt")
                         .WithMany("ArtifactSubmissions")
                         .HasForeignKey("SEG_IdTenant", "LAB_IdVersion", "ATT_IdAttempt")
@@ -2212,6 +2187,20 @@ namespace HumanOS.SimulationLabs.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
                         .HasConstraintName("FK_LAB_ArtifactSubmission_LAB_Attempt_SEG_IdTenant_LAB_IdVersion_ATT_IdAttempt");
+
+                    b.HasOne("HumanOS.SimulationLabs.Entities.LAB_Objective", "Objective")
+                        .WithMany("ArtifactSubmissions")
+                        .HasForeignKey("SEG_IdTenant", "LAB_IdVersion", "OBJ_IdObjective")
+                        .HasPrincipalKey("SEG_IdTenant", "LAB_IdVersion", "OBJ_IdObjective")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .HasConstraintName("FK_LAB_ArtifactSubmission_LAB_Objective_SEG_IdTenant_LAB_IdVersion_OBJ_IdObjective");
+
+                    b.HasOne("HumanOS.SimulationLabs.Entities.LAB_Stage", "Stage")
+                        .WithMany("ArtifactSubmissions")
+                        .HasForeignKey("SEG_IdTenant", "LAB_IdVersion", "STG_IdStage")
+                        .HasPrincipalKey("SEG_IdTenant", "LAB_IdVersion", "STG_IdStage")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .HasConstraintName("FK_LAB_ArtifactSubmission_LAB_Stage_SEG_IdTenant_LAB_IdVersion_STG_IdStage");
 
                     b.Navigation("Attempt");
 
@@ -2224,17 +2213,19 @@ namespace HumanOS.SimulationLabs.Migrations
                 {
                     b.HasOne("HumanOS.SimulationLabs.Entities.LAB_LabVersion", "LabVersion")
                         .WithMany("Attempts")
-                        .HasForeignKey("LAB_IdVersion")
+                        .HasForeignKey("SEG_IdTenant", "LAB_IdVersion")
+                        .HasPrincipalKey("SEG_IdTenant", "LAB_IdVersion")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_LAB_Attempt_LAB_LabVersion_LAB_IdVersion");
+                        .HasConstraintName("FK_LAB_Attempt_LAB_LabVersion_SEG_IdTenant_LAB_IdVersion");
 
                     b.HasOne("HumanOS.SimulationLabs.Entities.LAB_Scenario", "Scenario")
                         .WithMany("Attempts")
-                        .HasForeignKey("SCN_IdScenario")
+                        .HasForeignKey("SEG_IdTenant", "LAB_IdVersion", "SCN_IdScenario")
+                        .HasPrincipalKey("SEG_IdTenant", "LAB_IdVersion", "SCN_IdScenario")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_LAB_Attempt_LAB_Scenario_SCN_IdScenario");
+                        .HasConstraintName("FK_LAB_Attempt_LAB_Scenario_SEG_IdTenant_LAB_IdVersion_SCN_IdScenario");
 
                     b.Navigation("LabVersion");
 
@@ -2243,23 +2234,18 @@ namespace HumanOS.SimulationLabs.Migrations
 
             modelBuilder.Entity("HumanOS.SimulationLabs.Entities.LAB_ConversationTurn", b =>
                 {
-                    b.HasOne("HumanOS.SimulationLabs.Entities.LAB_SimulatedActor", "SimulatedActor")
-                        .WithMany()
-                        .HasForeignKey("ACT_IdActor")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .HasConstraintName("FK_LAB_ConversationTurn_LAB_SimulatedActor_ACT_IdActor");
-
-                    b.HasOne("HumanOS.SimulationLabs.Entities.LAB_ExpectedMoment", "ExpectedMoment")
-                        .WithMany()
-                        .HasForeignKey("TRN_IdExpectedMoment")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .HasConstraintName("FK_LAB_ConversationTurn_LAB_ExpectedMoment_TRN_IdExpectedMoment");
-
                     b.HasOne("HumanOS.SimulationLabs.Entities.LAB_ConversationTurn", "RespondedTurn")
                         .WithMany("Responses")
                         .HasForeignKey("TRN_IdTurnoRespondido")
                         .OnDelete(DeleteBehavior.Restrict)
                         .HasConstraintName("FK_LAB_ConversationTurn_LAB_ConversationTurn_TRN_IdTurnoRespondido");
+
+                    b.HasOne("HumanOS.SimulationLabs.Entities.LAB_SimulatedActor", "SimulatedActor")
+                        .WithMany()
+                        .HasForeignKey("SEG_IdTenant", "ACT_IdActor")
+                        .HasPrincipalKey("SEG_IdTenant", "ACT_IdActor")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .HasConstraintName("FK_LAB_ConversationTurn_LAB_SimulatedActor_SEG_IdTenant_ACT_IdActor");
 
                     b.HasOne("HumanOS.SimulationLabs.Entities.LAB_Attempt", "Attempt")
                         .WithMany("ConversationTurns")
@@ -2268,6 +2254,13 @@ namespace HumanOS.SimulationLabs.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
                         .HasConstraintName("FK_LAB_ConversationTurn_LAB_Attempt_SEG_IdTenant_ATT_IdAttempt");
+
+                    b.HasOne("HumanOS.SimulationLabs.Entities.LAB_ExpectedMoment", "ExpectedMoment")
+                        .WithMany()
+                        .HasForeignKey("SEG_IdTenant", "LAB_IdVersion", "TRN_IdExpectedMoment")
+                        .HasPrincipalKey("SEG_IdTenant", "LAB_IdVersion", "MOM_IdExpectedMoment")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .HasConstraintName("FK_LAB_ConversationTurn_LAB_ExpectedMoment_SEG_IdTenant_LAB_IdVersion_TRN_IdExpectedMoment");
 
                     b.Navigation("Attempt");
 
@@ -2282,7 +2275,8 @@ namespace HumanOS.SimulationLabs.Migrations
                 {
                     b.HasOne("HumanOS.SimulationLabs.Entities.LAB_Lab", "Lab")
                         .WithMany()
-                        .HasForeignKey("LAB_IdLab")
+                        .HasForeignKey("SEG_IdTenant", "LAB_IdLab")
+                        .HasPrincipalKey("SEG_IdTenant", "LAB_IdLab")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -2463,12 +2457,6 @@ namespace HumanOS.SimulationLabs.Migrations
 
             modelBuilder.Entity("HumanOS.SimulationLabs.Entities.LAB_UserAction", b =>
                 {
-                    b.HasOne("HumanOS.SimulationLabs.Entities.LAB_ExpectedMoment", "ExpectedMoment")
-                        .WithMany("UserActions")
-                        .HasForeignKey("MOM_IdExpectedMoment")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .HasConstraintName("FK_LAB_UserAction_LAB_ExpectedMoment_MOM_IdExpectedMoment");
-
                     b.HasOne("HumanOS.SimulationLabs.Entities.LAB_Attempt", "Attempt")
                         .WithMany("UserActions")
                         .HasForeignKey("SEG_IdTenant", "LAB_IdVersion", "ATT_IdAttempt")
@@ -2476,6 +2464,13 @@ namespace HumanOS.SimulationLabs.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
                         .HasConstraintName("FK_LAB_UserAction_LAB_Attempt_SEG_IdTenant_LAB_IdVersion_ATT_IdAttempt");
+
+                    b.HasOne("HumanOS.SimulationLabs.Entities.LAB_ExpectedMoment", "ExpectedMoment")
+                        .WithMany("UserActions")
+                        .HasForeignKey("SEG_IdTenant", "LAB_IdVersion", "MOM_IdExpectedMoment")
+                        .HasPrincipalKey("SEG_IdTenant", "LAB_IdVersion", "MOM_IdExpectedMoment")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .HasConstraintName("FK_LAB_UserAction_LAB_ExpectedMoment_SEG_IdTenant_LAB_IdVersion_MOM_IdExpectedMoment");
 
                     b.Navigation("Attempt");
 

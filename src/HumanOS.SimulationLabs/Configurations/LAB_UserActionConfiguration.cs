@@ -238,12 +238,12 @@ public class LAB_UserActionConfiguration : IEntityTypeConfiguration<LAB_UserActi
             .OnDelete(DeleteBehavior.Restrict)
             .IsRequired();
 
-        // Relación 1:N opcional con LAB_ExpectedMoment: FK compuesta (SEG_IdTenant, LAB_IdVersion, MOM_IdExpectedMoment)
+        // Relación 1:N opcional con LAB_ExpectedMoment — FK simple (MOM_IdExpectedMoment), para
+        // permitir labs globales practicados desde otro tenant.
         builder.HasOne(e => e.ExpectedMoment)
             .WithMany(m => m.UserActions)
-            .HasPrincipalKey(m => new { m.SEG_IdTenant, m.LAB_IdVersion, m.MOM_IdExpectedMoment })
-            .HasForeignKey(e => new { e.SEG_IdTenant, e.LAB_IdVersion, e.MOM_IdExpectedMoment })
-            .HasConstraintName("FK_LAB_UserAction_LAB_ExpectedMoment_SEG_IdTenant_LAB_IdVersion_MOM_IdExpectedMoment")
+            .HasForeignKey(e => e.MOM_IdExpectedMoment)
+            .HasConstraintName("FK_LAB_UserAction_LAB_ExpectedMoment_MOM_IdExpectedMoment")
             .OnDelete(DeleteBehavior.Restrict)
             .IsRequired(false);
 

@@ -12,9 +12,16 @@ public sealed class AttemptService : IAttemptService
 
     public async Task<AttemptResponse> StartAsync(Guid tenantId, Guid scenarioId, Guid participantId, string user, StartAttemptRequest request, CancellationToken ct)
     {
-        var scenario = await _db.Scenarios.AsNoTracking().FirstOrDefaultAsync(s => s.SEG_IdTenant == tenantId && s.SCN_IdScenario == scenarioId, ct) ?? throw new AttemptScenarioNotFoundException();
+        var scenario = await _db.Scenarios.AsNoTracking().FirstOrDefaultAsync(s => s.SCN_IdScenario == scenarioId, ct) ?? throw new AttemptScenarioNotFoundException();
+        if (scenario.SEG_IdTenant != tenantId)
+        {
+            var isGlobal = await _db.Labs.AsNoTracking()
+                .Join(_db.LabVersions.AsNoTracking(), l => l.LAB_IdLab, v => v.LAB_IdLab, (l, v) => new { l.LAB_EsGlobal, v.LAB_IdVersion })
+                .AnyAsync(x => x.LAB_IdVersion == scenario.LAB_IdVersion && x.LAB_EsGlobal, ct);
+            if (!isGlobal) throw new AttemptScenarioNotFoundException();
+        }
         if (!string.Equals(scenario.SCN_Estatus, ScenarioEstatus.Published, StringComparison.OrdinalIgnoreCase)) throw new ScenarioNotPublishedException();
-        var version = await _db.LabVersions.AsNoTracking().FirstOrDefaultAsync(v => v.SEG_IdTenant == tenantId && v.LAB_IdVersion == scenario.LAB_IdVersion, ct);
+        var version = await _db.LabVersions.AsNoTracking().FirstOrDefaultAsync(v => v.LAB_IdVersion == scenario.LAB_IdVersion, ct);
         var now = DateTime.UtcNow;
         if (scenario.SCN_VigenciaDesde is { } desde && now < desde) throw new ScenarioNotPublishedException();
         if (scenario.SCN_VigenciaHasta is { } hasta && now > hasta) throw new ScenarioNotPublishedException();

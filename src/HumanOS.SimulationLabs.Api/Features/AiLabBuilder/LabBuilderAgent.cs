@@ -1,7 +1,6 @@
 using Azure.AI.OpenAI;
 using Azure.Identity;
 using HumanOS.SimulationLabs.Api.Features.AiLabBuilder.Contracts;
-using HumanOS.SimulationLabs.Api.Features.Labs.Services;
 using Microsoft.Agents.AI;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.Configuration;
@@ -228,10 +227,8 @@ public sealed class LabBuilderAgent
 
     private static string BuildPrompt(GenerateLabDraftRequest r)
     {
-        var archetype = LabArchetypes.Resolve(r.Archetype);
         var lines = new List<string>
         {
-            $"ARCHETYPE: {archetype.LabelEn} \u2014 {archetype.DescriptionEn} Write the Scenario/Actor/Objectives so the roles match this archetype (who plays what side of the conversation).",
             string.IsNullOrWhiteSpace(r.LabName)
                 ? "LAB NAME: (not provided — YOU must propose a short, clear Lab name and put it in SuggestedLabName)"
                 : $"LAB NAME: {r.LabName}",

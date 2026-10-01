@@ -17,7 +17,7 @@ public sealed class UserActionService : IUserActionService
 
         if (request.ExpectedMomentId is { } momentId)
         {
-            var momentExists = await _db.ExpectedMoments.AnyAsync(m => m.SEG_IdTenant == tenantId && m.MOM_IdExpectedMoment == momentId && m.LAB_IdVersion == attempt.LAB_IdVersion, ct);
+            var momentExists = await _db.ExpectedMoments.AnyAsync(m => m.MOM_IdExpectedMoment == momentId && m.LAB_IdVersion == attempt.LAB_IdVersion, ct);
             if (!momentExists) throw new ActionExpectedMomentMismatchException();
         }
 

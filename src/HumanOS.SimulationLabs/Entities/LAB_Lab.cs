@@ -72,6 +72,12 @@ public class LAB_Lab
 
     public string LAB_Estatus { get; set; } = string.Empty;
 
+    /// <summary>When true, this Lab is visible in EVERY tenant's catalog, not just
+    /// <see cref="SEG_IdTenant"/>'s own — for shared/reference Labs like interview or
+    /// thesis-defense simulations meant to be reused across all tenants. Defaults to false
+    /// (tenant-scoped) for every Lab created before this concept existed.</summary>
+    public bool LAB_EsGlobal { get; set; }
+
     public Guid LAB_OwnerId { get; set; }
 
     public DateTimeOffset FechaCreacion { get; set; }

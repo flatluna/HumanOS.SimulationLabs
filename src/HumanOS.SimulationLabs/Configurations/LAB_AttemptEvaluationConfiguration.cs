@@ -10,7 +10,7 @@ public class LAB_AttemptEvaluationConfiguration : IEntityTypeConfiguration<LAB_A
     {
         builder.ToTable("LAB_AttemptEvaluation", t =>
         {
-            t.HasCheckConstraint("CK_LAB_AttemptEvaluation_ScoreFinal", "[EVL_ScoreFinal] >= 1.00 AND [EVL_ScoreFinal] <= 10.00");
+            t.HasCheckConstraint("CK_LAB_AttemptEvaluation_ScoreFinal", "[EVL_ScoreFinal] >= 1.00 AND [EVL_ScoreFinal] <= 5.00");
             t.HasCheckConstraint(
                 "CK_LAB_AttemptEvaluation_Resultado",
                 "[EVL_Resultado] IN ('PASSED', 'PARTIAL', 'REPEAT_RECOMMENDED', 'NOT_COMPLETED', 'CRITICAL_FAILURE')");

@@ -13,7 +13,7 @@ public sealed class EnrollmentService
 
     public async Task<EnrollmentResponse> EnrollAsync(Guid tenantId, Guid idLab, Guid participantId, string user, CancellationToken ct)
     {
-        var labExists = await _db.Labs.AsNoTracking().AnyAsync(l => l.SEG_IdTenant == tenantId && l.LAB_IdLab == idLab, ct);
+        var labExists = await _db.Labs.AsNoTracking().AnyAsync(l => (l.SEG_IdTenant == tenantId || l.LAB_EsGlobal) && l.LAB_IdLab == idLab, ct);
         if (!labExists) throw new LabNotFoundException();
 
         var existing = await _db.Enrollments

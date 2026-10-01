@@ -184,21 +184,21 @@ public class LAB_ConversationTurnConfiguration : IEntityTypeConfiguration<LAB_Co
             .OnDelete(DeleteBehavior.Restrict)
             .IsRequired();
 
-        // Relación N:1 opcional con LAB_SimulatedActor: FK compuesta (SEG_IdTenant, ACT_IdActor)
+        // Relación N:1 opcional con LAB_SimulatedActor — FK simple (ACT_IdActor), para permitir
+        // labs globales practicados desde otro tenant.
         builder.HasOne(e => e.SimulatedActor)
             .WithMany()
-            .HasPrincipalKey(a => new { a.SEG_IdTenant, a.ACT_IdActor })
-            .HasForeignKey(e => new { e.SEG_IdTenant, e.ACT_IdActor })
-            .HasConstraintName("FK_LAB_ConversationTurn_LAB_SimulatedActor_SEG_IdTenant_ACT_IdActor")
+            .HasForeignKey(e => e.ACT_IdActor)
+            .HasConstraintName("FK_LAB_ConversationTurn_LAB_SimulatedActor_ACT_IdActor")
             .OnDelete(DeleteBehavior.Restrict)
             .IsRequired(false);
 
-        // Relación N:1 opcional con LAB_ExpectedMoment: FK compuesta (SEG_IdTenant, LAB_IdVersion, TRN_IdExpectedMoment)
+        // Relación N:1 opcional con LAB_ExpectedMoment — FK simple (TRN_IdExpectedMoment -> MOM_IdExpectedMoment).
         builder.HasOne(e => e.ExpectedMoment)
             .WithMany()
-            .HasPrincipalKey(m => new { m.SEG_IdTenant, m.LAB_IdVersion, m.MOM_IdExpectedMoment })
-            .HasForeignKey(e => new { e.SEG_IdTenant, e.LAB_IdVersion, e.TRN_IdExpectedMoment })
-            .HasConstraintName("FK_LAB_ConversationTurn_LAB_ExpectedMoment_SEG_IdTenant_LAB_IdVersion_TRN_IdExpectedMoment")
+            .HasPrincipalKey(m => m.MOM_IdExpectedMoment)
+            .HasForeignKey(e => e.TRN_IdExpectedMoment)
+            .HasConstraintName("FK_LAB_ConversationTurn_LAB_ExpectedMoment_TRN_IdExpectedMoment")
             .OnDelete(DeleteBehavior.Restrict)
             .IsRequired(false);
 

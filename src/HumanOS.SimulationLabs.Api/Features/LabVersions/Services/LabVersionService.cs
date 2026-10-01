@@ -87,9 +87,18 @@ public sealed class LabVersionService : ILabVersionService
     {
         var version = await _db.LabVersions
             .AsNoTracking()
-            .FirstOrDefaultAsync(v => v.SEG_IdTenant == tenantId && v.LAB_IdVersion == idVersion, cancellationToken);
+            .FirstOrDefaultAsync(v => v.LAB_IdVersion == idVersion, cancellationToken);
 
-        return version is null ? null : ToDetailResponse(version);
+        if (version is null) return null;
+
+        if (version.SEG_IdTenant != tenantId)
+        {
+            var isGlobal = await _db.Labs.AsNoTracking()
+                .AnyAsync(l => l.LAB_IdLab == version.LAB_IdLab && l.LAB_EsGlobal, cancellationToken);
+            if (!isGlobal) return null;
+        }
+
+        return ToDetailResponse(version);
     }
 
     public async Task<PagedResult<LabVersionListItemResponse>> ListByLabAsync(
@@ -98,16 +107,16 @@ public sealed class LabVersionService : ILabVersionService
         LabVersionListQuery query,
         CancellationToken cancellationToken)
     {
-        var labExists = await _db.Labs.AsNoTracking()
-            .AnyAsync(l => l.SEG_IdTenant == tenantId && l.LAB_IdLab == idLab, cancellationToken);
+        var lab = await _db.Labs.AsNoTracking()
+            .FirstOrDefaultAsync(l => l.LAB_IdLab == idLab && (l.SEG_IdTenant == tenantId || l.LAB_EsGlobal), cancellationToken);
 
-        if (!labExists)
+        if (lab is null)
         {
             throw new LabNotFoundException("Lab no encontrado dentro del tenant.");
         }
 
         var versions = _db.LabVersions.AsNoTracking()
-            .Where(v => v.SEG_IdTenant == tenantId && v.LAB_IdLab == idLab);
+            .Where(v => v.SEG_IdTenant == lab.SEG_IdTenant && v.LAB_IdLab == idLab);
 
         if (!string.IsNullOrWhiteSpace(query.Estatus))
         {

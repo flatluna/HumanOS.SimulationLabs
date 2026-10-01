@@ -84,17 +84,15 @@ public sealed class LabRealtimeVoiceSessionService
                         turn_detection = new
                         {
                             type = "server_vad",
-                            // Matches VoiceTutorAgent.tsx/EngramReviewAgent.tsx's already-working
-                            // config in the main HumanOS backend (RealtimeVoiceSessionService.cs) —
-                            // this service's previous 0.5/500ms (Azure AI Foundry playground
-                            // defaults) was far more sensitive to ambient noise/echo, which the
-                            // server's own VAD misread as "the student started talking", triggering
-                            // interrupt_response mid-sentence and then create_response regenerating
-                            // a brand new response — looked exactly like sinodales stuttering/
-                            // restarting their own greeting for no audible reason.
-                            threshold = 0.85,
+                            // Now matches VoiceTutorAgent.tsx/RealtimeVoiceSessionService.cs's tuned value
+                            // (2026-08-27) exactly. The 0.85 tried here (2026-09-22) turned out too strict
+                            // to ever register a genuine student interruption as "speech started", so
+                            // barge-in silently never fired — the ACTUAL stuttering/restart bug (fixed
+                            // separately) was a stray response.cancel from committee hand-off logic that
+                            // ran even for single-actor Labs, not VAD sensitivity.
+                            threshold = 0.65,
                             prefix_padding_ms = 300,
-                            silence_duration_ms = 700,
+                            silence_duration_ms = 650,
                             create_response = true,
                             interrupt_response = true
                         },

@@ -11,4 +11,7 @@ public interface IScenarioService
     Task<ScenarioResponse> ApproveAsync(Guid tenantId, Guid scenarioId, string etag, string user, CancellationToken ct);
     Task<ScenarioResponse> PublishAsync(Guid tenantId, Guid scenarioId, string etag, string user, CancellationToken ct);
     Task<ScenarioResponse> RetireAsync(Guid tenantId, Guid scenarioId, string etag, string user, CancellationToken ct);
+    /// <summary>APPROVED or PUBLISHED -> DRAFT, so Studio admins can edit content again (e.g. job
+    /// description fields) without losing the Scenario/re-creating the Lab. See ScenarioService.</summary>
+    Task<ScenarioResponse> RevertToDraftAsync(Guid tenantId, Guid scenarioId, string etag, string user, CancellationToken ct);
 }

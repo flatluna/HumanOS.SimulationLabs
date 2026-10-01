@@ -181,3 +181,11 @@ public sealed class ScenarioRetireFunction : ScenarioTransitionFunctionBase
     public Task<HttpResponseData> RunAsync([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "scenarios/{idScenario}/retire")] HttpRequestData r, string idScenario, CancellationToken ct) =>
         RunTransition(r, idScenario, ScenarioPolicies.Retire, Service.RetireAsync, ct);
 }
+
+public sealed class ScenarioRevertToDraftFunction : ScenarioTransitionFunctionBase
+{
+    public ScenarioRevertToDraftFunction(IScenarioService s, ICurrentUserContext u, ILogger<ScenarioRevertToDraftFunction> l) : base(s, u, l) { }
+    [Function("Scenario_RevertToDraft")]
+    public Task<HttpResponseData> RunAsync([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "scenarios/{idScenario}/revert-to-draft")] HttpRequestData r, string idScenario, CancellationToken ct) =>
+        RunTransition(r, idScenario, ScenarioPolicies.Update, Service.RevertToDraftAsync, ct);
+}

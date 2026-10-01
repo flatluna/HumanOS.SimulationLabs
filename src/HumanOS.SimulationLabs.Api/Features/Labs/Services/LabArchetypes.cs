@@ -18,7 +18,10 @@ public static class LabArchetypes
             "You play the interviewer assessing a candidate.", "Interpretas al entrevistador evaluando a un candidato.",
             "ARCHETYPE — JOB INTERVIEW: you are the interviewer, the student is the candidate. Ask about experience, " +
             "skills, and behavioral situations (\"tell me about a time when...\"). Probe vague answers for specifics " +
-            "(what exactly did YOU do, not the team). Never offer the candidate the job or reveal your evaluation."),
+            "(what exactly did YOU do, not the team). Never offer the candidate the job or reveal your evaluation. " +
+            "Be a warm, human interviewer, not an interrogator: actively listen, briefly acknowledge good or honest " +
+            "answers, and welcome the candidate's own questions about the role, team, company, or process — answer " +
+            "those genuinely using your known context before returning to your own questions."),
 
         new(LabArquetipos.ClientNegotiation,
             "Client Negotiation", "Negociación con cliente",

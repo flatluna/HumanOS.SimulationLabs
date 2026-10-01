@@ -25,10 +25,10 @@ public class LAB_AttemptConfiguration : IEntityTypeConfiguration<LAB_Attempt>
                 "CK_LAB_Attempt_Fechas",
                 "([ATT_FechaFin] IS NULL) OR ([ATT_FechaInicio] IS NULL) OR ([ATT_FechaFin] >= [ATT_FechaInicio])");
 
-            // ATT_ScoreFinal NULL o entre 1.00 y 10.00
+            // ATT_ScoreFinal NULL o entre 1.00 y 5.00
             t.HasCheckConstraint(
                 "CK_LAB_Attempt_ATT_ScoreFinal",
-                "([ATT_ScoreFinal] IS NULL) OR ([ATT_ScoreFinal] >= 1.00 AND [ATT_ScoreFinal] <= 10.00)");
+                "([ATT_ScoreFinal] IS NULL) OR ([ATT_ScoreFinal] >= 1.00 AND [ATT_ScoreFinal] <= 5.00)");
 
             // ATT_Estatus solo acepta los valores definidos
             t.HasCheckConstraint(
@@ -166,20 +166,19 @@ public class LAB_AttemptConfiguration : IEntityTypeConfiguration<LAB_Attempt>
             .IsConcurrencyToken()
             .IsRequired();
 
-        // Relación 1:N con LAB_LabVersion: FK compuesta (SEG_IdTenant, LAB_IdVersion)
+        // Relación 1:N con LAB_LabVersion — FK simple (LAB_IdVersion) para permitir Attempts
+        // de participantes de OTRO tenant contra un LabVersion global (LAB_EsGlobal=true).
         builder.HasOne(a => a.LabVersion)
             .WithMany(v => v.Attempts)
-            .HasPrincipalKey(v => new { v.SEG_IdTenant, v.LAB_IdVersion })
-            .HasForeignKey(a => new { a.SEG_IdTenant, a.LAB_IdVersion })
-            .HasConstraintName("FK_LAB_Attempt_LAB_LabVersion_SEG_IdTenant_LAB_IdVersion")
+            .HasForeignKey(a => a.LAB_IdVersion)
+            .HasConstraintName("FK_LAB_Attempt_LAB_LabVersion_LAB_IdVersion")
             .OnDelete(DeleteBehavior.Restrict);
 
-        // Relación 1:N con LAB_Scenario: FK compuesta (SEG_IdTenant, LAB_IdVersion, SCN_IdScenario)
+        // Relación 1:N con LAB_Scenario — FK simple (SCN_IdScenario), mismo motivo.
         builder.HasOne(a => a.Scenario)
             .WithMany(s => s.Attempts)
-            .HasPrincipalKey(s => new { s.SEG_IdTenant, s.LAB_IdVersion, s.SCN_IdScenario })
-            .HasForeignKey(a => new { a.SEG_IdTenant, a.LAB_IdVersion, a.SCN_IdScenario })
-            .HasConstraintName("FK_LAB_Attempt_LAB_Scenario_SEG_IdTenant_LAB_IdVersion_SCN_IdScenario")
+            .HasForeignKey(a => a.SCN_IdScenario)
+            .HasConstraintName("FK_LAB_Attempt_LAB_Scenario_SCN_IdScenario")
             .OnDelete(DeleteBehavior.Restrict);
 
         // ÍNDICES

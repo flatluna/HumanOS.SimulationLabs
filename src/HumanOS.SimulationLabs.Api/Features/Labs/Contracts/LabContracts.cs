@@ -26,6 +26,9 @@ public sealed class UpdateLabRequest
     public string? Dominio { get; set; }
 
     public Guid? OwnerId { get; set; }
+
+    /// <summary>When set, updates whether this Lab is visible to every tenant.</summary>
+    public bool? EsGlobal { get; set; }
 }
 
 public sealed class InactivateLabRequest
@@ -52,6 +55,8 @@ public sealed class LabResponse
     public string Dominio { get; set; } = string.Empty;
 
     public string Estatus { get; set; } = string.Empty;
+
+    public bool EsGlobal { get; set; }
 
     public Guid OwnerId { get; set; }
 
@@ -81,6 +86,8 @@ public sealed class LabListItemResponse
     public string Dominio { get; set; } = string.Empty;
 
     public string Estatus { get; set; } = string.Empty;
+
+    public bool EsGlobal { get; set; }
 
     public Guid OwnerId { get; set; }
 
