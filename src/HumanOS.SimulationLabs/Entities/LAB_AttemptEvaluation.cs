@@ -48,6 +48,15 @@ public class LAB_AttemptEvaluation
 
     public string? EVL_GeneratedModel { get; set; }
 
+    /// <summary>LLM prompt/completion token counts for the evaluation call (2026-10-01) —
+    /// powers the tenant "evaluation cost" dashboard. Null for rows persisted before this
+    /// field existed.</summary>
+    public int? EVL_InputTokens { get; set; }
+
+    public int? EVL_OutputTokens { get; set; }
+
+    public int? EVL_CachedInputTokens { get; set; }
+
     public DateTimeOffset FechaCreacion { get; set; }
 
     public string CreadoPor { get; set; } = string.Empty;

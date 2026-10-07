@@ -90,6 +90,20 @@ public class LAB_Lab
 
     public byte[] RowVersion { get; set; } = [];
 
+    // AI Lab Builder generation cost (null for Labs created without the AI builder, or before this
+    // tracking existed) — see LabBuilderCostEstimator / GenerateLabDraftResponse.Cost.
+    public int? GEN_InputTokens { get; set; }
+
+    public int? GEN_OutputTokens { get; set; }
+
+    public int? GEN_CachedInputTokens { get; set; }
+
+    public string? GEN_ModelName { get; set; }
+
+    public long? GEN_ElapsedMilliseconds { get; set; }
+
+    public decimal? GEN_EstimatedCostUsd { get; set; }
+
     // Colección de versiones de este Lab
     public ICollection<LAB_LabVersion> Versiones { get; set; } = new List<LAB_LabVersion>();
 }

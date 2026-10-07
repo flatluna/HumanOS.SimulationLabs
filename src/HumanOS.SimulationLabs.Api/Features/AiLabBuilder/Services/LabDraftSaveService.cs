@@ -97,6 +97,12 @@ public sealed class LabDraftSaveService : ILabDraftSaveService
                 LAB_OwnerId = userId,
                 FechaCreacion = now,
                 CreadoPor = createdBy,
+                GEN_InputTokens = request.Cost?.InputTokens,
+                GEN_OutputTokens = request.Cost?.OutputTokens,
+                GEN_CachedInputTokens = request.Cost?.CachedInputTokens,
+                GEN_ModelName = request.Cost?.ModelName,
+                GEN_ElapsedMilliseconds = request.Cost?.ElapsedMilliseconds,
+                GEN_EstimatedCostUsd = request.Cost?.EstimatedCostUsd,
             };
             _db.Labs.Add(lab);
 

@@ -125,7 +125,7 @@ public sealed class LabVersionUpdateFunction
         {
             _logger.LogError(ex, "Unexpected error updating LabVersion {IdVersion}. CorrelationId={CorrelationId}", versionId, correlationId);
             LogAudit(versionId, "INTERNAL_ERROR", "FAILED", sw.ElapsedMilliseconds, null, null);
-            return await ApiResponses.ProblemAsync(request, HttpStatusCode.InternalServerError, "Ocurrió un error inesperado.", correlationId, errorCode: "INTERNAL_ERROR", cancellationToken: cancellationToken);
+            return await ApiResponses.ProblemAsync(request, HttpStatusCode.InternalServerError, "Ocurrió un error inesperado.", correlationId, errors: [$"{ex.GetType().Name}: {ex.Message}"], errorCode: "INTERNAL_ERROR", cancellationToken: cancellationToken);
         }
     }
 

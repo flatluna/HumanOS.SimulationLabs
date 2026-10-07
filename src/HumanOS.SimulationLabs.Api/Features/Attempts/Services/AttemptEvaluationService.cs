@@ -103,15 +103,18 @@ public sealed class AttemptEvaluationService
         };
 
         var result = await _agent.EvaluateAsync(context, ct);
+        var evaluationOutcome = result;
+        var tokenUsage = evaluationOutcome.TokenUsage;
+        var evaluationResult = evaluationOutcome.Result;
 
         // ScoreFinal and CriteriaScores are computed here from the model's own TurnEvaluations
         // (never from the LLM directly) so a topic that was never actually asked about can never
         // appear or drag down the score — grouped by SkillArea (TECHNICAL/SOFT), one entry per
         // area actually tested in the conversation.
-        if (result.TurnEvaluations.Count > 0)
+        if (evaluationResult.TurnEvaluations.Count > 0)
         {
-            result.ScoreFinal = Math.Round(result.TurnEvaluations.Average(t => t.Score), 2);
-            result.CriteriaScores = result.TurnEvaluations
+            evaluationResult.ScoreFinal = Math.Round(evaluationResult.TurnEvaluations.Average(t => t.Score), 2);
+            evaluationResult.CriteriaScores = evaluationResult.TurnEvaluations
                 .GroupBy(t => t.SkillArea)
                 .Select(g => new CriterionEvaluationDto
                 {
@@ -126,12 +129,12 @@ public sealed class AttemptEvaluationService
             // No substantive question/answer pairs found at all — force a safe, DB-valid
             // minimum score rather than trusting whatever the model left ScoreFinal at (it's
             // instructed to leave it 0, which violates the 1.00-5.00 check constraint).
-            result.ScoreFinal = 1.00m;
-            result.Resultado = "NOT_COMPLETED";
-            result.CriteriaScores = [];
+            evaluationResult.ScoreFinal = 1.00m;
+            evaluationResult.Resultado = "NOT_COMPLETED";
+            evaluationResult.CriteriaScores = [];
         }
-        result.ScoreFinal = Math.Clamp(result.ScoreFinal, 1.00m, 5.00m);
-        if (!ValidResultados.Contains(result.Resultado)) result.Resultado = "NOT_COMPLETED";
+        evaluationResult.ScoreFinal = Math.Clamp(evaluationResult.ScoreFinal, 1.00m, 5.00m);
+        if (!ValidResultados.Contains(evaluationResult.Resultado)) evaluationResult.Resultado = "NOT_COMPLETED";
 
         var now = DateTimeOffset.UtcNow;
         var existing = await _db.AttemptEvaluations
@@ -146,22 +149,26 @@ public sealed class AttemptEvaluationService
             CreadoPor = "AttemptEvaluationAgent",
         };
 
-        evaluation.EVL_ScoreFinal = result.ScoreFinal;
-        evaluation.EVL_Resultado = result.Resultado;
-        evaluation.EVL_Feedback = result.Feedback;
-        evaluation.EVL_StrengthsJson = JsonSerializer.Serialize(result.Strengths, JsonOptions);
-        evaluation.EVL_GapsJson = JsonSerializer.Serialize(result.Gaps, JsonOptions);
-        evaluation.EVL_RecommendedSkillsJson = JsonSerializer.Serialize(result.RecommendedSkills, JsonOptions);
-        evaluation.EVL_CriteriaScoresJson = JsonSerializer.Serialize(result.CriteriaScores, JsonOptions);
-        evaluation.EVL_TurnEvaluationsJson = JsonSerializer.Serialize(result.TurnEvaluations, JsonOptions);
+        evaluation.EVL_ScoreFinal = evaluationResult.ScoreFinal;
+        evaluation.EVL_Resultado = evaluationResult.Resultado;
+        evaluation.EVL_Feedback = evaluationResult.Feedback;
+        evaluation.EVL_StrengthsJson = JsonSerializer.Serialize(evaluationResult.Strengths, JsonOptions);
+        evaluation.EVL_GapsJson = JsonSerializer.Serialize(evaluationResult.Gaps, JsonOptions);
+        evaluation.EVL_RecommendedSkillsJson = JsonSerializer.Serialize(evaluationResult.RecommendedSkills, JsonOptions);
+        evaluation.EVL_CriteriaScoresJson = JsonSerializer.Serialize(evaluationResult.CriteriaScores, JsonOptions);
+        evaluation.EVL_TurnEvaluationsJson = JsonSerializer.Serialize(evaluationResult.TurnEvaluations, JsonOptions);
+        evaluation.EVL_GeneratedModel = tokenUsage.ModelName;
+        evaluation.EVL_InputTokens = tokenUsage.InputTokens;
+        evaluation.EVL_OutputTokens = tokenUsage.OutputTokens;
+        evaluation.EVL_CachedInputTokens = tokenUsage.CachedInputTokens;
 
         if (existing is null)
         {
             _db.AttemptEvaluations.Add(evaluation);
         }
 
-        attempt.ATT_ScoreFinal = result.ScoreFinal;
-        attempt.ATT_Resultado = result.Resultado;
+        attempt.ATT_ScoreFinal = evaluationResult.ScoreFinal;
+        attempt.ATT_Resultado = evaluationResult.Resultado;
         attempt.FechaActualizacion = now;
 
         await _db.SaveChangesAsync(ct);

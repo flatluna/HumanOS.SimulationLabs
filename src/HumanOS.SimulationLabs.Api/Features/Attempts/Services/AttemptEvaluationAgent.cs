@@ -27,6 +27,26 @@ public sealed class AttemptEvaluationResult
     public List<TurnEvaluationDto> TurnEvaluations { get; set; } = [];
 }
 
+public sealed class AttemptEvaluationTokenUsage
+{
+    public int InputTokens { get; set; }
+
+    public int OutputTokens { get; set; }
+
+    public int CachedInputTokens { get; set; }
+
+    public string? ModelName { get; set; }
+}
+
+/// <summary>Result of one evaluation call: the structured grading plus the token usage of the
+/// LLM call, for cost tracking — see LabBuilderAgent's identical pattern.</summary>
+public sealed class AttemptEvaluationOutcome
+{
+    public AttemptEvaluationResult Result { get; set; } = null!;
+
+    public AttemptEvaluationTokenUsage TokenUsage { get; set; } = null!;
+}
+
 public sealed class TranscriptTurnInput
 {
     public int NumeroTurno { get; set; }
@@ -214,7 +234,7 @@ public sealed class AttemptEvaluationAgent
 
     public bool IsConfigured => _client is not null;
 
-    public async Task<AttemptEvaluationResult> EvaluateAsync(AttemptEvaluationContext context, CancellationToken cancellationToken = default)
+    public async Task<AttemptEvaluationOutcome> EvaluateAsync(AttemptEvaluationContext context, CancellationToken cancellationToken = default)
     {
         if (_client is null || _deploymentName is null)
         {
@@ -225,7 +245,18 @@ public sealed class AttemptEvaluationAgent
         var prompt = BuildPrompt(context);
 
         var response = await agent.RunAsync<AttemptEvaluationResult>(prompt, cancellationToken: cancellationToken);
-        return response.Result;
+        var usage = response.Usage;
+        return new AttemptEvaluationOutcome
+        {
+            Result = response.Result,
+            TokenUsage = new AttemptEvaluationTokenUsage
+            {
+                InputTokens = (int)(usage?.InputTokenCount ?? 0),
+                OutputTokens = (int)(usage?.OutputTokenCount ?? 0),
+                CachedInputTokens = (int)(usage?.CachedInputTokenCount ?? 0),
+                ModelName = _deploymentName,
+            },
+        };
     }
 
     private static string BuildPrompt(AttemptEvaluationContext context)

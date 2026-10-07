@@ -129,6 +129,17 @@ public sealed class LabService : ILabService
                 FechaCreacion = l.FechaCreacion,
                 FechaActualizacion = l.FechaActualizacion,
                 RowVersion = Convert.ToBase64String(l.RowVersion),
+                GenerationCost = l.GEN_InputTokens.HasValue
+                    ? new LabGenerationCostResponse
+                    {
+                        InputTokens = l.GEN_InputTokens!.Value,
+                        OutputTokens = l.GEN_OutputTokens ?? 0,
+                        CachedInputTokens = l.GEN_CachedInputTokens ?? 0,
+                        ModelName = l.GEN_ModelName,
+                        ElapsedMilliseconds = l.GEN_ElapsedMilliseconds ?? 0,
+                        EstimatedCostUsd = l.GEN_EstimatedCostUsd ?? 0,
+                    }
+                    : null,
             })
             .ToListAsync(cancellationToken);
 
@@ -344,5 +355,16 @@ public sealed class LabService : ILabService
         FechaActualizacion = lab.FechaActualizacion,
         ActualizadoPor = lab.ActualizadoPor,
         RowVersion = Convert.ToBase64String(lab.RowVersion),
+        GenerationCost = lab.GEN_InputTokens.HasValue
+            ? new LabGenerationCostResponse
+            {
+                InputTokens = lab.GEN_InputTokens.Value,
+                OutputTokens = lab.GEN_OutputTokens ?? 0,
+                CachedInputTokens = lab.GEN_CachedInputTokens ?? 0,
+                ModelName = lab.GEN_ModelName,
+                ElapsedMilliseconds = lab.GEN_ElapsedMilliseconds ?? 0,
+                EstimatedCostUsd = lab.GEN_EstimatedCostUsd ?? 0,
+            }
+            : null,
     };
 }

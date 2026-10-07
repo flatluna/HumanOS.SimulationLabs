@@ -1,3 +1,5 @@
+using HumanOS.SimulationLabs.Api.Features.AiLabBuilder;
+
 namespace HumanOS.SimulationLabs.Api.Features.AiLabBuilder.Contracts;
 
 /// <summary>A simulated actor the agent proposes for the scenario (one or several).</summary>
@@ -173,4 +175,7 @@ public sealed class GenerateLabDraftResponse
     public bool HumanReviewRequired { get; set; } = true;
 
     public string CorrelationId { get; set; } = string.Empty;
+
+    /// <summary>Tokens, timing and estimated USD cost of this generation call (not persisted).</summary>
+    public LabBuilderCostEstimate? Cost { get; set; }
 }

@@ -37,6 +37,10 @@ public class LAB_AttemptEvaluationConfiguration : IEntityTypeConfiguration<LAB_A
         builder.Property(e => e.EVL_TurnEvaluationsJson).IsUnicode(true).IsRequired();
         builder.Property(e => e.EVL_GeneratedModel).HasMaxLength(100).IsUnicode(true).IsRequired(false);
 
+        builder.Property(e => e.EVL_InputTokens).IsRequired(false);
+        builder.Property(e => e.EVL_OutputTokens).IsRequired(false);
+        builder.Property(e => e.EVL_CachedInputTokens).IsRequired(false);
+
         builder.Property(e => e.FechaCreacion).IsRequired();
         builder.Property(e => e.CreadoPor).HasMaxLength(100).IsUnicode(true).IsRequired();
     }

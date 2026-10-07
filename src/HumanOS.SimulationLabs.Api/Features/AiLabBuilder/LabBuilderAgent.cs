@@ -16,6 +16,10 @@ public sealed class LabBuilderTokenUsage
     public int OutputTokens { get; set; }
 
     public int CachedInputTokens { get; set; }
+
+    public string? ModelName { get; set; }
+
+    public long ElapsedMilliseconds { get; set; }
 }
 
 /// <summary>Result of one draft generation: the structured content plus the token usage of the call.</summary>
@@ -192,6 +196,8 @@ public sealed class LabBuilderAgent
 
         var prompt = BuildPrompt(request);
 
+        var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+
         // A full Lab draft (many dialogues + criteria) is a long structured output — "Medium"
         // reasoning effort avoids gpt-5-mini burning its whole output budget on hidden
         // reasoning before emitting the JSON (observed failure mode on other agents in this
@@ -211,6 +217,7 @@ public sealed class LabBuilderAgent
         }
 
         var response = await agent.RunAsync<LabDraftGenerationResult>(prompt, options: runOptions, cancellationToken: cancellationToken);
+        stopwatch.Stop();
 
         var usage = response.Usage;
         return new LabBuilderGenerationOutcome
@@ -221,6 +228,8 @@ public sealed class LabBuilderAgent
                 InputTokens = (int)(usage?.InputTokenCount ?? 0),
                 OutputTokens = (int)(usage?.OutputTokenCount ?? 0),
                 CachedInputTokens = (int)(usage?.CachedInputTokenCount ?? 0),
+                ModelName = _deploymentName,
+                ElapsedMilliseconds = stopwatch.ElapsedMilliseconds,
             },
         };
     }

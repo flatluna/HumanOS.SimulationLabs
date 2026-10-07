@@ -5,6 +5,7 @@ using HumanOS.SimulationLabs.Api.Features.AiLabBuilder.Contracts;
 using HumanOS.SimulationLabs.Api.Features.AiLabBuilder.Validators;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace HumanOS.SimulationLabs.Api.Features.AiLabBuilder.Functions;
@@ -18,12 +19,14 @@ public sealed class LabBuilderGenerateDraftFunction
     private readonly LabBuilderAgent _agent;
     private readonly ICurrentUserContext _user;
     private readonly ILogger<LabBuilderGenerateDraftFunction> _logger;
+    private readonly IConfiguration _configuration;
 
-    public LabBuilderGenerateDraftFunction(LabBuilderAgent agent, ICurrentUserContext user, ILogger<LabBuilderGenerateDraftFunction> logger)
+    public LabBuilderGenerateDraftFunction(LabBuilderAgent agent, ICurrentUserContext user, ILogger<LabBuilderGenerateDraftFunction> logger, IConfiguration configuration)
     {
         _agent = agent;
         _user = user;
         _logger = logger;
+        _configuration = configuration;
     }
 
     [Function("LabBuilder_GenerateDraft")]
@@ -103,6 +106,7 @@ public sealed class LabBuilderGenerateDraftFunction
         {
             var outcome = await _agent.GenerateDraftAsync(body, cancellationToken);
             var generation = outcome.Generation;
+            var costEstimate = LabBuilderCostEstimator.Estimate(outcome.TokenUsage, _configuration);
 
             if (generation.NeedsInformation || generation.Draft is null)
             {
@@ -112,6 +116,7 @@ public sealed class LabBuilderGenerateDraftFunction
                     Questions = generation.Questions,
                     HumanReviewRequired = true,
                     CorrelationId = _user.CorrelationId,
+                    Cost = costEstimate,
                 };
                 return await ApiResponses.JsonAsync(request, HttpStatusCode.OK, needsInfo, _user.CorrelationId, cancellationToken);
             }
@@ -146,11 +151,12 @@ public sealed class LabBuilderGenerateDraftFunction
                 Warnings = warnings,
                 HumanReviewRequired = true,
                 CorrelationId = _user.CorrelationId,
+                Cost = costEstimate,
             };
 
             _logger.LogInformation(
-                "LabBuilder_GenerateDraft ok. TenantId={TenantId} UserId={UserId} CorrelationId={CorrelationId} DialogueCount={DialogueCount} ActorCount={ActorCount} CriterionCount={CriterionCount} InputTokens={InputTokens} OutputTokens={OutputTokens}",
-                _user.TenantId, _user.UserId, _user.CorrelationId, generation.Draft.Dialogues.Count, generation.Draft.Actors.Count, generation.Draft.Criteria.Count, outcome.TokenUsage.InputTokens, outcome.TokenUsage.OutputTokens);
+                "LabBuilder_GenerateDraft ok. TenantId={TenantId} UserId={UserId} CorrelationId={CorrelationId} DialogueCount={DialogueCount} ActorCount={ActorCount} CriterionCount={CriterionCount} InputTokens={InputTokens} OutputTokens={OutputTokens} ElapsedMilliseconds={ElapsedMilliseconds} EstimatedCostUsd={EstimatedCostUsd}",
+                _user.TenantId, _user.UserId, _user.CorrelationId, generation.Draft.Dialogues.Count, generation.Draft.Actors.Count, generation.Draft.Criteria.Count, outcome.TokenUsage.InputTokens, outcome.TokenUsage.OutputTokens, outcome.TokenUsage.ElapsedMilliseconds, costEstimate.EstimatedCostUsd);
 
             return await ApiResponses.JsonAsync(request, HttpStatusCode.OK, response, _user.CorrelationId, cancellationToken);
         }

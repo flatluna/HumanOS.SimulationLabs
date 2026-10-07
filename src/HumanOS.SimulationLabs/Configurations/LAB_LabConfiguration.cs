@@ -106,6 +106,16 @@ public class LAB_LabConfiguration : IEntityTypeConfiguration<LAB_Lab>
             .IsConcurrencyToken()
             .IsRequired();
 
+        // GEN_ModelName varchar(100) — AI Lab Builder generation cost snapshot (all nullable)
+        builder.Property(e => e.GEN_ModelName)
+            .HasMaxLength(100)
+            .IsUnicode(false)
+            .IsRequired(false);
+
+        builder.Property(e => e.GEN_EstimatedCostUsd)
+            .HasPrecision(10, 4)
+            .IsRequired(false);
+
         // Restricción única para SEG_IdTenant + LAB_Codigo
         builder.HasIndex(e => new { e.SEG_IdTenant, e.LAB_Codigo }, "UQ_LAB_Lab_SEG_IdTenant_LAB_Codigo")
             .IsUnique();

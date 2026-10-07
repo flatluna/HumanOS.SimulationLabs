@@ -4,6 +4,7 @@ using HumanOS.SimulationLabs.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HumanOS.SimulationLabs.Migrations
 {
     [DbContext(typeof(SimulationLabsDbContext))]
-    partial class SimulationLabsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20261001232011_AddLabGenerationCost")]
+    partial class AddLabGenerationCost
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -380,9 +383,6 @@ namespace HumanOS.SimulationLabs.Migrations
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int?>("EVL_CachedInputTokens")
-                        .HasColumnType("int");
-
                     b.Property<string>("EVL_CriteriaScoresJson")
                         .IsRequired()
                         .IsUnicode(true)
@@ -402,12 +402,6 @@ namespace HumanOS.SimulationLabs.Migrations
                         .HasMaxLength(100)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(100)");
-
-                    b.Property<int?>("EVL_InputTokens")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("EVL_OutputTokens")
-                        .HasColumnType("int");
 
                     b.Property<string>("EVL_RecommendedSkillsJson")
                         .IsRequired()

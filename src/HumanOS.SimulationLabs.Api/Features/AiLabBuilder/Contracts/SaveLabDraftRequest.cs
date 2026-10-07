@@ -1,5 +1,7 @@
 namespace HumanOS.SimulationLabs.Api.Features.AiLabBuilder.Contracts;
 
+using HumanOS.SimulationLabs.Api.Features.AiLabBuilder;
+
 public sealed class SaveLabDraftRequest
 {
     public string? LabName { get; set; }
@@ -28,4 +30,8 @@ public sealed class SaveLabDraftRequest
     public string? Language { get; set; }
 
     public LabDraftContent Draft { get; set; } = null!;
+
+    /// <summary>Cost estimate returned by generate-draft (GenerateLabDraftResponse.Cost) — echoed
+    /// back here so it gets persisted onto LAB_Lab at save time instead of being lost.</summary>
+    public LabBuilderCostEstimate? Cost { get; set; }
 }

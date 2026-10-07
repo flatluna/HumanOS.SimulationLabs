@@ -69,6 +69,27 @@ public sealed class LabResponse
     public string? ActualizadoPor { get; set; }
 
     public string RowVersion { get; set; } = string.Empty;
+
+    /// <summary>Set only for Labs created via the AI Lab Builder — tokens/timing/estimated USD
+    /// cost of the generation call that produced this Lab's draft.</summary>
+    public LabGenerationCostResponse? GenerationCost { get; set; }
+}
+
+/// <summary>See HumanOS.SimulationLabs.Api.Features.AiLabBuilder.LabBuilderCostEstimate — persisted
+/// snapshot of the generation cost, copied onto LAB_Lab at save time.</summary>
+public sealed class LabGenerationCostResponse
+{
+    public int InputTokens { get; set; }
+
+    public int OutputTokens { get; set; }
+
+    public int CachedInputTokens { get; set; }
+
+    public string? ModelName { get; set; }
+
+    public long ElapsedMilliseconds { get; set; }
+
+    public decimal EstimatedCostUsd { get; set; }
 }
 
 public sealed class LabListItemResponse
@@ -96,6 +117,9 @@ public sealed class LabListItemResponse
     public DateTimeOffset? FechaActualizacion { get; set; }
 
     public string RowVersion { get; set; } = string.Empty;
+
+    /// <summary>Set only for Labs created via the AI Lab Builder — see LabResponse.GenerationCost.</summary>
+    public LabGenerationCostResponse? GenerationCost { get; set; }
 }
 
 public sealed class InactivateLabResponse
